@@ -129,25 +129,35 @@ chinese_wwm_L-12_H-768_A-12.zip
 由于我们没有直接在PaddlePaddle上使用ERNIE，所以在ERNIE上的实验结果仅供参考（虽然我们在多个数据集上复现了效果）。
 
 ## FAQ
-Q: 会有计划发布更大模型吗？比如BERT-large版本？</br>
+**Q: 会有计划发布更大模型吗？比如BERT-large版本？**</br>
 A: 如果我们从实验中得到更好效果，会考虑发布更大的版本。
 
-Q: 你骗人！无法复现结果😂</br>
+**Q: 你骗人！无法复现结果😂**</br>
 A: 在下游任务中，我们采用了最简单的模型。比如分类任务，我们直接使用的是`run_classifier.py`（谷歌提供）。如果无法达到平均值，说明实验本身存在bug，请仔细排查。最高值存在很多随机因素，我们无法保证能够达到最高值。
 
-Q: 训练花了多长时间，在什么设备上训练的？</br>
+**Q: 训练花了多长时间，在什么设备上训练的？**</br>
 A: 训练是在谷歌TPU v3版本（128G HBM）完成的，大约需要1.5天左右。
 
-Q: ERNIE是谁？</br>
+**Q: ERNIE是谁？**</br>
 A: 本项目中特指百度公司提出的[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
 
-Q: 你们这个和百度的ERNIE有什么区别？</br>
-A: 因为百度ERNIE的提出先于谷歌提出wwm（仅以公开相关工作的时间为基准），基于全词mask的方法应该是百度相关工作在先。从数据上看，ERNIE采用了更多的网络数据（百科，知道，贴吧），而本项目中只使用了中文维基百科数据。
+**Q: 你们这个和百度的ERNIE有什么区别？**</br>
+A: 因为百度ERNIE的提出先于谷歌提出whole word masking（仅以公开相关工作的时间为基准），基于全词mask的方法应该是百度的相关工作在先。从数据上看，ERNIE采用了更多的网络数据（百科，知道，贴吧），而本项目中只使用了中文维基百科数据。
 
-Q: 你们在实验中使用了ERNIE，是怎么用的呢？</br>
-A: 我们将ERNIE从PaddlePaddle格式转换为TensorFlow格式，并加载到下游任务的代码中。很遗憾，目前我们不能提供PP转TF的代码，但GitHub中有一些开源的实现，可以搜索关注一下。同时，因为版权原因，我们不会提供ERNIE权重的TensorFlow/PyTorch版本。关于ERNIE在PaddlePaddle中使用的相关问题，请咨询[ERNIE官方](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)。
+**Q: 你们在实验中使用了ERNIE，是怎么用的呢？**</br>
+A: 我们将ERNIE从PaddlePaddle格式转换为TensorFlow格式，并加载到下游任务的代码中。很遗憾，目前我们不能提供PP转TF/PT的代码，但GitHub中有一些开源的实现，可以搜索关注一下。同时，因为版权原因，我们不会提供ERNIE权重的TensorFlow/PyTorch版本供大家下载。关于ERNIE在PaddlePaddle中使用的相关问题，请咨询[ERNIE官方](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)。
 
+**Q: BERT-wwm的效果不是在所有任务都很好**</br>
+A: 本项目的目的是为研究者提供多元化的预训练模型，自由选择BERT，ERNIE，或者是BERT-wwm。我们仅提供实验数据，具体效果如何还是得在自己的任务中不断尝试才能得出结论。
 
+**Q: 为什么有些数据集上没有试？**</br>
+A: 很坦率的说：1）没精力找更多的数据；2）没有必要； 3）没有钞票；
+
+**Q: 简单评价一下这几个模型**</br>
+A: 各有侧重，各有千秋。中文自然语言处理的研究发展需要多方共同努力。
+
+**Q: 你预测下一个预训练模型叫什么？**</br>
+A: 可能叫ZOE吧，ZOE: Zero-shOt Embeddings from language model
 
 
 ## 引用
