@@ -55,7 +55,7 @@ chinese_wwm_L-12_H-768_A-12.zip
     |- bert_config.json     # 模型参数
     |- vocab.txt            # 词表
 ```
-其中`bert_config.json`和`vocab.txt`与谷歌原版**`BERT-base, Chinese`**完全一致。
+其中`bert_config.json`和`vocab.txt`与谷歌原版`**BERT-base, Chinese**`完全一致。
 
 
 ## 中文基线系统效果
