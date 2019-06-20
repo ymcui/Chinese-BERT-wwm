@@ -13,7 +13,7 @@
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
 
 ## 新闻
-2019/6/20	初始版本，模型已可通过谷歌云下载，国内云盘正在上传中，查看[中文模型下载](#中文模型下载)
+2019/6/20	初始版本，模型已可通过谷歌云下载，国内云盘也已上传完毕，查看[中文模型下载](#中文模型下载)
 
 
 ## 内容导引
@@ -52,13 +52,13 @@
 
 #### TensorFlow版本（1.12、1.13、1.14测试通过）
 - Google: [download_link_for_google_storage](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_L-12_H-768_A-12.zip)
-- 国内地址: [download_link]（正在上传，稍后放出）
+- 讯飞云: [download_link_密码mva8](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)
 
 #### PyTorch版本（请使用🤗 的[PyTorch-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) > 0.6，其他版本请自行转换）
 - Google: [download_link_for_google_storage](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_pytorch.zip)
-- 国内地址: [download_link]（正在上传，稍后放出）
+- 讯飞云: [download_link_密码m1CE](https://pan.iflytek.com:443/link/F23B12B39A3077CF1ED7A08DDAD081E3)
 
-中国大陆境内建议使用国内地址下载点，境外用户建议使用谷歌云下载点，文件大小约**400M**。
+中国大陆境内建议使用讯飞云下载，境外用户建议使用谷歌云下载点，文件大小约**400M**。
 以TensorFlow版本为例，下载完毕后对zip文件进行解压得到：
 ```
 chinese_wwm_L-12_H-768_A-12.zip
