@@ -43,11 +43,11 @@
     12-layer, 768-hidden, 12-heads, 110M parameters
 
 #### TensorFlow版本（1.12、1.13、1.14测试通过）
-- Google: [download_link_for_google_storage]
+- Google: [download_link_for_google_storage](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_L-12_H-768_A-12.zip)
 - 百度云: [download_link_for_baidu_pan]
 
 #### PyTorch版本（请使用🤗 的[PyTorch-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) > 0.6，其他版本请自行转换）
-- Google: [download_link_for_google_storage]
+- Google: [download_link_for_google_storage](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_pytorch.zip)
 - 百度云: [download_link_for_baidu_pan]
 
 中国大陆境内建议使用百度云下载点，境外用户建议使用谷歌下载点，文件大小约**400M**。
