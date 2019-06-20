@@ -2,6 +2,8 @@
 为了进一步促进中文自然语言处理的研究发展，我们提供了中文全词覆盖（Whole Word Masking）BERT的预训练模型。
 同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)
 
+![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
+
 **For English description, please read our technical report on arXiv: https://arxiv.org/abs/1906.08101**
 
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
