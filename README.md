@@ -12,11 +12,11 @@
 
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
 
-## News
+## 新闻
 2019/6/20	初始版本，模型已可通过谷歌云下载，国内云盘正在上传中，查看[中文模型下载](#中文模型下载)
 
 
-## 内容
+## 内容导引
 | 章节 | 描述 |
 |-|-|
 | [简介](#简介) | 介绍BERT-wwm |
@@ -24,7 +24,7 @@
 | [中文基线系统效果](#中文基线系统效果) | 列举了部分中文基线系统效果 |
 | [使用建议](#使用建议) | 提供了若干使用中文预训练模型的建议 |
 | [英文模型下载](#英文模型下载) | 谷歌官方的英文BERT-wwm下载地址 |
-| [FAQ](#FAQ) | 常见问题 |
+| [FAQ](#FAQ) | 常见问题答疑 |
 | [引用](#引用) | 本目录的技术报告 |
 
 ## 简介
@@ -113,7 +113,7 @@ chinese_wwm_L-12_H-768_A-12.zip
 * 如果要处理繁体中文数据，请使用BERT或者BERT-wwm。因为我们发现ERNIE的词表中几乎没有繁体中文。
 
 ## 英文模型下载
-为了方便大家下载，顺便带上谷歌官方发布的**英文BERT-large（wwm）**模型：
+为了方便大家下载，顺便带上**谷歌官方发布的英文`BERT-large（wwm）`**模型：
 
 *   **[`BERT-Large, Uncased (Whole Word Masking)`](https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip)**:
     24-layer, 1024-hidden, 16-heads, 340M parameters
@@ -122,7 +122,7 @@ chinese_wwm_L-12_H-768_A-12.zip
     24-layer, 1024-hidden, 16-heads, 340M parameters
 
 ## 声明
-**这不是谷歌官方发布的Chinese BERT-base (wwm)。**
+**本项目并非谷歌官方发布的Chinese BERT-base (wwm)。**
 
 技术报告中所呈现的实验结果仅表明在特定数据集和超参组合下的表现，并不能代表各个模型的本质。
 实验结果可能因随机数种子，计算设备而发生改变。
@@ -139,19 +139,19 @@ A: 在下游任务中，我们采用了最简单的模型。比如分类任务�
 A: 恭喜你。
 
 **Q: 训练花了多长时间，在什么设备上训练的？**</br>
-A: 训练是在谷歌TPU v3版本（128G HBM）完成的，大约需要1.5天左右。
+A: 训练是在谷歌TPU v3版本（128G HBM）完成的，大约需要1.5天左右。需要注意的是，预训练阶段我们使用的是`LAMB Optimizer`（[TensorFlow版本实现](https://github.com/ymcui/LAMB_Optimizer_TF)）。该优化器对大的batch有良好的支持。在微调下游任务时，我们采用的是BERT默认的`AdamWeightDecayOptimizer`。
 
 **Q: ERNIE是谁？**</br>
-A: 本项目中特指百度公司提出的[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
+A: 本项目中的ERNIE模型特指百度公司提出的[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
 
 **Q: 你们这个和百度的ERNIE有什么区别？**</br>
 A: 因为百度ERNIE的提出先于谷歌提出whole word masking（仅以公开相关工作的时间为基准），基于全词mask的方法应该是百度的相关工作在先。从数据上看，ERNIE采用了更多的网络数据（百科，知道，贴吧），而本项目中只使用了中文维基百科数据。
 
 **Q: 你们在实验中使用了ERNIE，是怎么用的呢？**</br>
-A: 我们将ERNIE从PaddlePaddle格式转换为TensorFlow格式，并加载到下游任务的代码中。很遗憾，目前我们不能提供PP转TF/PT的代码，但GitHub中有一些开源的实现，可以搜索关注一下。同时，因为版权原因，我们不会提供ERNIE权重的TensorFlow/PyTorch版本供大家下载。关于ERNIE在PaddlePaddle中使用的相关问题，请咨询[ERNIE官方](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)。
+A: 我们将ERNIE从PaddlePaddle格式转换为TensorFlow格式，并加载到下游任务的代码中。很遗憾，目前我们不能提供PP转TF/PT的代码，但GitHub中有一些开源的实现，可以搜索关注一下。同时，因为版权原因，我们不会提供TensorFlow/PyTorch版本的ERNIE权重供大家下载。关于ERNIE在PaddlePaddle中使用的相关问题，请咨询[ERNIE官方](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)。
 
 **Q: BERT-wwm的效果不是在所有任务都很好**</br>
-A: 本项目的目的是为研究者提供多元化的预训练模型，自由选择BERT，ERNIE，或者是BERT-wwm。我们仅提供实验数据，具体效果如何还是得在自己的任务中不断尝试才能得出结论。
+A: 本项目的目的是为研究者提供多元化的预训练模型，自由选择BERT，ERNIE，或者是BERT-wwm。我们仅提供实验数据，具体效果如何还是得在自己的任务中不断尝试才能得出结论。多一个模型，多一种选择。
 
 **Q: 为什么有些数据集上没有试？**</br>
 A: 很坦率的说：1）没精力找更多的数据；2）没有必要； 3）没有钞票；
