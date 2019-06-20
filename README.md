@@ -71,16 +71,16 @@ chinese_wwm_L-12_H-768_A-12.zip
 
 
 ### CMRC 2018
-![./pics/cmrc2018.png][1]
+![./pics/cmrc2018.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/cmrc2018.png)
 
 ### DRCD
-![image_1ddp3tvbkaidnpohdi1vorm9km.png-34.9kB][2]
+![./pics/drcd.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/drcd.png)
 
 ### NER
-![image_1ddp409lpott1e2runo1ma7bm41g.png-47.9kB][3]
+![./pics/ner.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/ner.png)
 
 ### THUCNews
-![image_1ddp41isee47qt8121bogn1mu51t.png-22.2kB][4]
+![./pics/thucnews.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/thucnews.png)
 
 
 ## 英文模型下载
