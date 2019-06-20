@@ -8,7 +8,7 @@
 
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
-***
+**微信公众号文章介绍：https://mp.weixin.qq.com/s/EE6dEhvpKxqnVW_bBAKrnA**
 
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
 
