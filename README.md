@@ -28,11 +28,13 @@
 | [引用](#引用) | 本目录的技术报告 |
 
 ## 简介
-**Whole Word Masking (wwm)**，暂且翻译为`全词Mask`，是谷歌在2019年5月31日发布的一项BERT的升级版本，主要更改了原预训练阶段的训练样本生成策略。简单来说，原有基于WordPiece的分词方式会把一个完整的词切分成若干个词缀，在生成训练样本时，这些被分开的词缀会随机被`[MASK]`替换。在`全词Mask`中，如果一个完整的词的部分WordPiece被`[MASK]`替换，则同属该词的其他部分也会被`[MASK]`替换，即`全词Mask`。
+**Whole Word Masking (wwm)**，暂且翻译为`全词Mask`，是谷歌在2019年5月31日发布的一项BERT的升级版本，主要更改了原预训练阶段的训练样本生成策略。简单来说，原有基于WordPiece的分词方式会把一个完整的词切分成若干个词缀，在生成训练样本时，这些被分开的词缀会随机被mask。在`全词Mask`中，如果一个完整的词的部分WordPiece被mask，则同属该词的其他部分也会被mask，即`全词Mask`。
 
-同理，由于谷歌官方发布的`BERT-base , Chinese`中，中文是以**字**为粒度进行切分，没有考虑到传统NLP中的中文分词（CWS）。我们将全词Mask的方法应用在了中文中，使用了中文维基百科（包括简体和繁体）进行训练，并且使用了[哈工大LTP](http://ltp.ai)作为分词工具），即对组成同一个**词**的汉字全部进行[MASK]。
+**需要注意的是，这里的mask指的是广义的mask（替换成[MASK]；保持原词汇；随机替换成另外一个词），并非只局限于单词替换成`[MASK]`标签的情况。更详细的说明请参考：[issue-4](https://github.com/ymcui/Chinese-BERT-wwm/issues/4)**
 
-下述文本展示了`全词Mask`的生成样例。
+同理，由于谷歌官方发布的`BERT-base , Chinese`中，中文是以**字**为粒度进行切分，没有考虑到传统NLP中的中文分词（CWS）。我们将全词Mask的方法应用在了中文中，使用了中文维基百科（包括简体和繁体）进行训练，并且使用了[哈工大LTP](http://ltp.ai)作为分词工具），即对组成同一个**词**的汉字全部进行Mask。
+
+下述文本展示了`全词Mask`的生成样例（注意：为了理解方便，下述例子中只考虑替换成[MASK]标签的情况。）。
 
 | 说明 | 样例 |
 | :------- | :--------- |
@@ -43,11 +45,7 @@
 
 
 ## 中文模型下载
-**(We are finalizing on uploading our model, hopefully it will be coming soon.)**
-
-**(我们在打包上传模型，会很快将模型放出。)**
-
-*   **`BERT-base, Chinese (Whole Word Masking)`**:
+*   [**`BERT-base, Chinese (Whole Word Masking)`**](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_L-12_H-768_A-12.zip): 
     12-layer, 768-hidden, 12-heads, 110M parameters
 
 #### TensorFlow版本（1.12、1.13、1.14测试通过）
