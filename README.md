@@ -36,16 +36,19 @@
 
 
 ## 中文模型下载
+**(We are finalizing on uploading our model, hopefully it will be coming soon.)*
+**(我们在打包上传模型，会很快将模型放出。)**
+
 *   **`BERT-base, Chinese (Whole Word Masking)`**:
     12-layer, 768-hidden, 12-heads, 110M parameters
 
 #### TensorFlow版本（1.12、1.13、1.14测试通过）
-- Google: [download_link_for_google_storage](#)
-- 百度云: [download_link_for_baidu_pan](#)
+- Google: [download_link_for_google_storage]
+- 百度云: [download_link_for_baidu_pan]
 
 #### PyTorch版本（请使用🤗 的[PyTorch-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) > 0.6，其他版本请自行转换）
-- Google: [download_link_for_google_storage](#)
-- 百度云: [download_link_for_baidu_pan](#)
+- Google: [download_link_for_google_storage]
+- 百度云: [download_link_for_baidu_pan]
 
 中国大陆境内建议使用百度云下载点，境外用户建议使用谷歌下载点，文件大小约**400M**。
 以TensorFlow版本为例，下载完毕后对zip文件进行解压得到：
