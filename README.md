@@ -71,7 +71,7 @@ chinese_wwm_L-12_H-768_A-12.zip
 
 
 ### CMRC 2018
-![image_1ddp3tkrn3fq13481n5l1g6s12de9.png-48.7kB][1]
+![./pics/cmrc2018.png][1]
 
 ### DRCD
 ![image_1ddp3tvbkaidnpohdi1vorm9km.png-34.9kB][2]
