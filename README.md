@@ -8,7 +8,12 @@
 
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
+***
+
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
+
+## News
+2019/6/20	初始版本
 
 
 ## 内容
@@ -17,6 +22,7 @@
 | [简介](#简介) | 介绍BERT-wwm |
 | [中文模型下载](#中文模型下载) | 提供了BERT-wwm的下载地址 |
 | [中文基线系统效果](#中文基线系统效果) | 列举了部分中文基线系统效果 |
+| [使用建议](#使用建议) | 提供了若干使用中文预训练模型的建议 |
 | [英文模型下载](#英文模型下载) | 谷歌官方的英文BERT-wwm下载地址 |
 | [引用](#引用) | 本目录的技术报告 |
 
@@ -36,7 +42,8 @@
 
 
 ## 中文模型下载
-**(We are finalizing on uploading our model, hopefully it will be coming soon.)*
+**(We are finalizing on uploading our model, hopefully it will be coming soon.)**
+
 **(我们在打包上传模型，会很快将模型放出。)**
 
 *   **`BERT-base, Chinese (Whole Word Masking)`**:
@@ -65,6 +72,7 @@ chinese_wwm_L-12_H-768_A-12.zip
 
 ## 中文基线系统效果
 为了对比基线效果，我们在以下几个中文数据集上进行了测试，包括`句子级`和`篇章级`任务。
+
 **下面仅列举部分结果，完整结果请查看我们的[技术报告](https://arxiv.org/abs/1906.08101)。**
 
 - [**CMRC 2018**：篇章抽取型阅读理解（简体中文）](https://github.com/ymcui/cmrc2018)
@@ -76,17 +84,32 @@ chinese_wwm_L-12_H-768_A-12.zip
 
 
 ### CMRC 2018
+[CMRC 2018数据集](https://github.com/ymcui/cmrc2018)是哈工大讯飞联合实验室发布的中文机器阅读理解数据。根据给定问题，系统需要从篇章中抽取出片段作为答案，形式与SQuAD相同。
+
 ![./pics/cmrc2018.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/cmrc2018.png)
 
 ### DRCD
+[DRCD数据集](https://github.com/DRCKnowledgeTeam/DRCD)由中国台湾台达研究院发布，其形式与SQuAD相同，是基于繁体中文的抽取式阅读理解数据集。
+
 ![./pics/drcd.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/drcd.png)
 
 ### NER
+中文命名实体识别（NER）任务中，我们采用了经典的人民日报数据以及微软亚洲研究院发布的NER数据。
+
 ![./pics/ner.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/ner.png)
 
 ### THUCNews
+由清华大学自然语言处理实验室发布的新闻数据集，需要将新闻分成10个类别中的一个。
+
 ![./pics/thucnews.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/thucnews.png)
 
+## 使用建议
+* 初始学习率是非常重要的一个参数（不论是BERT还是其他模型），需要根据目标任务进行调整。
+* ERNIE的最佳学习率和BERT/BERT-wwm相差较大，所以使用ERNIE时请务必调整学习率（基于以上实验结果，ERNIE需要的初始学习率较高）。
+* 由于BERT/BERT-wwm使用了维基百科数据进行训练，故它们对正式文本建模较好；而ERNIE使用了额外的百度百科、贴吧、知道等网络数据，它对非正式文本（例如微博等）建模有优势。
+* 在长文本建模任务上，例如阅读理解、文档分类，BERT和BERT-wwm的效果较好。
+* 如果目标任务的数据和预训练模型的领域相差较大，请在自己的数据集上进一步做预训练。
+* 如果要处理繁体中文数据，请使用BERT或者BERT-wwm。因为我们发现ERNIE的词表中几乎没有繁体中文。
 
 ## 英文模型下载
 为了方便大家下载，顺便带上谷歌官方发布的**英文BERT-large（wwm）**模型：
@@ -115,6 +138,12 @@ https://arxiv.org/abs/1906.08101
   year={2019}
  }
 ```
+
+## 关注我们
+欢迎关注哈工大讯飞联合实验室官方微信公众号。
+
+![qrcode.png](https://github.com/ymcui/cmrc2019/blob/master/qrcode.jpg)
+
 
 ## 问题反馈
 如有问题，请在GitHub Issue中提交。
