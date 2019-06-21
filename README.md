@@ -1,10 +1,11 @@
-## 中文全词覆盖BERT
+## 中文全词覆盖BERT（Chinese BERT with Whole Word Masking）
+
+**For English description, please read [README_EN.md](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md) or our technical report on arXiv: https://arxiv.org/abs/1906.08101**
+
 为了进一步促进中文自然语言处理的研究发展，我们提供了中文全词覆盖（Whole Word Masking）BERT的预训练模型。
 同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)
 
 ![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
-
-**For English description, please read our technical report on arXiv: https://arxiv.org/abs/1906.08101**
 
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
@@ -30,11 +31,11 @@
 ## 简介
 **Whole Word Masking (wwm)**，暂且翻译为`全词Mask`，是谷歌在2019年5月31日发布的一项BERT的升级版本，主要更改了原预训练阶段的训练样本生成策略。简单来说，原有基于WordPiece的分词方式会把一个完整的词切分成若干个词缀，在生成训练样本时，这些被分开的词缀会随机被mask。在`全词Mask`中，如果一个完整的词的部分WordPiece被mask，则同属该词的其他部分也会被mask，即`全词Mask`。
 
-**需要注意的是，这里的mask指的是广义的mask（替换成[MASK]；保持原词汇；随机替换成另外一个词），并非只局限于单词替换成`[MASK]`标签的情况。更详细的说明请参考：[issue-4](https://github.com/ymcui/Chinese-BERT-wwm/issues/4)**
+**需要注意的是，这里的mask指的是广义的mask（替换成[MASK]；保持原词汇；随机替换成另外一个词），并非只局限于单词替换成`[MASK]`标签的情况。更详细的说明及样例请参考：[issue-4](https://github.com/ymcui/Chinese-BERT-wwm/issues/4)**
 
 同理，由于谷歌官方发布的`BERT-base , Chinese`中，中文是以**字**为粒度进行切分，没有考虑到传统NLP中的中文分词（CWS）。我们将全词Mask的方法应用在了中文中，使用了中文维基百科（包括简体和繁体）进行训练，并且使用了[哈工大LTP](http://ltp.ai)作为分词工具），即对组成同一个**词**的汉字全部进行Mask。
 
-下述文本展示了`全词Mask`的生成样例（注意：为了理解方便，下述例子中只考虑替换成[MASK]标签的情况。）。
+下述文本展示了`全词Mask`的生成样例（注意：为了方便理解，下述例子中只考虑替换成[MASK]标签的情况。）。
 
 | 说明 | 样例 |
 | :------- | :--------- |
