@@ -120,15 +120,8 @@ chinese_wwm_L-12_H-768_A-12.zip
 *   **[`BERT-Large, Cased (Whole Word Masking)`](https://storage.googleapis.com/bert_models/2019_05_30/wwm_cased_L-24_H-1024_A-16.zip)**:
     24-layer, 1024-hidden, 16-heads, 340M parameters
 
-## 声明
-**本项目并非谷歌官方发布的Chinese BERT-base (wwm)。**
-
-技术报告中所呈现的实验结果仅表明在特定数据集和超参组合下的表现，并不能代表各个模型的本质。
-实验结果可能因随机数种子，计算设备而发生改变。
-由于我们没有直接在PaddlePaddle上使用ERNIE，所以在ERNIE上的实验结果仅供参考（虽然我们在多个数据集上复现了效果）。
-
 ## FAQ
-**Q: 会有计划发布更大模型吗？比如BERT-large版本？**</br>
+**Q: 会有计划发布更大模型吗？比如BERT-large-wwm版本？**</br>
 A: 如果我们从实验中得到更好效果，会考虑发布更大的版本。
 
 **Q: 你骗人！无法复现结果😂**</br>
@@ -162,6 +155,7 @@ A: 各有侧重，各有千秋。中文自然语言处理的研究发展需要�
 A: 可能叫ZOE吧，ZOE: Zero-shOt Embeddings from language model
 
 
+
 ## 引用
 如果你觉得本目录中的内容对研究工作有所帮助，请在文献中引用下述技术报告：
 https://arxiv.org/abs/1906.08101
@@ -173,6 +167,15 @@ https://arxiv.org/abs/1906.08101
   year={2019}
  }
 ```
+
+
+## 声明
+**本项目并非谷歌官方发布的Chinese BERT-base (wwm)。**
+
+技术报告中所呈现的实验结果仅表明在特定数据集和超参组合下的表现，并不能代表各个模型的本质。
+实验结果可能因随机数种子，计算设备而发生改变。
+由于我们没有直接在PaddlePaddle上使用ERNIE，所以在ERNIE上的实验结果仅供参考（虽然我们在多个数据集上复现了效果）。
+
 
 ## 关注我们
 欢迎关注哈工大讯飞联合实验室官方微信公众号。
