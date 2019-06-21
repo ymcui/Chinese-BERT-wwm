@@ -137,7 +137,7 @@ A: We use the simplist models in the downstream tasks. For example, in the class
 A: Congratulations!
 
 **Q: How long did it take to train such a model?** </br>
-A: The training was done on Google Cloud TPU v3 with 128HBM, and it roughly takes 1.5 days. Note that, in the pre-training stage, we use `LAMB Optimizer`（[TensorFlow版本实现](https://github.com/ymcui/LAMB_Optimizer_TF) which is optimized for the larger batch. In fine-tuning downstream task, we use normal `AdamWeightDecayOptimizer` as default.
+A: The training was done on Google Cloud TPU v3 with 128HBM, and it roughly takes 1.5 days. Note that, in the pre-training stage, we use `LAMB Optimizer`（[TensorFlow Implementation](https://github.com/ymcui/LAMB_Optimizer_TF) which is optimized for the larger batch. In fine-tuning downstream task, we use normal `AdamWeightDecayOptimizer` as default.
 
 **Q: Who is ERNIE?** </br>
 A: The [ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE) in this repository refer to the model released by Baidu, but not the one that published by Tsinghua University which was also called [ERNIE](https://github.com/thunlp/ERNIE).
