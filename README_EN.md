@@ -52,11 +52,11 @@ In this repository, we utilize [Language Technology Platform (LTP)](http://ltp.a
 ## Download
 We mainly provide the pre-trained weights on TensorFlow.
 
-*   [**`BERT-base, Chinese (Whole Word Masking)`**](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_L-12_H-768_A-12.zip): 
+*   [**`BERT-base, Chinese (Whole Word Masking)`**](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW): 
     12-layer, 768-hidden, 12-heads, 110M parameters
 
 #### PyTorch Version（Please use[PyTorch-BERT by 🤗](https://github.com/huggingface/pytorch-pretrained-BERT) > 0.6, otherwise you need to convert by yourself）
-- Google: [download_link_for_google_storage](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_pytorch.zip)
+- Google: [download_link_for_google_storage](https://drive.google.com/open?id=1NlMd5GRG97N5BYJHDQR79EU41fEfzMCv)
 
 The whole zip package roughly takes ~400M.
 ZIP package (TensorFlow version) includes the following files:

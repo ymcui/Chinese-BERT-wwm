@@ -46,18 +46,18 @@
 
 
 ## 中文模型下载
-*   [**`BERT-base, Chinese (Whole Word Masking)`**](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_L-12_H-768_A-12.zip): 
+*   [**`BERT-base, Chinese (Whole Word Masking)`**](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW): 
     12-layer, 768-hidden, 12-heads, 110M parameters
 
 #### TensorFlow版本（1.12、1.13、1.14测试通过）
-- Google: [download_link_for_google_storage](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_L-12_H-768_A-12.zip)
+- Google: [download_link_for_google_storage](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)
 - 讯飞云: [download_link_密码mva8](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)
 
 #### PyTorch版本（请使用🤗 的[PyTorch-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) > 0.6，其他版本请自行转换）
-- Google: [download_link_for_google_storage](https://storage.googleapis.com/hfl-rc/chinese-bert/chinese_wwm_pytorch.zip)
+- Google: [download_link_for_google_storage](https://drive.google.com/open?id=1NlMd5GRG97N5BYJHDQR79EU41fEfzMCv)
 - 讯飞云: [download_link_密码m1CE](https://pan.iflytek.com:443/link/F23B12B39A3077CF1ED7A08DDAD081E3)
 
-中国大陆境内建议使用讯飞云下载，境外用户建议使用谷歌云下载点，文件大小约**400M**。
+中国大陆境内建议使用讯飞云下载，境外用户建议使用谷歌下载点，文件大小约**400M**。
 以TensorFlow版本为例，下载完毕后对zip文件进行解压得到：
 ```
 chinese_wwm_L-12_H-768_A-12.zip
