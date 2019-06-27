@@ -1,0 +1,1 @@
+https://github.com/ProHiryu/bert-chinese-ner/tree/master/data

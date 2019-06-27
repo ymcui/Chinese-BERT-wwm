@@ -72,6 +72,9 @@ chinese_wwm_L-12_H-768_A-12.zip
 `bert_config.json` and `vocab.txt` are identical to the original **`BERT-base, Chinese`** by Google。
 
 
+#### Task Data
+We only provide the data that is publically available, check `data` directory.
+
 ## Baselines
 We experiment on several Chinese datasets, including sentence-level to document-level tasks.
 
