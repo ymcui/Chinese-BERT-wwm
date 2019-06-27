@@ -14,7 +14,7 @@
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
 
 ## 新闻
-2019/6/20	初始版本，模型已可通过谷歌云下载，国内云盘也已上传完毕，查看[中文模型下载](#中文模型下载)
+2019/6/20	初始版本，模型已可通过谷歌下载，国内云盘也已上传完毕，查看[中文模型下载](#中文模型下载)
 
 
 ## 内容导引
@@ -50,11 +50,11 @@
     12-layer, 768-hidden, 12-heads, 110M parameters
 
 #### TensorFlow版本（1.12、1.13、1.14测试通过）
-- Google: [download_link_for_google_storage](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)
+- Google: [download_link_for_google_drive](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)
 - 讯飞云: [download_link_密码mva8](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)
 
 #### PyTorch版本（请使用🤗 的[PyTorch-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) > 0.6，其他版本请自行转换）
-- Google: [download_link_for_google_storage](https://drive.google.com/open?id=1NlMd5GRG97N5BYJHDQR79EU41fEfzMCv)
+- Google: [download_link_for_google_drive](https://drive.google.com/open?id=1NlMd5GRG97N5BYJHDQR79EU41fEfzMCv)
 - 讯飞云: [download_link_密码m1CE](https://pan.iflytek.com:443/link/F23B12B39A3077CF1ED7A08DDAD081E3)
 
 中国大陆境内建议使用讯飞云下载，境外用户建议使用谷歌下载点，文件大小约**400M**。
@@ -120,6 +120,7 @@ chinese_wwm_L-12_H-768_A-12.zip
 *   **[`BERT-Large, Cased (Whole Word Masking)`](https://storage.googleapis.com/bert_models/2019_05_30/wwm_cased_L-24_H-1024_A-16.zip)**:
     24-layer, 1024-hidden, 16-heads, 340M parameters
 
+
 ## FAQ
 **Q: 会有计划发布更大模型吗？比如BERT-large-wwm版本？**</br>
 A: 如果我们从实验中得到更好效果，会考虑发布更大的版本。
@@ -137,7 +138,7 @@ A: 训练是在谷歌TPU v3版本（128G HBM）完成的，大约需要1.5天左
 A: 本项目中的ERNIE模型特指百度公司提出的[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
 
 **Q: 你们这个和百度的ERNIE有什么区别？**</br>
-A: 因为百度ERNIE的提出先于谷歌提出whole word masking（仅以公开相关工作的时间为基准），基于全词mask的方法应该是百度的相关工作在先。从数据上看，ERNIE采用了更多的网络数据（百科，知道，贴吧），而本项目中只使用了中文维基百科数据。
+A: 因为百度ERNIE的提出先于谷歌提出whole word masking（仅以公开相关工作的时间为基准），基于全词mask的方法应该是百度的相关工作在先。从数据上看，ERNIE采用了更多的网络数据（百科，贴吧，新闻），而本项目中只使用了中文维基百科数据。
 
 **Q: 你们在实验中使用了ERNIE，是怎么用的呢？**</br>
 A: 我们将ERNIE从PaddlePaddle格式转换为TensorFlow格式，并加载到下游任务的代码中。很遗憾，目前我们不能提供PP转TF/PT的代码，但GitHub中有一些开源的实现，可以搜索关注一下。同时，因为版权原因，我们不会提供TensorFlow/PyTorch版本的ERNIE权重供大家下载。关于ERNIE在PaddlePaddle中使用的相关问题，请咨询[ERNIE官方](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)。
@@ -169,12 +170,14 @@ https://arxiv.org/abs/1906.08101
 ```
 
 
-## 声明
-**本项目并非谷歌官方发布的Chinese BERT-base (wwm)。**
+## 免责声明
+**本项目并非谷歌官方发布的Chinese BERT-base (wwm)。同时，本项目不是哈工大或科大讯飞的官方产品。**
 
 技术报告中所呈现的实验结果仅表明在特定数据集和超参组合下的表现，并不能代表各个模型的本质。
 实验结果可能因随机数种子，计算设备而发生改变。
 由于我们没有直接在PaddlePaddle上使用ERNIE，所以在ERNIE上的实验结果仅供参考（虽然我们在多个数据集上复现了效果）。
+
+**该项目中的内容仅供技术研究参考，不作为任何结论性依据。使用者可以在许可证范围内任意使用该模型，但我们不对因使用该项目内容造成的直接或间接损失负责。**
 
 
 ## 关注我们
@@ -185,3 +188,4 @@ https://arxiv.org/abs/1906.08101
 
 ## 问题反馈
 如有问题，请在GitHub Issue中提交。
+

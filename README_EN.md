@@ -7,7 +7,7 @@ For further accelerating Chinese natural language processing, we provide **Chine
 
 
 ## News
-2019/6/20 Initial version, pre-trained models could be downloaded through Google Storage, check [Download](#Download)
+2019/6/20 Initial version, pre-trained models could be downloaded through Google Drive, check [Download](#Download)
 
 
 ## Guide
@@ -56,7 +56,7 @@ We mainly provide the pre-trained weights on TensorFlow.
     12-layer, 768-hidden, 12-heads, 110M parameters
 
 #### PyTorch Version（Please use[PyTorch-BERT by 🤗](https://github.com/huggingface/pytorch-pretrained-BERT) > 0.6, otherwise you need to convert by yourself）
-- Google: [download_link_for_google_storage](https://drive.google.com/open?id=1NlMd5GRG97N5BYJHDQR79EU41fEfzMCv)
+- Google: [download_link_for_google_drive](https://drive.google.com/open?id=1NlMd5GRG97N5BYJHDQR79EU41fEfzMCv)
 
 The whole zip package roughly takes ~400M.
 ZIP package (TensorFlow version) includes the following files:
@@ -178,10 +178,11 @@ https://arxiv.org/abs/1906.08101
 ```
 
 ## Disclaimer
-**This is NOT a project by Google official.**
+**This is NOT a project by Google official. Also, this is NOT an official product by HIT and iFLYTEK.**
 
 The experiments only represent the empirical results in certain conditions and should not be regarded as the nature of the respective models. The results may vary using different random seeds, computing devices, etc. Note that, as we have not been testing ERNIE on PaddlePaddle, the results in this technical report may not reflect its true performance (Though we have reproduced several results on the datasets that they had tested.).
 
+**The contents in this repository are for academic research purpose, and we do not provide any conclusive remarks. Users are free to use anythings in this repository within the scope of Apache-2.0 licence. However, we are not responsible for direct or indirect losses that was caused by using the content in this project.**
 
 ## Issues
 If there is any problem, please submit a GitHub Issue.
