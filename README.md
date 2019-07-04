@@ -8,7 +8,7 @@
 
 ![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
 
-**微信公众号文章介绍
+**微信公众号文章介绍**
 
 - 哈工大讯飞联合实验室：https://mp.weixin.qq.com/s/EE6dEhvpKxqnVW_bBAKrnA
 - 机器之心：https://mp.weixin.qq.com/s/88OwaHqnrVMQ7vH98INA3w
