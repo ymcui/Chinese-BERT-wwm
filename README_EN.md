@@ -130,6 +130,18 @@ We also repost English BERT-wwm (by Google official) here for your perusal.
 
 
 ## FAQ
+**Q: How to use this model?** </br>
+A: Use it as if you are using original BERT. Note that, you don't need to do CWS for your text, as wwm only change the pre-training input but not the input for down-stream tasks.
+
+**Q: Do you have any plans to release the code?** </br>
+A: Unfortunately, I am not be able to release the code at the moment. As implementation is quite easy, I would suggest you to read #10 and #13.
+
+**Q: How can I download XXXXX dataset?** </br>
+A: Please see `data` directory. For copyright reasons, some of the datasets are not publically available. In that case, please search on GitHub or consult original authors for accessing.
+
+**Q: How to use this model?** </br>
+A: Use it as if you are using original BERT. Note that, you don't need to do CWS for your text, as wwm only change the pre-training input but not the input for down-stream tasks.
+
 **Q: Do you have any plans on releasing the larger model? Say BERT-large-wwm?** </br>
 A: If we could get significant gains from BERT-large, we will release a larger version in the future.
 
@@ -186,6 +198,7 @@ https://arxiv.org/abs/1906.08101
 The experiments only represent the empirical results in certain conditions and should not be regarded as the nature of the respective models. The results may vary using different random seeds, computing devices, etc. Note that, as we have not been testing ERNIE on PaddlePaddle, the results in this technical report may not reflect its true performance (Though we have reproduced several results on the datasets that they had tested.).
 
 **The contents in this repository are for academic research purpose, and we do not provide any conclusive remarks. Users are free to use anythings in this repository within the scope of Apache-2.0 licence. However, we are not responsible for direct or indirect losses that was caused by using the content in this project.**
+
 
 ## Issues
 If there is any problem, please submit a GitHub Issue.

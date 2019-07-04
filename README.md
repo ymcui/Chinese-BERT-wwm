@@ -3,13 +3,15 @@
 **For English description, please read [README_EN.md](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md) or our technical report on arXiv: https://arxiv.org/abs/1906.08101**
 
 为了进一步促进中文自然语言处理的研究发展，我们提供了中文全词覆盖（Whole Word Masking）BERT的预训练模型。
-同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)
+同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)。
+**更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
 ![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
 
-**更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
+**微信公众号文章介绍
 
-**微信公众号文章介绍：https://mp.weixin.qq.com/s/EE6dEhvpKxqnVW_bBAKrnA**
+- 哈工大讯飞联合实验室：https://mp.weixin.qq.com/s/EE6dEhvpKxqnVW_bBAKrnA
+- 机器之心：https://mp.weixin.qq.com/s/88OwaHqnrVMQ7vH98INA3w
 
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
 
@@ -128,6 +130,15 @@ chinese_wwm_L-12_H-768_A-12.zip
 
 
 ## FAQ
+**Q: 这个模型怎么用？**
+A: BERT怎么用，这个就怎么用。文本不需要经过分词，wwm只影响预训练过程，不影响下游任务的输入。
+
+**Q: 请问有预训练代码提供吗？**
+A: 很遗憾，我不能提供相关代码，实现可以参考 #10 #13。
+
+**Q: XXXXX数据集在哪里下载？**
+A: 请查看data目录。对于有版权的内容，请自行搜索或与原作者联系获取数据。
+
 **Q: 会有计划发布更大模型吗？比如BERT-large-wwm版本？**</br>
 A: 如果我们从实验中得到更好效果，会考虑发布更大的版本。
 
@@ -162,9 +173,8 @@ A: 各有侧重，各有千秋。中文自然语言处理的研究发展需要�
 A: 可能叫ZOE吧，ZOE: Zero-shOt Embeddings from language model
 
 
-
 ## 引用
-如果你觉得本目录中的内容对研究工作有所帮助，请在文献中引用下述技术报告：
+如果本目录中的内容对你的研究工作有所帮助，请在文献中引用下述技术报告：
 https://arxiv.org/abs/1906.08101
 ```
 @article{chinese-bert-wwm,
