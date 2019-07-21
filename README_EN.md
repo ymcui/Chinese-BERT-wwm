@@ -200,6 +200,9 @@ The experiments only represent the empirical results in certain conditions and s
 **The contents in this repository are for academic research purpose, and we do not provide any conclusive remarks. Users are free to use anythings in this repository within the scope of Apache-2.0 licence. However, we are not responsible for direct or indirect losses that was caused by using the content in this project.**
 
 
+## Acknowledgement
+The first author of this project is partially supported by [Google TensorFlow Research Cloud (TFRC) Program](https://www.tensorflow.org/tfrc).
+
 ## Issues
 If there is any problem, please submit a GitHub Issue.
 
