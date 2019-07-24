@@ -7,6 +7,8 @@ For further accelerating Chinese natural language processing, we provide **Chine
 
 
 ## News
+**Upcoming Event: We are going to release `BERT-wwm-ext` which was trained on a much larger data, stay tuned!**
+
 2019/6/20 Initial version, pre-trained models could be downloaded through Google Drive, check [Download](#Download)
 
 
@@ -92,22 +94,45 @@ We experiment on several Chinese datasets, including sentence-level to document-
 CMRC 2018 dataset is released by Joint Laboratory of HIT and iFLYTEK Research.
 The model should answer the questions based on the given passage, which is identical to SQuAD.
 
-![./pics/cmrc2018.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/cmrc2018.png)
+| Model | Development | Test | Challenge |
+| :------- | :--------- | :---------: | :---------: |
+| BERT | 65.5 (64.4) / 84.5 (84.0) | 70.0 (68.7) / 87.0 (86.3) | 18.6 (17.0) / 43.3 (41.3) | 
+| ERNIE | 65.4 (64.3) / 84.7 (84.2) | 69.4 (68.2) / 86.6 (86.1) | 19.6 (17.0) / 44.3 (42.8) | 
+| **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
+| **BERT-wwm-ext** |  |  |  |
+
 
 ### [DRCD](https://github.com/DRCKnowledgeTeam/DRCD)
 DRCD is also a span-extraction machine reading comprehension dataset, released by Delta Research Center. The text is written in Traditional Chinese.
 
-![./pics/drcd.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/drcd.png)
+| Model | Development | Test |
+| :------- | :--------- | :---------: |
+| BERT | 83.1 (82.7) / 89.9 (89.6) | 82.2 (81.6) / 89.2 (88.8) | 
+| ERNIE | 73.2 (73.0) / 83.9 (83.8) | 71.9 (71.4) / 82.5 (82.3) | 
+| **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
+| **BERT-wwm-ext** |  |  |
+
 
 ### NER
-We use People Daily and MSRA-NER data for testing Chinese NER.
+We use People's Daily and MSRA-NER data for testing Chinese NER.
 
-![./pics/ner.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/ner.png)
+| Model | People's Daily | MSRA |
+| :------- | :--------- | :---------: |
+| BERT | 95.2 (94.9) | 95.3 (94.9) |  
+| ERNIE | 95.7 (94.5) | 95.4 (95.1) |
+| **BERT-wwm** | 95.3 (95.1) | 95.4 (95.1) |
+| **BERT-wwm-ext** | | |
 
 ### THUCNews
 Released by Tsinghua University, which contains news in 10 categories.
 
-![./pics/thucnews.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/thucnews.png)
+| Model | Development | Test | 
+| :------- | :--------- | :---------: | 
+| BERT | 97.7 (97.4) | 97.8 (97.6) |
+| ERNIE | 97.6 (97.3) | 97.5 (97.3) |
+| **BERT-wwm** | 98.0 (97.6) | 97.8 (97.6) |
+| **BERT-wwm-ext** | | | |
+
 
 ## Useful Tips
 * Initial learning rate is the most important hyper-parameters (regardless of BERT or other neural networks), and should ALWAYS be tuned for better performance.

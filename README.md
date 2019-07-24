@@ -15,14 +15,17 @@
 
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
 
+
 ## 新闻
+**Upcoming Event: 我们即将发布在更大通用语料上训练的中文`BERT-wwm-ext`模型**
+
 2019/6/20 初始版本，模型已可通过谷歌下载，国内云盘也已上传完毕，查看[中文模型下载](#中文模型下载)
 
 
 ## 内容导引
 | 章节 | 描述 |
 |-|-|
-| [简介](#简介) | 介绍BERT-wwm |
+| [简介](#简介) | 介绍BERT-wwm基本原理 |
 | [中文模型下载](#中文模型下载) | 提供了BERT-wwm的下载地址 |
 | [中文基线系统效果](#中文基线系统效果) | 列举了部分中文基线系统效果 |
 | [使用建议](#使用建议) | 提供了若干使用中文预训练模型的建议 |
@@ -48,18 +51,23 @@
 
 
 ## 中文模型下载
-*   [**`BERT-base, Chinese (Whole Word Masking)`**](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW): 
-    12-layer, 768-hidden, 12-heads, 110M parameters
+由于在中文下，目前只包含base模型，故我们不在模型简称中标注`base`字样。
+* **`BERT-base模型`**：12-layer, 768-hidden, 12-heads, 110M parameters
 
-#### TensorFlow版本（1.12、1.13、1.14测试通过）
-- Google: [download_link_for_google_drive](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)
-- 讯飞云: [download_link_密码mva8](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)
+| 模型简称 | 语料 | Google下载 | 讯飞云下载 |
+| :------- | :--------- | :---------: | :---------: |
+| **`BERT-wwm-ext, Chinese`** | **Wikipedia + Extended Data** | **Google Drive** | **讯飞云（密码）** |
+| **`BERT-wwm, Chinese`** | **Wikipedia** | **[Google Drive](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** | **[讯飞云（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** |
+| `BERT-base, Chinese` (Google) | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
+| `BERT-base, Multilingual Cased` (Google) | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
+| `BERT-base, Multilingual Uncased` (Google) | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
 
-#### PyTorch版本（请使用🤗 的[PyTorch-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) > 0.6，其他版本请自行转换）
-- Google: [download_link_for_google_drive](https://drive.google.com/open?id=1NlMd5GRG97N5BYJHDQR79EU41fEfzMCv)
-- 讯飞云: [download_link_密码m1CE](https://pan.iflytek.com:443/link/F23B12B39A3077CF1ED7A08DDAD081E3)
+以上均为TensorFlow版本的模型权重。
+由于Huggingface出品的[PyTorch-Transformers](https://github.com/huggingface/pytorch-transformers)发生较大版本变化，我们不提供转换好的PyTorch版本供下载。
+我们建议使用PyTorch-Transformers自带的转换脚本进行权重转换。
+具体可参考[该目录](https://github.com/huggingface/pytorch-transformers/tree/master/notebooks)。
 
-中国大陆境内建议使用讯飞云下载，境外用户建议使用谷歌下载点，文件大小约**400M**。
+中国大陆境内建议使用讯飞云下载点，境外用户建议使用谷歌下载点，base模型文件大小约**400M**。 
 以TensorFlow版本为例，下载完毕后对zip文件进行解压得到：
 ```
 chinese_wwm_L-12_H-768_A-12.zip
@@ -69,7 +77,7 @@ chinese_wwm_L-12_H-768_A-12.zip
     |- bert_config.json     # 模型参数
     |- vocab.txt            # 词表
 ```
-其中`bert_config.json`和`vocab.txt`与谷歌原版`**BERT-base, Chinese**`完全一致。
+其中`bert_config.json`和`vocab.txt`与谷歌原版**`BERT-base, Chinese`**完全一致。
 
 
 ### 测试任务数据
@@ -94,22 +102,44 @@ chinese_wwm_L-12_H-768_A-12.zip
 ### CMRC 2018
 [CMRC 2018数据集](https://github.com/ymcui/cmrc2018)是哈工大讯飞联合实验室发布的中文机器阅读理解数据。根据给定问题，系统需要从篇章中抽取出片段作为答案，形式与SQuAD相同。
 
-![./pics/cmrc2018.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/cmrc2018.png)
+| 模型 | 开发集 | 测试集 | 挑战集 |
+| :------- | :--------- | :---------: | :---------: |
+| BERT | 65.5 (64.4) / 84.5 (84.0) | 70.0 (68.7) / 87.0 (86.3) | 18.6 (17.0) / 43.3 (41.3) | 
+| ERNIE | 65.4 (64.3) / 84.7 (84.2) | 69.4 (68.2) / 86.6 (86.1) | 19.6 (17.0) / 44.3 (42.8) | 
+| **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
+| **BERT-wwm-ext** |  |  |  |
+
 
 ### DRCD
 [DRCD数据集](https://github.com/DRCKnowledgeTeam/DRCD)由中国台湾台达研究院发布，其形式与SQuAD相同，是基于繁体中文的抽取式阅读理解数据集。
 
-![./pics/drcd.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/drcd.png)
+| 模型 | 开发集 | 测试集 |
+| :------- | :--------- | :---------: |
+| BERT | 83.1 (82.7) / 89.9 (89.6) | 82.2 (81.6) / 89.2 (88.8) | 
+| ERNIE | 73.2 (73.0) / 83.9 (83.8) | 71.9 (71.4) / 82.5 (82.3) | 
+| **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
+| **BERT-wwm-ext** |  |  |
 
 ### NER
-中文命名实体识别（NER）任务中，我们采用了经典的人民日报数据以及微软亚洲研究院发布的NER数据。
+中文命名实体识别（NER）任务中，我们采用了经典的人民日报数据以及微软亚洲研究院发布的NER数据。在这里我们只列F值，其他数值请参看技术报告。
 
-![./pics/ner.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/ner.png)
+| 模型 | 人民日报 | MSRA |
+| :------- | :--------- | :---------: |
+| BERT | 95.2 (94.9) | 95.3 (94.9) |  
+| ERNIE | 95.7 (94.5) | 95.4 (95.1) |
+| **BERT-wwm** | 95.3 (95.1) | 95.4 (95.1) |
+| **BERT-wwm-ext** | | |
 
 ### THUCNews
-由清华大学自然语言处理实验室发布的新闻数据集，需要将新闻分成10个类别中的一个。
+由清华大学自然语言处理实验室发布的新闻数据集，我们采用的是其中一个子集，需要将新闻分成10个类别中的一个。
 
-![./pics/thucnews.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/thucnews.png)
+| 模型 | 开发集 | 测试集 | 
+| :------- | :--------- | :---------: | 
+| BERT | 97.7 (97.4) | 97.8 (97.6) |
+| ERNIE | 97.6 (97.3) | 97.5 (97.3) |
+| **BERT-wwm** | 98.0 (97.6) | 97.8 (97.6) |
+| **BERT-wwm-ext** | | | |
+
 
 ## 使用建议
 * 初始学习率是非常重要的一个参数（不论是BERT还是其他模型），需要根据目标任务进行调整。
@@ -130,46 +160,63 @@ chinese_wwm_L-12_H-768_A-12.zip
 
 
 ## FAQ
-**Q: 这个模型怎么用？**
-A: BERT怎么用，这个就怎么用。文本不需要经过分词，wwm只影响预训练过程，不影响下游任务的输入。
+**Q: 这个模型怎么用？**  
+A: 谷歌发布的中文BERT怎么用，这个就怎么用。
+**文本不需要经过分词，wwm只影响预训练过程，不影响下游任务的输入。**
 
-**Q: 请问有预训练代码提供吗？**
-A: 很遗憾，我不能提供相关代码，实现可以参考 #10 #13。
+**Q: 请问有预训练代码提供吗？**  
+A: 很遗憾，我不能提供相关代码，实现可以参考 [#10](https://github.com/ymcui/Chinese-BERT-wwm/issues/10) 和 [#13](https://github.com/ymcui/Chinese-BERT-wwm/issues/13)。
 
-**Q: XXXXX数据集在哪里下载？**
+**Q: 某某数据集在哪里下载？**  
 A: 请查看data目录。对于有版权的内容，请自行搜索或与原作者联系获取数据。
 
-**Q: 会有计划发布更大模型吗？比如BERT-large-wwm版本？**</br>
+**Q: 会有计划发布更大模型吗？比如BERT-large-wwm版本？**  
 A: 如果我们从实验中得到更好效果，会考虑发布更大的版本。
 
-**Q: 你骗人！无法复现结果😂**</br>
-A: 在下游任务中，我们采用了最简单的模型。比如分类任务，我们直接使用的是`run_classifier.py`（谷歌提供）。如果无法达到平均值，说明实验本身存在bug，请仔细排查。最高值存在很多随机因素，我们无法保证能够达到最高值。
+**Q: 你骗人！无法复现结果😂**  
+A: 在下游任务中，我们采用了最简单的模型。比如分类任务，我们直接使用的是`run_classifier.py`（谷歌提供）。
+如果无法达到平均值，说明实验本身存在bug，请仔细排查。
+最高值存在很多随机因素，我们无法保证能够达到最高值。
+另外一个公认的因素：降低batch size会显著降低实验效果，具体可参考BERT，XLNet目录的相关Issue。
 
-**Q: 我训出来比你更好的结果！**</br>
+**Q: 我训出来比你更好的结果！**  
 A: 恭喜你。
 
-**Q: 训练花了多长时间，在什么设备上训练的？**</br>
-A: 训练是在谷歌TPU v3版本（128G HBM）完成的，大约需要1.5天左右。需要注意的是，预训练阶段我们使用的是`LAMB Optimizer`（[TensorFlow版本实现](https://github.com/ymcui/LAMB_Optimizer_TF)）。该优化器对大的batch有良好的支持。在微调下游任务时，我们采用的是BERT默认的`AdamWeightDecayOptimizer`。
+**Q: 训练花了多长时间，在什么设备上训练的？**  
+A: 训练是在谷歌TPU v3版本（128G HBM）完成的，训练BERT-wwm-base花费约1.5天，BERT-wwm-base-ext则需要数周时间（使用了更多数据需要迭代更充分）。
+需要注意的是，预训练阶段我们使用的是`LAMB Optimizer`（[TensorFlow版本实现](https://github.com/ymcui/LAMB_Optimizer_TF)）。该优化器对大的batch有良好的支持。
+在微调下游任务时，我们采用的是BERT默认的`AdamWeightDecayOptimizer`。
 
-**Q: ERNIE是谁？**</br>
+**Q: ERNIE是谁？**  
 A: 本项目中的ERNIE模型特指百度公司提出的[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
 
-**Q: 你们这个和百度的ERNIE有什么区别？**</br>
-A: 因为百度ERNIE的提出先于谷歌提出whole word masking（仅以公开相关工作的时间为基准），基于全词mask的方法应该是百度的相关工作在先。从数据上看，ERNIE采用了更多的网络数据（百科，贴吧，新闻），而本项目中只使用了中文维基百科数据。
+**Q: 你们这个和百度的ERNIE有什么区别？**  
+A: 因为百度ERNIE的提出先于谷歌提出Whole Word Masking（仅以公开相关工作的时间为基准），基于全词mask的方法应该是百度的相关工作在先。
+另外百度ERNIE采用了更多的masking策略，而本工作只针对CWS进行了特殊处理，尽量保持与谷歌BERT-wwm一致。
+从数据上看，ERNIE采用了更多的网络数据（百科，贴吧，新闻），而本项目中只使用了中文维基百科数据。
 
-**Q: 你们在实验中使用了ERNIE，是怎么用的呢？**</br>
-A: 我们将ERNIE从PaddlePaddle格式转换为TensorFlow格式，并加载到下游任务的代码中。很遗憾，目前我们不能提供PP转TF/PT的代码，但GitHub中有一些开源的实现，可以搜索关注一下。同时，因为版权原因，我们不会提供TensorFlow/PyTorch版本的ERNIE权重供大家下载。关于ERNIE在PaddlePaddle中使用的相关问题，请咨询[ERNIE官方](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)。
+**Q: 你们在实验中使用了ERNIE，是怎么用的呢？**  
+A: 我们将ERNIE从PaddlePaddle格式转换为TensorFlow格式，并加载到下游任务的代码中。
+很遗憾，目前我们不能提供PP转TF/PT的代码，但GitHub中有一些开源的实现，可以搜索关注一下。
+同时，因为版权原因，我们不会提供TensorFlow/PyTorch版本的ERNIE权重供大家下载。
+关于ERNIE在PaddlePaddle中使用的相关问题，请咨询[ERNIE官方](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)。
 
-**Q: BERT-wwm的效果不是在所有任务都很好**</br>
-A: 本项目的目的是为研究者提供多元化的预训练模型，自由选择BERT，ERNIE，或者是BERT-wwm。我们仅提供实验数据，具体效果如何还是得在自己的任务中不断尝试才能得出结论。多一个模型，多一种选择。
+**Q: BERT-wwm的效果不是在所有任务都很好**  
+A: 本项目的目的是为研究者提供多元化的预训练模型，自由选择BERT，ERNIE，或者是BERT-wwm。
+我们仅提供实验数据，具体效果如何还是得在自己的任务中不断尝试才能得出结论。
+多一个模型，多一种选择。
 
-**Q: 为什么有些数据集上没有试？**</br>
-A: 很坦率的说：1）没精力找更多的数据；2）没有必要； 3）没有钞票；
+**Q: 为什么有些数据集上没有试？**  
+A: 很坦率的说：
+1）没精力找更多的数据；
+2）没有必要； 
+3）没有钞票；
 
-**Q: 简单评价一下这几个模型**</br>
-A: 各有侧重，各有千秋。中文自然语言处理的研究发展需要多方共同努力。
+**Q: 简单评价一下这几个模型**  
+A: 各有侧重，各有千秋。
+中文自然语言处理的研究发展需要多方共同努力。
 
-**Q: 你预测下一个预训练模型叫什么？**</br>
+**Q: 你预测下一个预训练模型叫什么？**  
 A: 可能叫ZOE吧，ZOE: Zero-shOt Embeddings from language model
 
 
@@ -203,7 +250,7 @@ https://arxiv.org/abs/1906.08101
 ## 关注我们
 欢迎关注哈工大讯飞联合实验室官方微信公众号。
 
-![qrcode.png](https://github.com/ymcui/cmrc2019/blob/master/qrcode.jpg)
+![qrcode.png](https://github.com/ymcui/cmrc2019/raw/master/qrcode.jpg)
 
 
 ## 问题反馈
