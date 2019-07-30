@@ -127,7 +127,6 @@ chinese_wwm_L-12_H-768_A-12.zip
 **[DRCD数据集](https://github.com/DRCKnowledgeTeam/DRCD)**由中国台湾台达研究院发布，其形式与SQuAD相同，是基于繁体中文的抽取式阅读理解数据集。
 本实验中可以看到，`BERT-wwm`模型显著优于BERT和ERNIE。 
 使用了更大规模数据训练的`BERT-wwm-ext`同样带来了显著性能提升。
-因增添的数据全部是简体中文，这样会导致繁体中文的比例下降，最终导致性能没有提升。
 **由于ERNIE中去除了繁体中文字符，故不建议在繁体中文数据上使用ERNIE。**
 
 | 模型 | 开发集 | 测试集 |
