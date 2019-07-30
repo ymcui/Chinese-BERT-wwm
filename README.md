@@ -62,7 +62,7 @@
 
 | 模型简称 | 语料 | Google下载 | 讯飞云下载 |
 | :------- | :--------- | :---------: | :---------: |
-| **`BERT-wwm-ext, Chinese`** | **中文维基+通用数据<sup>[1]</sup>** | **上传中** | **上传中** |
+| **`BERT-wwm-ext, Chinese`** | **中文维基+通用数据<sup>[1]</sup>** | **[Google Drive](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** | **[讯飞云（密码thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** |
 | **`BERT-wwm, Chinese`** | **中文维基** | **[Google Drive](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** | **[讯飞云（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** |
 | `BERT-base, Chinese`<sup>Google</sup> | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Cased`<sup>Google</sup>  | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
@@ -111,7 +111,7 @@ chinese_wwm_L-12_H-768_A-12.zip
 
 
 ### 简体中文阅读理解：CMRC 2018
-**[CMRC 2018数据集](https://github.com/ymcui/cmrc2018)**是哈工大讯飞联合实验室发布的中文机器阅读理解数据。
+[**CMRC 2018数据集**](https://github.com/ymcui/cmrc2018)是哈工大讯飞联合实验室发布的中文机器阅读理解数据。
 根据给定问题，系统需要从篇章中抽取出片段作为答案，形式与SQuAD相同。
 本实验中可以看到，`BERT-wwm`模型显著优于BERT和ERNIE。
 使用了更大规模数据训练的`BERT-wwm-ext`则会带来进一步性能提升。
@@ -124,7 +124,7 @@ chinese_wwm_L-12_H-768_A-12.zip
 | **BERT-wwm-ext** | **67.1 (65.6) / 85.7 (85.0)** | **71.4 (70.0) / 87.7 (87.0)** | **24.0 (20.0) / 47.3 (44.6)** |
 
 ### 繁体中文阅读理解：DRCD
-**[DRCD数据集](https://github.com/DRCKnowledgeTeam/DRCD)**由中国台湾台达研究院发布，其形式与SQuAD相同，是基于繁体中文的抽取式阅读理解数据集。
+[**DRCD数据集**](https://github.com/DRCKnowledgeTeam/DRCD)由中国台湾台达研究院发布，其形式与SQuAD相同，是基于繁体中文的抽取式阅读理解数据集。
 本实验中可以看到，`BERT-wwm`模型显著优于BERT和ERNIE。 
 使用了更大规模数据训练的`BERT-wwm-ext`同样带来了显著性能提升。
 **由于ERNIE中去除了繁体中文字符，故不建议在繁体中文数据上使用ERNIE。**
