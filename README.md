@@ -1,6 +1,6 @@
-## 中文预训练BERT-wwm（Pre-Trained Chinese BERT with Whole Word Masking）
+[**中文说明**](https://github.com/ymcui/Chinese-BERT-wwm/) | [**English**](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md)
 
-**For English description, please read [README_EN.md](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md) or our technical report on arXiv: https://arxiv.org/abs/1906.08101**
+## 中文预训练BERT-wwm（Pre-Trained Chinese BERT with Whole Word Masking）
 
 为了进一步促进中文自然语言处理的研究发展，我们提供了基于全词遮掩（Whole Word Masking）技术的中文预训练模型BERT-wwm。
 同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)。
