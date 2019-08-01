@@ -60,8 +60,8 @@ As all models are 'BERT-base' variants, we do not incidate 'base' in the followi
 
 | Model | Data | Google Drive | iFLYTEK Cloud |
 | :------- | :--------- | :---------: | :---------: |
-| **`BERT-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[Google Drive](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** | **[iFLY-Cloud（pw:thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** |
-| **`BERT-wwm, Chinese`** | **Wikipedia** | **[Google Drive](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** | **[iFLY-Cloud（pw:mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** |
+| **`BERT-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（pw:thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（上传中）]()** |
+| **`BERT-wwm, Chinese`** | **Wikipedia** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（pw:mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（上传中）]()** |
 | `BERT-base, Chinese`<sup>Google</sup> | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Cased`<sup>Google</sup>  | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Uncased`<sup>Google</sup>  | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |

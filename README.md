@@ -1,8 +1,8 @@
-## 中文预训练BERT-wwm（Chinese BERT with Whole Word Masking）
+## 中文预训练BERT-wwm（Pre-Trained Chinese BERT with Whole Word Masking）
 
 **For English description, please read [README_EN.md](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md) or our technical report on arXiv: https://arxiv.org/abs/1906.08101**
 
-为了进一步促进中文自然语言处理的研究发展，我们提供了中文全词覆盖（Whole Word Masking）BERT的预训练模型。
+为了进一步促进中文自然语言处理的研究发展，我们提供了基于全词遮掩（Whole Word Masking）技术的中文预训练模型BERT-wwm。
 同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)。
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
@@ -35,9 +35,9 @@
 
 
 ## 简介
-**Whole Word Masking (wwm)**，暂且翻译为`全词Mask`或`整词Mask`，是谷歌在2019年5月31日发布的一项BERT的升级版本，主要更改了原预训练阶段的训练样本生成策略。
-简单来说，原有基于WordPiece的分词方式会把一个完整的词切分成若干个词缀，在生成训练样本时，这些被分开的词缀会随机被mask。
-在`全词Mask`中，如果一个完整的词的部分WordPiece被mask，则同属该词的其他部分也会被mask，即`全词Mask`。
+**Whole Word Masking (wwm)**，暂翻译为`全词Mask`或`整词Mask`，是谷歌在2019年5月31日发布的一项BERT的升级版本，主要更改了原预训练阶段的训练样本生成策略。
+简单来说，原有基于WordPiece的分词方式会把一个完整的词切分成若干个子词，在生成训练样本时，这些被分开的子词会随机被mask。
+在`全词Mask`中，如果一个完整的词的部分WordPiece子词被mask，则同属该词的其他部分也会被mask，即`全词Mask`。
 
 **需要注意的是，这里的mask指的是广义的mask（替换成[MASK]；保持原词汇；随机替换成另外一个词），并非只局限于单词替换成`[MASK]`标签的情况。
 更详细的说明及样例请参考：[#4](https://github.com/ymcui/Chinese-BERT-wwm/issues/4)**
@@ -57,26 +57,25 @@
 
 
 ## 中文模型下载
-由于在中文下，目前只包含base模型，故我们不在模型简称中标注`base`字样。
+由于目前只包含base模型，故我们不在模型简称中标注`base`字样。
 * **`BERT-base模型`**：12-layer, 768-hidden, 12-heads, 110M parameters
 
 | 模型简称 | 语料 | Google下载 | 讯飞云下载 |
 | :------- | :--------- | :---------: | :---------: |
-| **`BERT-wwm-ext, Chinese`** | **中文维基+通用数据<sup>[1]</sup>** | **[Google Drive](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** | **[讯飞云（密码thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** |
-| **`BERT-wwm, Chinese`** | **中文维基** | **[Google Drive](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** | **[讯飞云（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** |
+| **`BERT-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（密码thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（上传中）]()** |
+| **`BERT-wwm, Chinese`** | **中文维基** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（上传中）]()** |
 | `BERT-base, Chinese`<sup>Google</sup> | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
-| `BERT-base, Multilingual Cased`<sup>Google</sup>  | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
-| `BERT-base, Multilingual Uncased`<sup>Google</sup>  | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
+| `BERT-base, Multilingual Cased`<sup>Google</sup>  | 多语种维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
+| `BERT-base, Multilingual Uncased`<sup>Google</sup>  | 多语种维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
 
 > [1] 通用数据包括：百科、新闻、问答等数据，总词数达5.4B
 
-以上均为TensorFlow版本的模型权重。
-由于Huggingface出品的[PyTorch-Transformers](https://github.com/huggingface/pytorch-transformers)发生较大版本变化，我们不提供转换好的PyTorch版本供下载。
-我们建议使用PyTorch-Transformers自带的转换脚本进行权重转换。
-具体可参考[该目录](https://github.com/huggingface/pytorch-transformers/tree/master/notebooks)。
+以上预训练模型以TensorFlow版本的权重为准。
+对于PyTorch版本，我们使用的是由Huggingface出品的[PyTorch-Transformers 1.0](https://github.com/huggingface/pytorch-transformers)提供的转换脚本。
+如果使用的是其他版本，请自行进行权重转换。
 
 中国大陆境内建议使用讯飞云下载点，境外用户建议使用谷歌下载点，base模型文件大小约**400M**。 
-以`BERT-wwm, Chinese`为例，下载完毕后对zip文件进行解压得到：
+以TensorFlow版`BERT-wwm, Chinese`为例，下载完毕后对zip文件进行解压得到：
 ```
 chinese_wwm_L-12_H-768_A-12.zip
     |- bert_model.ckpt      # 模型权重
@@ -86,6 +85,7 @@ chinese_wwm_L-12_H-768_A-12.zip
     |- vocab.txt            # 词表
 ```
 其中`bert_config.json`和`vocab.txt`与谷歌原版`BERT-base, Chinese`完全一致。
+PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件。
 
 
 ### 测试任务数据
@@ -97,14 +97,14 @@ chinese_wwm_L-12_H-768_A-12.zip
 ## 中文基线系统效果
 为了对比基线效果，我们在以下几个中文数据集上进行了测试，包括`句子级`和`篇章级`任务。
 对于`BERT-wwm-ext`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
-同时，目前我们仅在CMRC 2018 / DRCD / XNLI数据集上尝试了新模型（`BERT-wwm-ext`）效果。
+同时，目前我们仅在CMRC 2018 / DRCD / XNLI数据集上尝试了新模型`BERT-wwm-ext`效果（更多结果待后续补充）。
 
 **下面仅列举部分结果，完整结果请查看我们的[技术报告](https://arxiv.org/abs/1906.08101)。**
 
 - [**CMRC 2018**：篇章片段抽取型阅读理解（简体中文）](https://github.com/ymcui/cmrc2018)
 - [**DRCD**：篇章片段抽取型阅读理解（繁体中文）](https://github.com/DRCSolutionService/DRCD)
 - [**XNLI**：自然语言推断](https://github.com/google-research/bert/blob/master/multilingual.md)
-- [**NER**：中文命名实体抽取](http://sighan.cs.uchicago.edu/bakeoff2006/)
+- [**NER**：中文命名实体识别](http://sighan.cs.uchicago.edu/bakeoff2006/)
 - [**THUCNews**：篇章级文本分类](http://thuctc.thunlp.org)
 
 **注意：为了保证结果的可靠性，对于同一模型，我们运行10遍（不同随机种子），汇报模型性能的最大值和平均值。不出意外，你运行的结果应该很大概率落在这个区间内。**
@@ -255,7 +255,7 @@ https://arxiv.org/abs/1906.08101
 
 
 ## 致谢
-第一作者部分受到**[谷歌TensorFlow Research Cloud](https://www.tensorflow.org/tfrc)**计划资助。
+第一作者部分受到[**谷歌TensorFlow Research Cloud**](https://www.tensorflow.org/tfrc)计划资助。
 
 
 ## 免责声明
