@@ -9,7 +9,7 @@ For further accelerating Chinese natural language processing, we provide **Chine
 
 
 ## News
-**Upcoming Event: We are going to release `BERT-wwm-ext` which was trained on a much larger data, stay tuned!**
+**2019/9/10 We release `RoBERTa-wwm-ext`, check [Download](#Download)**
 
 2019/7/30 We release `BERT-wwm-ext`, which was trained on larger data, check [Download](#Download)
 
@@ -21,6 +21,7 @@ For further accelerating Chinese natural language processing, we provide **Chine
 |-|-|
 | [Introduction](#Introduction) | Introduction to BERT with Whole Word Masking (WWM) |
 | [Download](#Download) | Download links for Chinese BERT-wwm |
+| [Model Comparison](#Model-Comparison) | Compare the models published in this repository |
 | [Baselines](#Baselines) | Baseline results for several Chinese NLP datasets (partial) |
 | [Useful Tips](#Useful-Tips) | Provide several useful tips for using Chinese pre-trained models |
 | [English BERT-wwm](#English-BERT-wwm) | Download English BERT-wwm (by Google) |
@@ -62,6 +63,7 @@ As all models are 'BERT-base' variants, we do not incidate 'base' in the followi
 
 | Model | Data | Google Drive | iFLYTEK Cloud |
 | :------- | :--------- | :---------: | :---------: |
+| **`RoBERTa-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** | **[TensorFlow（pw:peMe）](https://pan.iflytek.com:443/link/A136858D5F529E7C385C73EEE336F27B)** |
 | **`BERT-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（pw:thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（pw:bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
 | **`BERT-wwm, Chinese`** | **Wikipedia** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（pw:mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（pw:8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
 | `BERT-base, Chinese`<sup>Google</sup> | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
@@ -85,6 +87,23 @@ chinese_wwm_L-12_H-768_A-12.zip
 #### Task Data
 We only provide the data that is publically available, check `data` directory.
 
+
+## Model Comparison
+We list comparisons on the models that were released in this project.
+`~BERT` means to inherit the attributes from original Google's BERT.
+
+| - | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
+| :------- | :---------: | :---------: | :---------: |
+| Masking | whole word | whole word | whole word |
+| Data | wiki | wiki+extended data | wiki+extended data |
+| Device | TPU v3 | TPU v3 | TPU v3 |
+| Training Steps | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
+| Batch Size | 2,560 / 384 | 2,560 / 384 | 384 |
+| Optimizer | LAMB | LAMB | AdamW |
+| Vocabulary | ~BERT vocab | ~BERT vocab | ~BERT vocab |
+| Init Checkpoint | ~BERT weight | ~BERT weight | ~BERT weight |
+
+
 ## Baselines
 We experiment on several Chinese datasets, including sentence-level to document-level tasks.
 
@@ -92,6 +111,7 @@ We experiment on several Chinese datasets, including sentence-level to document-
 
 - [**CMRC 2018**：Span-Extraction Machine Reading Comprehension (Simplified Chinese)](https://github.com/ymcui/cmrc2018)
 - [**DRCD**：Span-Extraction Machine Reading Comprehension (Traditional Chinese)](https://github.com/DRCSolutionService/DRCD)
+- [**CJRC**: Chinese Judiciary Reading Comprehension](http://cail.cipsc.org.cn)
 - [**XNLI**：Natural Langauge Inference](https://github.com/google-research/bert/blob/master/multilingual.md)
 - [**NER**：Chinese Named Entity Recognition](http://sighan.cs.uchicago.edu/bakeoff2006/)
 - [**THUCNews**：Document-level Text Classification](http://thuctc.thunlp.org)
@@ -108,7 +128,8 @@ The model should answer the questions based on the given passage, which is ident
 | BERT | 65.5 (64.4) / 84.5 (84.0) | 70.0 (68.7) / 87.0 (86.3) | 18.6 (17.0) / 43.3 (41.3) | 
 | ERNIE | 65.4 (64.3) / 84.7 (84.2) | 69.4 (68.2) / 86.6 (86.1) | 19.6 (17.0) / 44.3 (42.8) | 
 | **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
-| **BERT-wwm-ext** | **67.1 (65.6) / 85.7 (85.0)** | **71.4 (70.0) / 87.7 (87.0)** | **24.0 (20.0) / 47.3 (44.6)** |
+| **BERT-wwm-ext** | 67.1 (65.6) / 85.7 (85.0) | 71.4 (70.0) / 87.7 (87.0) | 24.0 (20.0) / 47.3 (44.6) |
+| **RoBERTa-wwm-ext** | **67.4 (66.5) / 87.2 (86.5)** | **72.6 (71.4) / 89.4 (88.8)** | **26.2 (24.6) / 51.0 (49.1)** |
 
 
 ### [DRCD](https://github.com/DRCKnowledgeTeam/DRCD)
@@ -119,7 +140,20 @@ DRCD is also a span-extraction machine reading comprehension dataset, released b
 | BERT | 83.1 (82.7) / 89.9 (89.6) | 82.2 (81.6) / 89.2 (88.8) | 
 | ERNIE | 73.2 (73.0) / 83.9 (83.8) | 71.9 (71.4) / 82.5 (82.3) | 
 | **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
-| **BERT-wwm-ext** | **85.0 (84.5) / 91.2 (90.9)** | **83.6 (83.0) / 90.4 (89.9)** |
+| **BERT-wwm-ext** | 85.0 (84.5) / 91.2 (90.9) | 83.6 (83.0) / 90.4 (89.9) |
+| **RoBERTa-wwm-ext** | **86.6 (85.9) / 92.5 (92.2)** | **85.6 (85.2) / 92.0 (91.7)** | 
+
+### CJRC
+[**CJRC**](http://cail.cipsc.org.cn) is a Chinese judiciary reading comprehension dataset, released by Joint Laboratory of HIT and iFLYTEK Research. Note that, the data used in these experiments are NOT identical to the official one.
+
+| Model | Development | Test |
+| :------- | :---------: | :---------: |
+| BERT | 54.6 (54.0) / 75.4 (74.5) | 55.1 (54.1) / 75.2 (74.3) | 
+| ERNIE | 54.3 (53.9) / 75.3 (74.6) | 55.0 (53.9) / 75.0 (73.9) | 
+| **BERT-wwm** | 54.7 (54.0) / 75.2 (74.8) | 55.1 (54.1) / 75.4 (74.4) | 
+| **BERT-wwm-ext** | 55.6 (54.8) / 76.0 (75.3) | 55.6 (54.9) / 75.8 (75.0) | 
+| **RoBERTa-wwm-ext** | **58.7 (57.6) / 79.1 (78.3)** | **59.0 (57.8) / 79.0 (78.0)** |
+
 
 ### XNLI
 We use XNLI data for testing NLI task.
@@ -130,6 +164,7 @@ We use XNLI data for testing NLI task.
 | ERNIE | **79.7 (79.4)** | 78.6 (78.2) | 
 | **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) | 
 | **BERT-wwm-ext** | 79.4 (78.6) | **78.7 (78.3)** |
+| **RoBERTa-wwm-ext** | **80.0** (79.2) | **78.8 (78.3)** |
 
 ### NER
 We use People's Daily and MSRA-NER data for testing Chinese NER.
@@ -213,6 +248,12 @@ A: Each has its own emphasis and merits. Development of Chinese NLP needs joint 
 **Q: Any comments on the name of next generation of the pre-trained model?**  
 A: Maybe ZOE: Zero-shOt Embeddings from language model
 
+**Q: Tell me a little bit more about `RoBERTa-wwm-ext`**  
+A: integrate whole word masking (wwm) into RoBERTa model, specifically:  
+1) use whole word masking (but we did not use dynamic masking)  
+2) remove Next Sentence Prediction (NSP)
+3) directly use the data generated by `max_len=512` (but not from `max_len=128` for several steps then `max_len=512`)
+4) extended training steps (1M steps)
 
 ## Reference
 If you find the technical report or resource is useful, please cite the following technical report in your paper.
