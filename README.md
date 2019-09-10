@@ -62,6 +62,7 @@
 
 | 模型简称 | 语料 | Google下载 | 讯飞云下载 |
 | :------- | :--------- | :---------: | :---------: |
+| ? | **中文维基+<br/>通用数据<sup>[1]</sup>** | [TensorFlow] | [TensorFlow] |
 | **`BERT-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（密码thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（密码bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
 | **`BERT-wwm, Chinese`** | **中文维基** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（密码8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
 | `BERT-base, Chinese`<sup>Google</sup> | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
