@@ -92,16 +92,16 @@ We only provide the data that is publically available, check `data` directory.
 We list comparisons on the models that were released in this project.
 `~BERT` means to inherit the attributes from original Google's BERT.
 
-| - | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
-| :------- | :---------: | :---------: | :---------: |
-| Masking | whole word | whole word | whole word |
-| Data | wiki | wiki+extended data | wiki+extended data |
-| Device | TPU v3 | TPU v3 | TPU v3 |
-| Training Steps | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
-| Batch Size | 2,560 / 384 | 2,560 / 384 | 384 |
-| Optimizer | LAMB | LAMB | AdamW |
-| Vocabulary | ~BERT vocab | ~BERT vocab | ~BERT vocab |
-| Init Checkpoint | ~BERT weight | ~BERT weight | ~BERT weight |
+| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
+| :------- | :---------: | :---------: | :---------: | :---------: |
+| Masking | WordPiece | whole word | whole word | whole word |
+| Data | wiki | wiki | wiki+extended data | wiki+extended data |
+| Device | TPU v2 Pod | TPU v3 | TPU v3 | TPU v3 |
+| Training Steps | ? | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
+| Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 |
+| Optimizer | AdamW | LAMB | LAMB | AdamW |
+| Vocabulary | 21128 | ~BERT vocab | ~BERT vocab |
+| Init Checkpoint | RandomInit | ~BERT weight | ~BERT weight | ~BERT weight |
 
 
 ## Baselines

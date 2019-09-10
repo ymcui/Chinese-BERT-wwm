@@ -100,16 +100,16 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ## 模型对比
 针对大家比较关心的一些模型细节进行汇总如下。`~BERT`表示**继承**谷歌原版中文BERT的属性。
 
-| - | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
-| :------- | :---------: | :---------: | :---------: |
-| Masking | whole word | whole word | whole word |
-| Data | wiki | wiki+extended data | wiki+extended data |
-| Device | TPU v3 | TPU v3 | TPU v3 |
-| Training Steps | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
-| Batch Size | 2,560 / 384 | 2,560 / 384 | 384 |
-| Optimizer | LAMB | LAMB | AdamW |
-| Vocabulary | ~BERT vocab | ~BERT vocab | ~BERT vocab |
-| Init Checkpoint | ~BERT weight | ~BERT weight | ~BERT weight |
+| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
+| :------- | :---------: | :---------: | :---------: | :---------: |
+| Masking | WordPiece | whole word | whole word | whole word |
+| Data | wiki | wiki | wiki+extended data | wiki+extended data |
+| Device | TPU v2 Pod | TPU v3 | TPU v3 | TPU v3 |
+| Training Steps | ? | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
+| Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 |
+| Optimizer | AdamW | LAMB | LAMB | AdamW |
+| Vocabulary | 21128 | ~BERT vocab | ~BERT vocab | ~BERT vocab |
+| Init Checkpoint | RandomInit | ~BERT weight | ~BERT weight | ~BERT weight |
 
 
 ## 中文基线系统效果
