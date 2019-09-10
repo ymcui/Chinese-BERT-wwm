@@ -17,9 +17,11 @@
 
 
 ## 新闻
-**2019/7/30 提供了在更大通用语料（5.4B词数）上训练的中文`BERT-wwm-ext`模型，查看[中文模型下载](#中文模型下载)**
+**2019/9/10 发布萝卜塔RoBERTa-wwm-ext模型，查看[中文模型下载](#中文模型下载)**
 
-2019/6/20	初始版本，模型已可通过谷歌下载，国内云盘也已上传完毕，查看[中文模型下载](#中文模型下载)
+2019/7/30 提供了在更大通用语料（5.4B词数）上训练的中文`BERT-wwm-ext`模型，查看[中文模型下载](#中文模型下载)
+
+2019/6/20 初始版本，模型已可通过谷歌下载，国内云盘也已上传完毕，查看[中文模型下载](#中文模型下载)
 
 
 ## 内容导引
@@ -27,6 +29,7 @@
 |-|-|
 | [简介](#简介) | 介绍BERT-wwm基本原理 |
 | [中文模型下载](#中文模型下载) | 提供了BERT-wwm的下载地址 |
+| [模型对比](#模型对比) | 提供了本目录中模型的参数对比 |
 | [中文基线系统效果](#中文基线系统效果) | 列举了部分中文基线系统效果 |
 | [使用建议](#使用建议) | 提供了若干使用中文预训练模型的建议 |
 | [英文模型下载](#英文模型下载) | 谷歌官方的英文BERT-wwm下载地址 |
@@ -62,7 +65,7 @@
 
 | 模型简称 | 语料 | Google下载 | 讯飞云下载 |
 | :------- | :--------- | :---------: | :---------: |
-| ? | **中文维基+<br/>通用数据<sup>[1]</sup>** | [TensorFlow] | [TensorFlow] |
+| **`RoBERTa-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** | **[TensorFlow（密码peMe）](https://pan.iflytek.com:443/link/A136858D5F529E7C385C73EEE336F27B)** |
 | **`BERT-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（密码thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（密码bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
 | **`BERT-wwm, Chinese`** | **中文维基** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（密码8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
 | `BERT-base, Chinese`<sup>Google</sup> | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
@@ -94,16 +97,30 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 压缩包内包含训练和测试数据，同一目录下的`README.md`标明数据来源。
 由于一部分数据需要原作者授权，故我们无法提供下载链接，敬请谅解。
 
+## 模型对比
+针对大家比较关心的一些模型细节进行汇总如下。`~BERT`表示**继承**谷歌原版中文BERT的属性。
+
+| - | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
+| :------- | :---------: | :---------: | :---------: |
+| Masking | whole word | whole word | whole word |
+| Data | wiki | wiki+extended data | wiki+extended data |
+| Device | TPU v3 | TPU v3 | TPU v3 |
+| Training Steps | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
+| Batch Size | 2,560 / 384 | 2,560 / 384 | 384 |
+| Optimizer | LAMB | LAMB | AdamW |
+| Vocabulary | ~BERT vocab | ~BERT vocab | ~BERT vocab |
+| Init Checkpoint | ~BERT weight | ~BERT weight | ~BERT weight |
+
 
 ## 中文基线系统效果
 为了对比基线效果，我们在以下几个中文数据集上进行了测试，包括`句子级`和`篇章级`任务。
-对于`BERT-wwm-ext`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
-同时，目前我们仅在CMRC 2018 / DRCD / XNLI数据集上尝试了新模型`BERT-wwm-ext`效果（更多结果待后续补充）。
+对于`BERT-wwm-ext`以及`RoBERTa-wwm-ext`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
 
 **下面仅列举部分结果，完整结果请查看我们的[技术报告](https://arxiv.org/abs/1906.08101)。**
 
 - [**CMRC 2018**：篇章片段抽取型阅读理解（简体中文）](https://github.com/ymcui/cmrc2018)
 - [**DRCD**：篇章片段抽取型阅读理解（繁体中文）](https://github.com/DRCSolutionService/DRCD)
+- [**CJRC**: 法律阅读理解（简体中文）](http://cail.cipsc.org.cn)
 - [**XNLI**：自然语言推断](https://github.com/google-research/bert/blob/master/multilingual.md)
 - [**NER**：中文命名实体识别](http://sighan.cs.uchicago.edu/bakeoff2006/)
 - [**THUCNews**：篇章级文本分类](http://thuctc.thunlp.org)
@@ -114,45 +131,58 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ### 简体中文阅读理解：CMRC 2018
 [**CMRC 2018数据集**](https://github.com/ymcui/cmrc2018)是哈工大讯飞联合实验室发布的中文机器阅读理解数据。
 根据给定问题，系统需要从篇章中抽取出片段作为答案，形式与SQuAD相同。
-本实验中可以看到，`BERT-wwm`模型显著优于BERT和ERNIE。
-使用了更大规模数据训练的`BERT-wwm-ext`则会带来进一步性能提升。
 
 | 模型 | 开发集 | 测试集 | 挑战集 |
 | :------- | :---------: | :---------: | :---------: |
 | BERT | 65.5 (64.4) / 84.5 (84.0) | 70.0 (68.7) / 87.0 (86.3) | 18.6 (17.0) / 43.3 (41.3) | 
 | ERNIE | 65.4 (64.3) / 84.7 (84.2) | 69.4 (68.2) / 86.6 (86.1) | 19.6 (17.0) / 44.3 (42.8) | 
 | **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
-| **BERT-wwm-ext** | **67.1 (65.6) / 85.7 (85.0)** | **71.4 (70.0) / 87.7 (87.0)** | **24.0 (20.0) / 47.3 (44.6)** |
+| **BERT-wwm-ext** | 67.1 (65.6) / 85.7 (85.0) | 71.4 (70.0) / 87.7 (87.0) | 24.0 (20.0) / 47.3 (44.6) |
+| **RoBERTa-wwm-ext** | **67.4 (66.5) / 87.2 (86.5)** | **72.6 (71.4) / 89.4 (88.8)** | **26.2 (24.6) / 51.0 (49.1)** |
+
 
 ### 繁体中文阅读理解：DRCD
 [**DRCD数据集**](https://github.com/DRCKnowledgeTeam/DRCD)由中国台湾台达研究院发布，其形式与SQuAD相同，是基于繁体中文的抽取式阅读理解数据集。
-本实验中可以看到，`BERT-wwm`模型显著优于BERT和ERNIE。 
-使用了更大规模数据训练的`BERT-wwm-ext`同样带来了显著性能提升。
-**由于ERNIE中去除了繁体中文字符，故不建议在繁体中文数据上使用ERNIE。**
+**由于ERNIE中去除了繁体中文字符，故不建议在繁体中文数据上使用ERNIE（或转换成简体中文后再处理）。**
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
 | BERT | 83.1 (82.7) / 89.9 (89.6) | 82.2 (81.6) / 89.2 (88.8) | 
 | ERNIE | 73.2 (73.0) / 83.9 (83.8) | 71.9 (71.4) / 82.5 (82.3) | 
 | **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
-| **BERT-wwm-ext** | **85.0 (84.5) / 91.2 (90.9)** | **83.6 (83.0) / 90.4 (89.9)** |
+| **BERT-wwm-ext** | 85.0 (84.5) / 91.2 (90.9) | 83.6 (83.0) / 90.4 (89.9) |
+| **RoBERTa-wwm-ext** | **86.6 (85.9) / 92.5 (92.2)** | **85.6 (85.2) / 92.0 (91.7)** | 
+
+
+### 司法阅读理解：CJRC
+[**CJRC数据集**](http://cail.cipsc.org.cn)是哈工大讯飞联合实验室发布的面向**司法领域**的中文机器阅读理解数据。
+需要注意的是实验中使用的数据并非官方发布的最终数据，结果仅供参考。
+
+| 模型 | 开发集 | 测试集 |
+| :------- | :---------: | :---------: |
+| BERT | 54.6 (54.0) / 75.4 (74.5) | 55.1 (54.1) / 75.2 (74.3) | 
+| ERNIE | 54.3 (53.9) / 75.3 (74.6) | 55.0 (53.9) / 75.0 (73.9) | 
+| **BERT-wwm** | 54.7 (54.0) / 75.2 (74.8) | 55.1 (54.1) / 75.4 (74.4) | 
+| **BERT-wwm-ext** | 55.6 (54.8) / 76.0 (75.3) | 55.6 (54.9) / 75.8 (75.0) | 
+| **RoBERTa-wwm-ext** | **58.7 (57.6) / 79.1 (78.3)** | **59.0 (57.8) / 79.0 (78.0)** |
 
 
 ### 自然语言推断：XNLI
 在自然语言推断任务中，我们采用了**XNLI**数据。
-可以看到`BERT-wwm-ext`与`ERNIE`在该任务上的效果较好。
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
 | BERT | 77.8 (77.4) | 77.8 (77.5) | 
-| ERNIE | **79.7 (79.4)** | 78.6 (78.2) | 
+| ERNIE | 79.7 **(79.4)** | 78.6 (78.2) | 
 | **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) | 
-| **BERT-wwm-ext** | 79.4 (78.6) | **78.7 (78.3)** |
+| **BERT-wwm-ext** | 79.4 (78.6) | 78.7 (78.3) |
+| **RoBERTa-wwm-ext** | **80.0** (79.2) | **78.8 (78.3)** |
 
 
 ### 命名实体识别：人民日报、MSRA-NER
 中文命名实体识别（NER）任务中，我们采用了经典的**人民日报数据**以及**微软亚洲研究院发布的NER数据**。
 在这里我们只列F值，其他数值请参看技术报告。
+*(因为这两个数据集在网上流传的版本甚多，建议在自己的数据上比对相对提升，以下数据仅供参考。)*
 
 | 模型 | 人民日报 | MSRA-NER |
 | :------- | :---------: | :---------: |
@@ -164,7 +194,6 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ### 篇章级文本分类：THUCNews
 篇章级文本分类任务我们选用了由清华大学自然语言处理实验室发布的新闻数据集**THUCNews**。
 我们采用的是其中一个子集，需要将新闻分成10个类别中的一个。
-从实验结果来看，`BERT-wwm`效果优于BERT以及ERNIE。
 
 | 模型 | 开发集 | 测试集 | 
 | :------- | :---------: | :---------: | 
@@ -191,7 +220,6 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 *   **[`BERT-Large, Cased (Whole Word Masking)`](https://storage.googleapis.com/bert_models/2019_05_30/wwm_cased_L-24_H-1024_A-16.zip)**:
     24-layer, 1024-hidden, 16-heads, 340M parameters
 
-
 ## FAQ
 **Q: 这个模型怎么用？**  
 A: 谷歌发布的中文BERT怎么用，这个就怎么用。
@@ -216,7 +244,7 @@ A: 在下游任务中，我们采用了最简单的模型。比如分类任务�
 A: 恭喜你。
 
 **Q: 训练花了多长时间，在什么设备上训练的？**  
-A: 训练是在谷歌TPU v3版本（128G HBM）完成的，训练BERT-wwm-base花费约1.5天，BERT-wwm-base-ext则需要数周时间（使用了更多数据需要迭代更充分）。
+A: 训练是在谷歌TPU v3版本（128G HBM）完成的，训练BERT-wwm花费约1.5天，BERT-wwm-ext则需要数周时间（使用了更多数据需要迭代更充分）。
 需要注意的是，预训练阶段我们使用的是`LAMB Optimizer`（[TensorFlow版本实现](https://github.com/ymcui/LAMB_Optimizer_TF)）。该优化器对大的batch有良好的支持。
 在微调下游任务时，我们采用的是BERT默认的`AdamWeightDecayOptimizer`。
 
@@ -240,6 +268,14 @@ A: 各有侧重，各有千秋。
 
 **Q: 你预测下一个预训练模型叫什么？**  
 A: 可能叫ZOE吧，ZOE: Zero-shOt Embeddings from language model
+
+**Q: 更多关于`RoBERTa-wwm-ext`模型的细节？**  
+A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然的结合。
+和之前本目录中的模型之间的区别如下:  
+1）预训练阶段采用wwm策略进行mask（但没有使用dynamic masking）  
+2）简单取消Next Sentence Prediction（NSP）loss  
+3）不再采用先max_len=128然后再max_len=512的训练模式，直接训练max_len=512  
+4）训练步数适当延长  
 
 
 ## 引用
