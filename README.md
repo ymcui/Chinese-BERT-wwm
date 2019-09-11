@@ -103,12 +103,13 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
 | :------- | :---------: | :---------: | :---------: | :---------: |
 | Masking | WordPiece | whole word | whole word | whole word |
-| Data | wiki | wiki | wiki+extended data | wiki+extended data |
+| Data Source | wiki | wiki | wiki+extended data | wiki+extended data |
+| Training Tokens # | 0.4B | 0.4B | 5.4B | 5.4B |
 | Device | TPU v2 Pod | TPU v3 | TPU v3 | TPU v3 |
 | Training Steps | ? | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
 | Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 |
 | Optimizer | AdamW | LAMB | LAMB | AdamW |
-| Vocabulary | 21128 | ~BERT vocab | ~BERT vocab | ~BERT vocab |
+| Vocabulary | 21,128 | ~BERT vocab | ~BERT vocab | ~BERT vocab |
 | Init Checkpoint | RandomInit | ~BERT weight | ~BERT weight | ~BERT weight |
 
 
@@ -178,6 +179,8 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **BERT-wwm-ext** | 79.4 (78.6) | 78.7 (78.3) |
 | **RoBERTa-wwm-ext** | **80.0** (79.2) | **78.8 (78.3)** |
 
+<details>
+<summary><b>其他不完整实验结果</b></summary>
 
 ### 命名实体识别：人民日报、MSRA-NER
 中文命名实体识别（NER）任务中，我们采用了经典的**人民日报数据**以及**微软亚洲研究院发布的NER数据**。
@@ -200,6 +203,8 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | BERT | 97.7 (97.4) | **97.8 (97.6)** |
 | ERNIE | 97.6 (97.3) | 97.5 (97.3) |
 | **BERT-wwm** | **98.0 (97.6)** | **97.8 (97.6)** |
+
+</details>
 
 
 ## 使用建议
@@ -297,10 +302,8 @@ https://arxiv.org/abs/1906.08101
 
 ## 免责声明
 **本项目并非谷歌官方发布的Chinese BERT-wwm模型。同时，本项目不是哈工大或科大讯飞的官方产品。**
-
 技术报告中所呈现的实验结果仅表明在特定数据集和超参组合下的表现，并不能代表各个模型的本质。
 实验结果可能因随机数种子，计算设备而发生改变。
-
 **该项目中的内容仅供技术研究参考，不作为任何结论性依据。使用者可以在许可证范围内任意使用该模型，但我们不对因使用该项目内容造成的直接或间接损失负责。**
 
 

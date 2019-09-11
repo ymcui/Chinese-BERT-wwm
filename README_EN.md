@@ -95,12 +95,13 @@ We list comparisons on the models that were released in this project.
 | - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
 | :------- | :---------: | :---------: | :---------: | :---------: |
 | Masking | WordPiece | whole word | whole word | whole word |
-| Data | wiki | wiki | wiki+extended data | wiki+extended data |
+| Data Source | wiki | wiki | wiki+extended data | wiki+extended data |
+| Training Tokens # | 0.4B | 0.4B | 5.4B | 5.4B |
 | Device | TPU v2 Pod | TPU v3 | TPU v3 | TPU v3 |
 | Training Steps | ? | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
 | Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 |
 | Optimizer | AdamW | LAMB | LAMB | AdamW |
-| Vocabulary | 21128 | ~BERT vocab | ~BERT vocab |
+| Vocabulary | 21,128 | ~BERT vocab | ~BERT vocab | ~BERT vocab |
 | Init Checkpoint | RandomInit | ~BERT weight | ~BERT weight | ~BERT weight |
 
 
@@ -166,6 +167,9 @@ We use XNLI data for testing NLI task.
 | **BERT-wwm-ext** | 79.4 (78.6) | **78.7 (78.3)** |
 | **RoBERTa-wwm-ext** | **80.0** (79.2) | **78.8 (78.3)** |
 
+<details>
+<summary><b>Other experiments</b></summary>
+
 ### NER
 We use People's Daily and MSRA-NER data for testing Chinese NER.
 
@@ -184,6 +188,7 @@ Released by Tsinghua University, which contains news in 10 categories.
 | ERNIE | 97.6 (97.3) | 97.5 (97.3) |
 | **BERT-wwm** | 98.0 (97.6) | 97.8 (97.6) |
 
+</details>
 
 ## Useful Tips
 * Initial learning rate is the most important hyper-parameters (regardless of BERT or other neural networks), and should ALWAYS be tuned for better performance.
@@ -269,9 +274,7 @@ https://arxiv.org/abs/1906.08101
 
 ## Disclaimer
 **This is NOT a project by Google official. Also, this is NOT an official product by HIT and iFLYTEK.**
-
 The experiments only represent the empirical results in certain conditions and should not be regarded as the nature of the respective models. The results may vary using different random seeds, computing devices, etc. 
-
 **The contents in this repository are for academic research purpose, and we do not provide any conclusive remarks. Users are free to use anythings in this repository within the scope of Apache-2.0 licence. However, we are not responsible for direct or indirect losses that was caused by using the content in this project.**
 
 
