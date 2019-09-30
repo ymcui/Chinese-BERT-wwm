@@ -1,9 +1,9 @@
 [**中文说明**](https://github.com/ymcui/Chinese-BERT-wwm/) | [**English**](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md)
 
 ## 中文预训练BERT-wwm（Pre-Trained Chinese BERT with Whole Word Masking）
-
-为了进一步促进中文自然语言处理的研究发展，我们提供了基于全词遮掩（Whole Word Masking）技术的中文预训练模型BERT-wwm。
-同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)。
+在自然语言处理领域中，预训练模型（Pre-trained Models）已成为非常重要的基础技术。
+为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext。
+同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/ERNIE/blob/develop/README.zh.md)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)。
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
 ![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
@@ -28,7 +28,7 @@
 | 章节 | 描述 |
 |-|-|
 | [简介](#简介) | 介绍BERT-wwm基本原理 |
-| [中文模型下载](#中文模型下载) | 提供了BERT-wwm的下载地址 |
+| [中文模型下载](#中文模型下载) | 提供了BERT-wwm系列模型的下载地址 |
 | [模型对比](#模型对比) | 提供了本目录中模型的参数对比 |
 | [中文基线系统效果](#中文基线系统效果) | 列举了部分中文基线系统效果 |
 | [使用建议](#使用建议) | 提供了若干使用中文预训练模型的建议 |
@@ -92,7 +92,7 @@ chinese_wwm_L-12_H-768_A-12.zip
 PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件。
 
 
-### 测试任务数据
+### 测试任务数据下载
 我们提供部分任务数据，请查看`data`目录了解。
 压缩包内包含训练和测试数据，同一目录下的`README.md`标明数据来源。
 由于一部分数据需要原作者授权，故我们无法提供下载链接，敬请谅解。
@@ -254,7 +254,7 @@ A: 训练是在谷歌TPU v3版本（128G HBM）完成的，训练BERT-wwm花费�
 在微调下游任务时，我们采用的是BERT默认的`AdamWeightDecayOptimizer`。
 
 **Q: ERNIE是谁？**  
-A: 本项目中的ERNIE模型特指百度公司提出的[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
+A: 本项目中的ERNIE模型特指百度公司提出的[ERNIE 1.0](https://github.com/PaddlePaddle/ERNIE/blob/develop/README.zh.md)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
 
 **Q: BERT-wwm的效果不是在所有任务都很好**  
 A: 本项目的目的是为研究者提供多元化的预训练模型，自由选择BERT，ERNIE，或者是BERT-wwm。
@@ -282,6 +282,9 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 3）不再采用先max_len=128然后再max_len=512的训练模式，直接训练max_len=512  
 4）训练步数适当延长  
 
+需要注意的是，该模型并非原版RoBERTa模型，只是按照类似RoBERTa训练方式训练出的BERT模型，即RoBERTa-like BERT。
+故在下游任务使用、模型转换时请按BERT的方式处理，而非RoBERTa。
+
 
 ## 引用
 如果本目录中的内容对你的研究工作有所帮助，请在文献中引用下述技术报告：
@@ -308,7 +311,7 @@ https://arxiv.org/abs/1906.08101
 
 
 ## 关注我们
-欢迎关注哈工大讯飞联合实验室官方微信公众号。
+欢迎关注哈工大讯飞联合实验室官方微信公众号，了解最新的技术动态。
 
 ![qrcode.png](https://github.com/ymcui/cmrc2019/raw/master/qrcode.jpg)
 
