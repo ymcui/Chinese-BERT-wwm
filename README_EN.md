@@ -9,7 +9,9 @@ For further accelerating Chinese natural language processing, we provide **Chine
 
 
 ## News
-**2019/9/10 We release `RoBERTa-wwm-ext`, check [Download](#Download)**
+**2019/10/14 We release `RoBERTa-wwm-large-ext`, check [Download](#Download)**
+
+2019/9/10 We release `RoBERTa-wwm-ext`, check [Download](#Download)
 
 2019/7/30 We release `BERT-wwm-ext`, which was trained on larger data, check [Download](#Download)
 
@@ -63,6 +65,7 @@ As all models are 'BERT-base' variants, we do not incidate 'base' in the followi
 
 | Model | Data | Google Drive | iFLYTEK Cloud |
 | :------- | :--------- | :---------: | :---------: |
+| **`RoBERTa-wwm-large-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **TensorFlow**<br/>**PyTorch** |
 | **`RoBERTa-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** | **[TensorFlow（pw:peMe）](https://pan.iflytek.com:443/link/A136858D5F529E7C385C73EEE336F27B)** |
 | **`BERT-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（pw:thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（pw:bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
 | **`BERT-wwm, Chinese`** | **Wikipedia** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（pw:mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（pw:8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
@@ -92,17 +95,18 @@ We only provide the data that is publically available, check `data` directory.
 We list comparisons on the models that were released in this project.
 `~BERT` means to inherit the attributes from original Google's BERT.
 
-| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
-| :------- | :---------: | :---------: | :---------: | :---------: |
-| Masking | WordPiece | whole word | whole word | whole word |
-| Data Source | wiki | wiki | wiki+extended data | wiki+extended data |
-| Training Tokens # | 0.4B | 0.4B | 5.4B | 5.4B |
-| Device | TPU v2 Pod | TPU v3 | TPU v3 | TPU v3 |
-| Training Steps | ? | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
-| Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 |
-| Optimizer | AdamW | LAMB | LAMB | AdamW |
-| Vocabulary | 21,128 | ~BERT vocab | ~BERT vocab | ~BERT vocab |
-| Init Checkpoint | RandomInit | ~BERT weight | ~BERT weight | ~BERT weight |
+| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext | RoBERTa-wwm-large-ext |
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | 
+| Masking | WordPiece | WWM<sup>[1]</sup> | WWM | WWM | WWM |
+| Type | BERT-base | BERT-base | BERT-base | BERT-base | **BERT-large** | 
+| Data Source | wiki | wiki | wiki+ext<sup>[2]</sup> | wiki+ext | wiki+ext | 
+| Training Tokens # | 0.4B | 0.4B | 5.4B | 5.4B | 5.4B |
+| Device | TPU Pod v2 | TPU v3 | TPU v3 | TPU v3 | **TPU Pod v3-32<sup>[3]</sup>** | 
+| Training Steps | ? | 100K<sup>MAX128</sup> <br/>+100K<sup>MAX512</sup> | 1M<sup>MAX128</sup> <br/>+400K<sup>MAX512</sup> | 1M<sup>MAX512</sup> | 2M<sup>MAX512</sup> | 
+| Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 | 512 |
+| Optimizer | AdamW | LAMB | LAMB | AdamW | AdamW |
+| Vocabulary | 21,128 | ~BERT<sup>[4]</sup> vocab | ~BERT vocab | ~BERT vocab | ~BERT vocab |
+| Init Checkpoint | Random Init | ~BERT weight | ~BERT weight | ~BERT weight | Random Init |
 
 
 ## Baselines
@@ -114,6 +118,8 @@ We experiment on several Chinese datasets, including sentence-level to document-
 - [**DRCD**：Span-Extraction Machine Reading Comprehension (Traditional Chinese)](https://github.com/DRCSolutionService/DRCD)
 - [**CJRC**: Chinese Judiciary Reading Comprehension](http://cail.cipsc.org.cn)
 - [**XNLI**：Natural Langauge Inference](https://github.com/google-research/bert/blob/master/multilingual.md)
+- [**LCQMC**：Sentence Pair Matching](http://icrc.hitsz.edu.cn/info/1037/1146.htm)
+- [**BQ Corpus**：Sentence Pair Matching](http://icrc.hitsz.edu.cn/Article/show/175.html)
 - [**NER**：Chinese Named Entity Recognition](http://sighan.cs.uchicago.edu/bakeoff2006/)
 - [**THUCNews**：Document-level Text Classification](http://thuctc.thunlp.org)
 
@@ -130,7 +136,8 @@ The model should answer the questions based on the given passage, which is ident
 | ERNIE | 65.4 (64.3) / 84.7 (84.2) | 69.4 (68.2) / 86.6 (86.1) | 19.6 (17.0) / 44.3 (42.8) | 
 | **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
 | **BERT-wwm-ext** | 67.1 (65.6) / 85.7 (85.0) | 71.4 (70.0) / 87.7 (87.0) | 24.0 (20.0) / 47.3 (44.6) |
-| **RoBERTa-wwm-ext** | **67.4 (66.5) / 87.2 (86.5)** | **72.6 (71.4) / 89.4 (88.8)** | **26.2 (24.6) / 51.0 (49.1)** |
+| **RoBERTa-wwm-ext** | 67.4 (66.5) / 87.2 (86.5) | 72.6 (71.4) / 89.4 (88.8) | 26.2 (24.6) / 51.0 (49.1) |
+| **RoBERTa-wwm-large-ext** | **68.5 (67.6) / 88.4 (87.9)** | **74.2 (72.4) / 90.6 (90.0)** | **31.5 (30.1) / 60.1 (57.5)** |
 
 
 ### [DRCD](https://github.com/DRCKnowledgeTeam/DRCD)
@@ -142,7 +149,9 @@ DRCD is also a span-extraction machine reading comprehension dataset, released b
 | ERNIE | 73.2 (73.0) / 83.9 (83.8) | 71.9 (71.4) / 82.5 (82.3) | 
 | **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
 | **BERT-wwm-ext** | 85.0 (84.5) / 91.2 (90.9) | 83.6 (83.0) / 90.4 (89.9) |
-| **RoBERTa-wwm-ext** | **86.6 (85.9) / 92.5 (92.2)** | **85.6 (85.2) / 92.0 (91.7)** | 
+| **RoBERTa-wwm-ext** | 86.6 (85.9) / 92.5 (92.2) | 85.6 (85.2) / 92.0 (91.7) | 
+| **RoBERTa-wwm-large-ext** | **89.6 (89.1) / 94.8 (94.4)** | **89.6 (88.9) / 94.5 (94.1)** |
+
 
 ### CJRC
 [**CJRC**](http://cail.cipsc.org.cn) is a Chinese judiciary reading comprehension dataset, released by Joint Laboratory of HIT and iFLYTEK Research. Note that, the data used in these experiments are NOT identical to the official one.
@@ -153,7 +162,8 @@ DRCD is also a span-extraction machine reading comprehension dataset, released b
 | ERNIE | 54.3 (53.9) / 75.3 (74.6) | 55.0 (53.9) / 75.0 (73.9) | 
 | **BERT-wwm** | 54.7 (54.0) / 75.2 (74.8) | 55.1 (54.1) / 75.4 (74.4) | 
 | **BERT-wwm-ext** | 55.6 (54.8) / 76.0 (75.3) | 55.6 (54.9) / 75.8 (75.0) | 
-| **RoBERTa-wwm-ext** | **58.7 (57.6) / 79.1 (78.3)** | **59.0 (57.8) / 79.0 (78.0)** |
+| **RoBERTa-wwm-ext** | 58.7 (57.6) / 79.1 (78.3) | 59.0 (57.8) / 79.0 (78.0) |
+| **RoBERTa-wwm-large-ext** | **62.1 (61.1) / 82.4 (81.6)** | **62.4 (61.4) / 82.2 (81.0)** |
 
 
 ### XNLI
@@ -162,10 +172,35 @@ We use XNLI data for testing NLI task.
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
 | BERT | 77.8 (77.4) | 77.8 (77.5) | 
-| ERNIE | **79.7 (79.4)** | 78.6 (78.2) | 
+| ERNIE | 79.7 (79.4) | 78.6 (78.2) | 
 | **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) | 
-| **BERT-wwm-ext** | 79.4 (78.6) | **78.7 (78.3)** |
-| **RoBERTa-wwm-ext** | **80.0** (79.2) | **78.8 (78.3)** |
+| **BERT-wwm-ext** | 79.4 (78.6) | 78.7 (78.3) |
+| **RoBERTa-wwm-ext** | 80.0 (79.2) | 78.8 (78.3) |
+| **RoBERTa-wwm-large-ext** | **82.1 (81.3)** | **81.2 (80.6)** |
+
+### Sentence Pair Matching：LCQMC, BQ Corpus
+
+#### LCQMC
+
+| Model | Development | Test |
+| :------- | :---------: | :---------: |
+| BERT | 89.4 (88.4) | 86.9 (86.4) |  
+| ERNIE | 89.8 (89.6) | **87.2 (87.0)** |
+| **BERT-wwm** | 89.4 (89.2) | 87.0 (86.8) |
+| **BERT-wwm-ext** | TBA | TBA |
+| **RoBERTa-wwm-ext** | TBA | TBA |
+| **RoBERTa-wwm-large-ext** | **90.4 (90.0)** | 87.0 (86.8) |
+
+#### BQ Corpus 
+
+| Model | Development | Test |
+| :------- | :---------: | :---------: |
+| BERT | 86.0 (85.5) | 84.8 (84.6) | 
+| ERNIE | **86.3** (85.5) | 85.0 (84.6) |
+| **BERT-wwm** | 86.1 (85.6) | 85.2 **(84.9)** |
+| **BERT-wwm-ext** | TBA | TBA |
+| **RoBERTa-wwm-ext** | TBA | TBA |
+| **RoBERTa-wwm-large-ext** | **86.3 (85.7)** | **85.8 (84.9)** |
 
 <details>
 <summary><b>Other experiments</b></summary>

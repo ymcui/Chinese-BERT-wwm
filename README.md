@@ -2,7 +2,7 @@
 
 ## 中文预训练BERT-wwm（Pre-Trained Chinese BERT with Whole Word Masking）
 在自然语言处理领域中，预训练模型（Pre-trained Models）已成为非常重要的基础技术。
-为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext。
+为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-large-ext。
 同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/ERNIE/blob/develop/README.zh.md)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)。
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
@@ -17,7 +17,9 @@
 
 
 ## 新闻
-**2019/9/10 发布萝卜塔RoBERTa-wwm-ext模型，查看[中文模型下载](#中文模型下载)**
+**2019/10/14 发布萝卜塔RoBERTa-wwm-large-ext模型，查看[中文模型下载](#中文模型下载)**
+
+2019/9/10 发布萝卜塔RoBERTa-wwm-ext模型，查看[中文模型下载](#中文模型下载)
 
 2019/7/30 提供了在更大通用语料（5.4B词数）上训练的中文`BERT-wwm-ext`模型，查看[中文模型下载](#中文模型下载)
 
@@ -28,7 +30,7 @@
 | 章节 | 描述 |
 |-|-|
 | [简介](#简介) | 介绍BERT-wwm基本原理 |
-| [中文模型下载](#中文模型下载) | 提供了BERT-wwm系列模型的下载地址 |
+| [中文模型下载](#中文模型下载) | 提供了BERT-wwm的下载地址 |
 | [模型对比](#模型对比) | 提供了本目录中模型的参数对比 |
 | [中文基线系统效果](#中文基线系统效果) | 列举了部分中文基线系统效果 |
 | [使用建议](#使用建议) | 提供了若干使用中文预训练模型的建议 |
@@ -60,11 +62,14 @@
 
 
 ## 中文模型下载
-由于目前只包含base模型，故我们不在模型简称中标注`base`字样。
-* **`BERT-base模型`**：12-layer, 768-hidden, 12-heads, 110M parameters
+本目录中主要包含base模型，故我们不在模型简称中标注`base`字样。对于其他大小的模型会标注对应的标记（例如large）。
+
+* **`BERT-large模型`**：24-layer, 1024-hidden, 16-heads, 330M parameters  
+* **`BERT-base模型`**：12-layer, 768-hidden, 12-heads, 110M parameters  
 
 | 模型简称 | 语料 | Google下载 | 讯飞云下载 |
 | :------- | :--------- | :---------: | :---------: |
+| **`RoBERTa-wwm-large-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **TensorFlow**<br/>**PyTorch** |
 | **`RoBERTa-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** <br/>**[PyTorch](https://drive.google.com/open?id=1eHM3l4fMo6DsQYGmey7UZGiTmQquHw25)** | **[TensorFlow（密码peMe）](https://pan.iflytek.com:443/link/A136858D5F529E7C385C73EEE336F27B)** <br/>**[PyTorch（密码6kpJ）](https://pan.iflytek.com:443/link/2F25AD577CC47EA9CCFC3A038AF29429)**|
 | **`BERT-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（密码thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（密码bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
 | **`BERT-wwm, Chinese`** | **中文维基** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（密码8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
@@ -72,12 +77,11 @@
 | `BERT-base, Multilingual Cased`<sup>Google</sup>  | 多语种维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Uncased`<sup>Google</sup>  | 多语种维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
 
-> [1] 通用数据包括：百科、新闻、问答等数据，总词数达5.4B
+> [1] 通用数据包括：百科、新闻、问答等数据，总词数达5.4B，处理后的文本大小约10G
 
 以上预训练模型以TensorFlow版本的权重为准。
 对于PyTorch版本，我们使用的是由Huggingface出品的[PyTorch-Transformers 1.0](https://github.com/huggingface/pytorch-transformers)提供的转换脚本。
 如果使用的是其他版本，请自行进行权重转换。
-
 中国大陆境内建议使用讯飞云下载点，境外用户建议使用谷歌下载点，base模型文件大小约**400M**。 
 以TensorFlow版`BERT-wwm, Chinese`为例，下载完毕后对zip文件进行解压得到：
 ```
@@ -92,30 +96,37 @@ chinese_wwm_L-12_H-768_A-12.zip
 PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件。
 
 
-### 测试任务数据下载
+### 测试任务数据
 我们提供部分任务数据，请查看`data`目录了解。
 压缩包内包含训练和测试数据，同一目录下的`README.md`标明数据来源。
 由于一部分数据需要原作者授权，故我们无法提供下载链接，敬请谅解。
 
-## 模型对比
-针对大家比较关心的一些模型细节进行汇总如下。`~BERT`表示**继承**谷歌原版中文BERT的属性。
 
-| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext |
-| :------- | :---------: | :---------: | :---------: | :---------: |
-| Masking | WordPiece | whole word | whole word | whole word |
-| Data Source | wiki | wiki | wiki+extended data | wiki+extended data |
-| Training Tokens # | 0.4B | 0.4B | 5.4B | 5.4B |
-| Device | TPU v2 Pod | TPU v3 | TPU v3 | TPU v3 |
-| Training Steps | ? | 100K (MAX128) <br/>+100K (MAX512) | 1M (MAX128) <br/>+400K (MAX512) | 1M (MAX512) |
-| Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 |
-| Optimizer | AdamW | LAMB | LAMB | AdamW |
-| Vocabulary | 21,128 | ~BERT vocab | ~BERT vocab | ~BERT vocab |
-| Init Checkpoint | RandomInit | ~BERT weight | ~BERT weight | ~BERT weight |
+## 模型对比
+针对大家比较关心的一些模型细节进行汇总如下。
+
+| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext | RoBERTa-wwm-large-ext |
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | 
+| Masking | WordPiece | WWM<sup>[1]</sup> | WWM | WWM | WWM |
+| Type | BERT-base | BERT-base | BERT-base | BERT-base | **BERT-large** | 
+| Data Source | wiki | wiki | wiki+ext<sup>[2]</sup> | wiki+ext | wiki+ext | 
+| Training Tokens # | 0.4B | 0.4B | 5.4B | 5.4B | 5.4B |
+| Device | TPU Pod v2 | TPU v3 | TPU v3 | TPU v3 | **TPU Pod v3-32<sup>[3]</sup>** | 
+| Training Steps | ? | 100K<sup>MAX128</sup> <br/>+100K<sup>MAX512</sup> | 1M<sup>MAX128</sup> <br/>+400K<sup>MAX512</sup> | 1M<sup>MAX512</sup> | 2M<sup>MAX512</sup> | 
+| Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 | 512 |
+| Optimizer | AdamW | LAMB | LAMB | AdamW | AdamW |
+| Vocabulary | 21,128 | ~BERT<sup>[4]</sup> vocab | ~BERT vocab | ~BERT vocab | ~BERT vocab |
+| Init Checkpoint | Random Init | ~BERT weight | ~BERT weight | ~BERT weight | Random Init |
+
+> [1] WWM = Whole Word Masking  
+> [2] ext = extended data  
+> [3] TPU Pod v3-32 (512G HBM)等价于4个TPU v3 (128G HBM)  
+> [4] `~BERT`表示**继承**谷歌原版中文BERT的属性  
 
 
 ## 中文基线系统效果
 为了对比基线效果，我们在以下几个中文数据集上进行了测试，包括`句子级`和`篇章级`任务。
-对于`BERT-wwm-ext`以及`RoBERTa-wwm-ext`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
+对于`BERT-wwm-ext`、`RoBERTa-wwm-ext`、`RoBERTa-wwm-large-ext`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
 
 **下面仅列举部分结果，完整结果请查看我们的[技术报告](https://arxiv.org/abs/1906.08101)。**
 
@@ -123,6 +134,8 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 - [**DRCD**：篇章片段抽取型阅读理解（繁体中文）](https://github.com/DRCSolutionService/DRCD)
 - [**CJRC**: 法律阅读理解（简体中文）](http://cail.cipsc.org.cn)
 - [**XNLI**：自然语言推断](https://github.com/google-research/bert/blob/master/multilingual.md)
+- [**LCQMC**：句对匹配](http://icrc.hitsz.edu.cn/info/1037/1146.htm)
+- [**BQ Corpus**：句对匹配](http://icrc.hitsz.edu.cn/Article/show/175.html)
 - [**NER**：中文命名实体识别](http://sighan.cs.uchicago.edu/bakeoff2006/)
 - [**THUCNews**：篇章级文本分类](http://thuctc.thunlp.org)
 
@@ -139,7 +152,8 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | ERNIE | 65.4 (64.3) / 84.7 (84.2) | 69.4 (68.2) / 86.6 (86.1) | 19.6 (17.0) / 44.3 (42.8) | 
 | **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
 | **BERT-wwm-ext** | 67.1 (65.6) / 85.7 (85.0) | 71.4 (70.0) / 87.7 (87.0) | 24.0 (20.0) / 47.3 (44.6) |
-| **RoBERTa-wwm-ext** | **67.4 (66.5) / 87.2 (86.5)** | **72.6 (71.4) / 89.4 (88.8)** | **26.2 (24.6) / 51.0 (49.1)** |
+| **RoBERTa-wwm-ext** | 67.4 (66.5) / 87.2 (86.5) | 72.6 (71.4) / 89.4 (88.8) | 26.2 (24.6) / 51.0 (49.1) |
+| **RoBERTa-wwm-large-ext** | **68.5 (67.6) / 88.4 (87.9)** | **74.2 (72.4) / 90.6 (90.0)** | **31.5 (30.1) / 60.1 (57.5)** |
 
 
 ### 繁体中文阅读理解：DRCD
@@ -152,7 +166,8 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | ERNIE | 73.2 (73.0) / 83.9 (83.8) | 71.9 (71.4) / 82.5 (82.3) | 
 | **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
 | **BERT-wwm-ext** | 85.0 (84.5) / 91.2 (90.9) | 83.6 (83.0) / 90.4 (89.9) |
-| **RoBERTa-wwm-ext** | **86.6 (85.9) / 92.5 (92.2)** | **85.6 (85.2) / 92.0 (91.7)** | 
+| **RoBERTa-wwm-ext** | 86.6 (85.9) / 92.5 (92.2) | 85.6 (85.2) / 92.0 (91.7) | 
+| **RoBERTa-wwm-large-ext** | **89.6 (89.1) / 94.8 (94.4)** | **89.6 (88.9) / 94.5 (94.1)** |
 
 
 ### 司法阅读理解：CJRC
@@ -165,19 +180,50 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | ERNIE | 54.3 (53.9) / 75.3 (74.6) | 55.0 (53.9) / 75.0 (73.9) | 
 | **BERT-wwm** | 54.7 (54.0) / 75.2 (74.8) | 55.1 (54.1) / 75.4 (74.4) | 
 | **BERT-wwm-ext** | 55.6 (54.8) / 76.0 (75.3) | 55.6 (54.9) / 75.8 (75.0) | 
-| **RoBERTa-wwm-ext** | **58.7 (57.6) / 79.1 (78.3)** | **59.0 (57.8) / 79.0 (78.0)** |
+| **RoBERTa-wwm-ext** | 58.7 (57.6) / 79.1 (78.3) | 59.0 (57.8) / 79.0 (78.0) |
+| **RoBERTa-wwm-large-ext** | **62.1 (61.1) / 82.4 (81.6)** | **62.4 (61.4) / 82.2 (81.0)** |
 
 
 ### 自然语言推断：XNLI
-在自然语言推断任务中，我们采用了**XNLI**数据。
+在自然语言推断任务中，我们采用了[**XNLI**数据](https://github.com/google-research/bert/blob/master/multilingual.md)，需要将文本分成三个类别：`entailment`，`neutral`，`contradictory`。
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
 | BERT | 77.8 (77.4) | 77.8 (77.5) | 
-| ERNIE | 79.7 **(79.4)** | 78.6 (78.2) | 
+| ERNIE | 79.7 (79.4) | 78.6 (78.2) | 
 | **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) | 
 | **BERT-wwm-ext** | 79.4 (78.6) | 78.7 (78.3) |
-| **RoBERTa-wwm-ext** | **80.0** (79.2) | **78.8 (78.3)** |
+| **RoBERTa-wwm-ext** | 80.0 (79.2) | 78.8 (78.3) |
+| **RoBERTa-wwm-large-ext** | **82.1 (81.3)** | **81.2 (80.6)** |
+
+
+### 句对分类：LCQMC, BQ Corpus
+以下两个数据集均需要将一个句对进行分类，判断两个句子的语义是否相同（二分类任务）。
+
+#### LCQMC
+[LCQMC](http://icrc.hitsz.edu.cn/info/1037/1146.htm)由哈工大深圳研究生院智能计算研究中心发布。 
+
+| 模型 | 开发集 | 测试集 |
+| :------- | :---------: | :---------: |
+| BERT | 89.4 (88.4) | 86.9 (86.4) |  
+| ERNIE | 89.8 (89.6) | **87.2 (87.0)** |
+| **BERT-wwm** | 89.4 (89.2) | 87.0 (86.8) |
+| **BERT-wwm-ext** | TBA | TBA |
+| **RoBERTa-wwm-ext** | TBA | TBA |
+| **RoBERTa-wwm-large-ext** | **90.4 (90.0)** | 87.0 (86.8) |
+
+#### BQ Corpus 
+[BQ Corpus](http://icrc.hitsz.edu.cn/Article/show/175.html)由哈工大深圳研究生院智能计算研究中心发布，是面向银行领域的数据集。
+
+| 模型 | 开发集 | 测试集 |
+| :------- | :---------: | :---------: |
+| BERT | 86.0 (85.5) | 84.8 (84.6) | 
+| ERNIE | **86.3** (85.5) | 85.0 (84.6) |
+| **BERT-wwm** | 86.1 (85.6) | 85.2 **(84.9)** |
+| **BERT-wwm-ext** | TBA | TBA |
+| **RoBERTa-wwm-ext** | TBA | TBA |
+| **RoBERTa-wwm-large-ext** | **86.3 (85.7)** | **85.8 (84.9)** |
+
 
 <details>
 <summary><b>其他不完整实验结果</b></summary>
@@ -254,7 +300,7 @@ A: 训练是在谷歌TPU v3版本（128G HBM）完成的，训练BERT-wwm花费�
 在微调下游任务时，我们采用的是BERT默认的`AdamWeightDecayOptimizer`。
 
 **Q: ERNIE是谁？**  
-A: 本项目中的ERNIE模型特指百度公司提出的[ERNIE 1.0](https://github.com/PaddlePaddle/ERNIE/blob/develop/README.zh.md)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
+A: 本项目中的ERNIE模型特指百度公司提出的[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)，而非清华大学在ACL 2019上发表的[ERNIE](https://github.com/thunlp/ERNIE)。
 
 **Q: BERT-wwm的效果不是在所有任务都很好**  
 A: 本项目的目的是为研究者提供多元化的预训练模型，自由选择BERT，ERNIE，或者是BERT-wwm。
@@ -284,7 +330,6 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 
 需要注意的是，该模型并非原版RoBERTa模型，只是按照类似RoBERTa训练方式训练出的BERT模型，即RoBERTa-like BERT。
 故在下游任务使用、模型转换时请按BERT的方式处理，而非RoBERTa。
-
 
 ## 引用
 如果本目录中的内容对你的研究工作有所帮助，请在文献中引用下述技术报告：
