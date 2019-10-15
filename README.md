@@ -208,9 +208,10 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | BERT | 89.4 (88.4) | 86.9 (86.4) |  
 | ERNIE | 89.8 (89.6) | **87.2 (87.0)** |
 | **BERT-wwm** | 89.4 (89.2) | 87.0 (86.8) |
-| **BERT-wwm-ext** | TBA | TBA |
-| **RoBERTa-wwm-ext** | TBA | TBA |
+| **BERT-wwm-ext** | 89.6 (89.2) | 87.1 (86.6) |
+| **RoBERTa-wwm-ext** | 89.0 (88.7) | 86.4 (86.1) |
 | **RoBERTa-wwm-large-ext** | **90.4 (90.0)** | 87.0 (86.8) |
+
 
 #### BQ Corpus 
 [BQ Corpus](http://icrc.hitsz.edu.cn/Article/show/175.html)由哈工大深圳研究生院智能计算研究中心发布，是面向银行领域的数据集。
@@ -218,11 +219,11 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
 | BERT | 86.0 (85.5) | 84.8 (84.6) | 
-| ERNIE | **86.3** (85.5) | 85.0 (84.6) |
+| ERNIE | 86.3 (85.5) | 85.0 (84.6) |
 | **BERT-wwm** | 86.1 (85.6) | 85.2 **(84.9)** |
-| **BERT-wwm-ext** | TBA | TBA |
-| **RoBERTa-wwm-ext** | TBA | TBA |
-| **RoBERTa-wwm-large-ext** | **86.3 (85.7)** | **85.8 (84.9)** |
+| **BERT-wwm-ext** | **86.4** (85.5) | 85.3 (84.8) |
+| **RoBERTa-wwm-ext** | 86.0 (85.4) | 85.0 (84.6) |
+| **RoBERTa-wwm-large-ext** | 86.3 **(85.7)** | **85.8 (84.9)** |
 
 
 <details>
