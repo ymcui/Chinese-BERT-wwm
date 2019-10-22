@@ -2,7 +2,7 @@
 
 ## 中文预训练BERT-wwm（Pre-Trained Chinese BERT with Whole Word Masking）
 在自然语言处理领域中，预训练模型（Pre-trained Models）已成为非常重要的基础技术。
-为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-large-ext。
+为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-ext-large。
 同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/ERNIE/blob/develop/README.zh.md)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)。
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
@@ -17,7 +17,7 @@
 
 
 ## 新闻
-**2019/10/14 发布萝卜塔RoBERTa-wwm-large-ext模型，查看[中文模型下载](#中文模型下载)**
+**2019/10/14 发布萝卜塔RoBERTa-wwm-ext-large模型，查看[中文模型下载](#中文模型下载)**
 
 2019/9/10 发布萝卜塔RoBERTa-wwm-ext模型，查看[中文模型下载](#中文模型下载)
 
@@ -69,7 +69,7 @@
 
 | 模型简称 | 语料 | Google下载 | 讯飞云下载 |
 | :------- | :--------- | :---------: | :---------: |
-| **`RoBERTa-wwm-large-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（密码u6gC）](https://pan.iflytek.com:443/link/AC056611607108F33A744A0F56D0F6BE)**<br/>**[PyTorch（密码43eH）](https://pan.iflytek.com:443/link/9B46A0ABA70C568AAAFCD004B9A2C773)** |
+| **`RoBERTa-wwm-ext-large, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（密码u6gC）](https://pan.iflytek.com:443/link/AC056611607108F33A744A0F56D0F6BE)**<br/>**[PyTorch（密码43eH）](https://pan.iflytek.com:443/link/9B46A0ABA70C568AAAFCD004B9A2C773)** |
 | **`RoBERTa-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** <br/>**[PyTorch](https://drive.google.com/open?id=1eHM3l4fMo6DsQYGmey7UZGiTmQquHw25)** | **[TensorFlow（密码peMe）](https://pan.iflytek.com:443/link/A136858D5F529E7C385C73EEE336F27B)** <br/>**[PyTorch（密码6kpJ）](https://pan.iflytek.com:443/link/2F25AD577CC47EA9CCFC3A038AF29429)**|
 | **`BERT-wwm-ext, Chinese`** | **中文维基+<br/>通用数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（密码thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（密码bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
 | **`BERT-wwm, Chinese`** | **中文维基** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（密码mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（密码8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
@@ -105,7 +105,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ## 模型对比
 针对大家比较关心的一些模型细节进行汇总如下。
 
-| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext | RoBERTa-wwm-large-ext |
+| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext | RoBERTa-wwm-ext-large |
 | :------- | :---------: | :---------: | :---------: | :---------: | :---------: | 
 | Masking | WordPiece | WWM<sup>[1]</sup> | WWM | WWM | WWM |
 | Type | BERT-base | BERT-base | BERT-base | BERT-base | **BERT-large** | 
@@ -126,7 +126,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 
 ## 中文基线系统效果
 为了对比基线效果，我们在以下几个中文数据集上进行了测试，包括`句子级`和`篇章级`任务。
-对于`BERT-wwm-ext`、`RoBERTa-wwm-ext`、`RoBERTa-wwm-large-ext`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
+对于`BERT-wwm-ext`、`RoBERTa-wwm-ext`、`RoBERTa-wwm-ext-large`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
 
 **下面仅列举部分结果，完整结果请查看我们的[技术报告](https://arxiv.org/abs/1906.08101)。**
 
@@ -153,7 +153,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
 | **BERT-wwm-ext** | 67.1 (65.6) / 85.7 (85.0) | 71.4 (70.0) / 87.7 (87.0) | 24.0 (20.0) / 47.3 (44.6) |
 | **RoBERTa-wwm-ext** | 67.4 (66.5) / 87.2 (86.5) | 72.6 (71.4) / 89.4 (88.8) | 26.2 (24.6) / 51.0 (49.1) |
-| **RoBERTa-wwm-large-ext** | **68.5 (67.6) / 88.4 (87.9)** | **74.2 (72.4) / 90.6 (90.0)** | **31.5 (30.1) / 60.1 (57.5)** |
+| **RoBERTa-wwm-ext-large** | **68.5 (67.6) / 88.4 (87.9)** | **74.2 (72.4) / 90.6 (90.0)** | **31.5 (30.1) / 60.1 (57.5)** |
 
 
 ### 繁体中文阅读理解：DRCD
@@ -167,7 +167,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
 | **BERT-wwm-ext** | 85.0 (84.5) / 91.2 (90.9) | 83.6 (83.0) / 90.4 (89.9) |
 | **RoBERTa-wwm-ext** | 86.6 (85.9) / 92.5 (92.2) | 85.6 (85.2) / 92.0 (91.7) | 
-| **RoBERTa-wwm-large-ext** | **89.6 (89.1) / 94.8 (94.4)** | **89.6 (88.9) / 94.5 (94.1)** |
+| **RoBERTa-wwm-ext-large** | **89.6 (89.1) / 94.8 (94.4)** | **89.6 (88.9) / 94.5 (94.1)** |
 
 
 ### 司法阅读理解：CJRC
@@ -181,7 +181,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **BERT-wwm** | 54.7 (54.0) / 75.2 (74.8) | 55.1 (54.1) / 75.4 (74.4) | 
 | **BERT-wwm-ext** | 55.6 (54.8) / 76.0 (75.3) | 55.6 (54.9) / 75.8 (75.0) | 
 | **RoBERTa-wwm-ext** | 58.7 (57.6) / 79.1 (78.3) | 59.0 (57.8) / 79.0 (78.0) |
-| **RoBERTa-wwm-large-ext** | **62.1 (61.1) / 82.4 (81.6)** | **62.4 (61.4) / 82.2 (81.0)** |
+| **RoBERTa-wwm-ext-large** | **62.1 (61.1) / 82.4 (81.6)** | **62.4 (61.4) / 82.2 (81.0)** |
 
 
 ### 自然语言推断：XNLI
@@ -194,7 +194,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) | 
 | **BERT-wwm-ext** | 79.4 (78.6) | 78.7 (78.3) |
 | **RoBERTa-wwm-ext** | 80.0 (79.2) | 78.8 (78.3) |
-| **RoBERTa-wwm-large-ext** | **82.1 (81.3)** | **81.2 (80.6)** |
+| **RoBERTa-wwm-ext-large** | **82.1 (81.3)** | **81.2 (80.6)** |
 
 
 ### 句对分类：LCQMC, BQ Corpus
@@ -210,7 +210,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **BERT-wwm** | 89.4 (89.2) | 87.0 (86.8) |
 | **BERT-wwm-ext** | 89.6 (89.2) | 87.1 (86.6) |
 | **RoBERTa-wwm-ext** | 89.0 (88.7) | 86.4 (86.1) |
-| **RoBERTa-wwm-large-ext** | **90.4 (90.0)** | 87.0 (86.8) |
+| **RoBERTa-wwm-ext-large** | **90.4 (90.0)** | 87.0 (86.8) |
 
 
 #### BQ Corpus 
@@ -223,7 +223,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **BERT-wwm** | 86.1 (85.6) | 85.2 **(84.9)** |
 | **BERT-wwm-ext** | **86.4** (85.5) | 85.3 (84.8) |
 | **RoBERTa-wwm-ext** | 86.0 (85.4) | 85.0 (84.6) |
-| **RoBERTa-wwm-large-ext** | 86.3 **(85.7)** | **85.8 (84.9)** |
+| **RoBERTa-wwm-ext-large** | 86.3 **(85.7)** | **85.8 (84.9)** |
 
 
 <details>

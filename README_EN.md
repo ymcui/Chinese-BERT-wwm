@@ -9,7 +9,7 @@ For further accelerating Chinese natural language processing, we provide **Chine
 
 
 ## News
-**2019/10/14 We release `RoBERTa-wwm-large-ext`, check [Download](#Download)**
+**2019/10/14 We release `RoBERTa-wwm-ext-large`, check [Download](#Download)**
 
 2019/9/10 We release `RoBERTa-wwm-ext`, check [Download](#Download)
 
@@ -65,7 +65,7 @@ As all models are 'BERT-base' variants, we do not incidate 'base' in the followi
 
 | Model | Data | Google Drive | iFLYTEK Cloud |
 | :------- | :--------- | :---------: | :---------: |
-| **`RoBERTa-wwm-large-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（pw:u6gC）](https://pan.iflytek.com:443/link/AC056611607108F33A744A0F56D0F6BE)**<br/>**[PyTorch（pw:43eH）](https://pan.iflytek.com:443/link/9B46A0ABA70C568AAAFCD004B9A2C773)** |
+| **`RoBERTa-wwm-ext-large, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（pw:u6gC）](https://pan.iflytek.com:443/link/AC056611607108F33A744A0F56D0F6BE)**<br/>**[PyTorch（pw:43eH）](https://pan.iflytek.com:443/link/9B46A0ABA70C568AAAFCD004B9A2C773)** |
 | **`RoBERTa-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** | **[TensorFlow（pw:peMe）](https://pan.iflytek.com:443/link/A136858D5F529E7C385C73EEE336F27B)** |
 | **`BERT-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（pw:thGd）](https://pan.iflytek.com:443/link/8AA4B23D9BCBCBA0187EE58234332B46)** <br/>**[PyTorch（pw:bJns）](https://pan.iflytek.com:443/link/4AB35DEBECB79C578BEC9952F78FB6F2)** |
 | **`BERT-wwm, Chinese`** | **Wikipedia** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（pw:mva8）](https://pan.iflytek.com:443/link/4B172939D5748FB1A3881772BC97A898)** <br/>**[PyTorch（pw:8fX5）](https://pan.iflytek.com:443/link/8D4E8680433E6AD0F33D521EA920348E)** |
@@ -95,7 +95,7 @@ We only provide the data that is publically available, check `data` directory.
 We list comparisons on the models that were released in this project.
 `~BERT` means to inherit the attributes from original Google's BERT.
 
-| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext | RoBERTa-wwm-large-ext |
+| - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext | RoBERTa-wwm-ext-large |
 | :------- | :---------: | :---------: | :---------: | :---------: | :---------: | 
 | Masking | WordPiece | WWM<sup>[1]</sup> | WWM | WWM | WWM |
 | Type | BERT-base | BERT-base | BERT-base | BERT-base | **BERT-large** | 
@@ -137,7 +137,7 @@ The model should answer the questions based on the given passage, which is ident
 | **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
 | **BERT-wwm-ext** | 67.1 (65.6) / 85.7 (85.0) | 71.4 (70.0) / 87.7 (87.0) | 24.0 (20.0) / 47.3 (44.6) |
 | **RoBERTa-wwm-ext** | 67.4 (66.5) / 87.2 (86.5) | 72.6 (71.4) / 89.4 (88.8) | 26.2 (24.6) / 51.0 (49.1) |
-| **RoBERTa-wwm-large-ext** | **68.5 (67.6) / 88.4 (87.9)** | **74.2 (72.4) / 90.6 (90.0)** | **31.5 (30.1) / 60.1 (57.5)** |
+| **RoBERTa-wwm-ext-large** | **68.5 (67.6) / 88.4 (87.9)** | **74.2 (72.4) / 90.6 (90.0)** | **31.5 (30.1) / 60.1 (57.5)** |
 
 
 ### [DRCD](https://github.com/DRCKnowledgeTeam/DRCD)
@@ -150,7 +150,7 @@ DRCD is also a span-extraction machine reading comprehension dataset, released b
 | **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
 | **BERT-wwm-ext** | 85.0 (84.5) / 91.2 (90.9) | 83.6 (83.0) / 90.4 (89.9) |
 | **RoBERTa-wwm-ext** | 86.6 (85.9) / 92.5 (92.2) | 85.6 (85.2) / 92.0 (91.7) | 
-| **RoBERTa-wwm-large-ext** | **89.6 (89.1) / 94.8 (94.4)** | **89.6 (88.9) / 94.5 (94.1)** |
+| **RoBERTa-wwm-ext-large** | **89.6 (89.1) / 94.8 (94.4)** | **89.6 (88.9) / 94.5 (94.1)** |
 
 
 ### CJRC
@@ -163,7 +163,7 @@ DRCD is also a span-extraction machine reading comprehension dataset, released b
 | **BERT-wwm** | 54.7 (54.0) / 75.2 (74.8) | 55.1 (54.1) / 75.4 (74.4) | 
 | **BERT-wwm-ext** | 55.6 (54.8) / 76.0 (75.3) | 55.6 (54.9) / 75.8 (75.0) | 
 | **RoBERTa-wwm-ext** | 58.7 (57.6) / 79.1 (78.3) | 59.0 (57.8) / 79.0 (78.0) |
-| **RoBERTa-wwm-large-ext** | **62.1 (61.1) / 82.4 (81.6)** | **62.4 (61.4) / 82.2 (81.0)** |
+| **RoBERTa-wwm-ext-large** | **62.1 (61.1) / 82.4 (81.6)** | **62.4 (61.4) / 82.2 (81.0)** |
 
 
 ### XNLI
@@ -176,7 +176,7 @@ We use XNLI data for testing NLI task.
 | **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) | 
 | **BERT-wwm-ext** | 79.4 (78.6) | 78.7 (78.3) |
 | **RoBERTa-wwm-ext** | 80.0 (79.2) | 78.8 (78.3) |
-| **RoBERTa-wwm-large-ext** | **82.1 (81.3)** | **81.2 (80.6)** |
+| **RoBERTa-wwm-ext-large** | **82.1 (81.3)** | **81.2 (80.6)** |
 
 ### Sentence Pair Matching：LCQMC, BQ Corpus
 
@@ -189,7 +189,7 @@ We use XNLI data for testing NLI task.
 | **BERT-wwm** | 89.4 (89.2) | 87.0 (86.8) |
 | **BERT-wwm-ext** | 89.6 (89.2) | 87.1 (86.6) |
 | **RoBERTa-wwm-ext** | 89.0 (88.7) | 86.4 (86.1) |
-| **RoBERTa-wwm-large-ext** | **90.4 (90.0)** | 87.0 (86.8) |
+| **RoBERTa-wwm-ext-large** | **90.4 (90.0)** | 87.0 (86.8) |
 
 #### BQ Corpus 
 
@@ -200,7 +200,7 @@ We use XNLI data for testing NLI task.
 | **BERT-wwm** | 86.1 (85.6) | 85.2 **(84.9)** |
 | **BERT-wwm-ext** | **86.4** (85.5) | 85.3 (84.8) |
 | **RoBERTa-wwm-ext** | 86.0 (85.4) | 85.0 (84.6) |
-| **RoBERTa-wwm-large-ext** | 86.3 **(85.7)** | **85.8 (84.9)** |
+| **RoBERTa-wwm-ext-large** | 86.3 **(85.7)** | **85.8 (84.9)** |
 
 
 <details>
