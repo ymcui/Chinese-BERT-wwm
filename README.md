@@ -106,17 +106,17 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 针对大家比较关心的一些模型细节进行汇总如下。
 
 | - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext | RoBERTa-wwm-ext-large |
-| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | 
-| Masking | WordPiece | WWM<sup>[1]</sup> | WWM | WWM | WWM |
-| Type | BERT-base | BERT-base | BERT-base | BERT-base | **BERT-large** | 
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: |
+| Masking | WordPiece | WWM<sup>[1]</sup> | WWM | WWM | WWM | 
+| Type | base | base | base | base | **large** | 
 | Data Source | wiki | wiki | wiki+ext<sup>[2]</sup> | wiki+ext | wiki+ext | 
 | Training Tokens # | 0.4B | 0.4B | 5.4B | 5.4B | 5.4B |
 | Device | TPU Pod v2 | TPU v3 | TPU v3 | TPU v3 | **TPU Pod v3-32<sup>[3]</sup>** | 
 | Training Steps | ? | 100K<sup>MAX128</sup> <br/>+100K<sup>MAX512</sup> | 1M<sup>MAX128</sup> <br/>+400K<sup>MAX512</sup> | 1M<sup>MAX512</sup> | 2M<sup>MAX512</sup> | 
 | Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 | 512 |
 | Optimizer | AdamW | LAMB | LAMB | AdamW | AdamW |
-| Vocabulary | 21,128 | ~BERT<sup>[4]</sup> vocab | ~BERT vocab | ~BERT vocab | ~BERT vocab |
-| Init Checkpoint | Random Init | ~BERT weight | ~BERT weight | ~BERT weight | Random Init |
+| Vocabulary | 21,128 | ~BERT<sup>[4]</sup> | ~BERT | ~BERT | ~BERT |
+| Init Checkpoint | Random Init | ~BERT | ~BERT | ~BERT | Random Init |
 
 > [1] WWM = Whole Word Masking  
 > [2] ext = extended data  
@@ -139,7 +139,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 - [**NER**：中文命名实体识别](http://sighan.cs.uchicago.edu/bakeoff2006/)
 - [**THUCNews**：篇章级文本分类](http://thuctc.thunlp.org)
 
-**注意：为了保证结果的可靠性，对于同一模型，我们运行10遍（不同随机种子），汇报模型性能的最大值和平均值。不出意外，你运行的结果应该很大概率落在这个区间内。**
+**注意：为了保证结果的可靠性，对于同一模型，我们运行10遍（不同随机种子），汇报模型性能的最大值和平均值（括号内为平均值）。不出意外，你运行的结果应该很大概率落在这个区间内。**
 
 
 ### 简体中文阅读理解：CMRC 2018
