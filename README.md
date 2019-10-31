@@ -200,6 +200,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ### 情感分析：ChnSentiCorp
 在情感分析任务中，二分类的情感分类数据集ChnSentiCorp。
 
+| 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
 | BERT | 94.7 (94.3) | 95.0 (94.7) |
 | ERNIE | 95.4 (94.8) | 95.4 **(95.3)** |
