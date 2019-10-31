@@ -2,8 +2,8 @@
 
 ## 中文预训练BERT-wwm（Pre-Trained Chinese BERT with Whole Word Masking）
 在自然语言处理领域中，预训练模型（Pre-trained Models）已成为非常重要的基础技术。
-为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-ext-large。
-同时在我们的技术报告中详细对比了当今流行的中文预训练模型：[BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/ERNIE/blob/develop/README.zh.md)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)。
+为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-ext-large。  
+
 **更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
 
 ![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
@@ -134,9 +134,9 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 - [**DRCD**：篇章片段抽取型阅读理解（繁体中文）](https://github.com/DRCSolutionService/DRCD)
 - [**CJRC**: 法律阅读理解（简体中文）](http://cail.cipsc.org.cn)
 - [**XNLI**：自然语言推断](https://github.com/google-research/bert/blob/master/multilingual.md)
+- [**ChnSentiCorp**：情感分析](https://github.com/pengming617/bert_classification)
 - [**LCQMC**：句对匹配](http://icrc.hitsz.edu.cn/info/1037/1146.htm)
 - [**BQ Corpus**：句对匹配](http://icrc.hitsz.edu.cn/Article/show/175.html)
-- [**NER**：中文命名实体识别](http://sighan.cs.uchicago.edu/bakeoff2006/)
 - [**THUCNews**：篇章级文本分类](http://thuctc.thunlp.org)
 
 **注意：为了保证结果的可靠性，对于同一模型，我们运行10遍（不同随机种子），汇报模型性能的最大值和平均值（括号内为平均值）。不出意外，你运行的结果应该很大概率落在这个区间内。**
@@ -197,6 +197,18 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **RoBERTa-wwm-ext-large** | **82.1 (81.3)** | **81.2 (80.6)** |
 
 
+### 情感分析：ChnSentiCorp
+在情感分析任务中，二分类的情感分类数据集ChnSentiCorp。
+
+| :------- | :---------: | :---------: |
+| BERT | 94.7 (94.3) | 95.0 (94.7) |
+| ERNIE | 95.4 (94.8) | 95.4 **(95.3)** |
+| **BERT-wwm** | 95.1 (94.5) | 95.4 (95.0) |
+| **BERT-wwm-ext** | 95.4 （94.6) | 95.3 (94.7) |
+| **RoBERTa-wwm-ext** | 95.0 (94.6) | 95.6 (94.8) |
+| **RoBERTa-wwm-ext-large** | **95.8 (94.9)** | **95.8** (94.9) |
+
+
 ### 句对分类：LCQMC, BQ Corpus
 以下两个数据集均需要将一个句对进行分类，判断两个句子的语义是否相同（二分类任务）。
 
@@ -226,32 +238,18 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 | **RoBERTa-wwm-ext-large** | 86.3 **(85.7)** | **85.8 (84.9)** |
 
 
-<details>
-<summary><b>其他不完整实验结果</b></summary>
-
-### 命名实体识别：人民日报、MSRA-NER
-中文命名实体识别（NER）任务中，我们采用了经典的**人民日报数据**以及**微软亚洲研究院发布的NER数据**。
-在这里我们只列F值，其他数值请参看技术报告。
-*(因为这两个数据集在网上流传的版本甚多，建议在自己的数据上比对相对提升，以下数据仅供参考。)*
-
-| 模型 | 人民日报 | MSRA-NER |
-| :------- | :---------: | :---------: |
-| BERT | 95.2 (94.9) | 95.3 (94.9) |  
-| ERNIE | **95.7 (94.5)** | **95.4 (95.1)** |
-| **BERT-wwm** | 95.3 (95.1) | **95.4 (95.1)** |
-
-
 ### 篇章级文本分类：THUCNews
 篇章级文本分类任务我们选用了由清华大学自然语言处理实验室发布的新闻数据集**THUCNews**。
 我们采用的是其中一个子集，需要将新闻分成10个类别中的一个。
 
 | 模型 | 开发集 | 测试集 | 
 | :------- | :---------: | :---------: | 
-| BERT | 97.7 (97.4) | **97.8 (97.6)** |
+| BERT | 97.7 (97.4) | 97.8 (97.6) |
 | ERNIE | 97.6 (97.3) | 97.5 (97.3) |
-| **BERT-wwm** | **98.0 (97.6)** | **97.8 (97.6)** |
-
-</details>
+| **BERT-wwm** | 98.0 (97.6) | 97.8 (97.6) |
+| **BERT-wwm-ext** | 97.7 (97.5) | 97.7 (97.5) |
+| **RoBERTa-wwm-ext** | 98.3 (97.9) | 97.7 (97.5) |
+| **RoBERTa-wwm-ext-large** | 98.3 (97.7) | 97.8 (97.6) |
 
 
 ## 使用建议

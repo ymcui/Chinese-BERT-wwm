@@ -118,9 +118,9 @@ We experiment on several Chinese datasets, including sentence-level to document-
 - [**DRCD**：Span-Extraction Machine Reading Comprehension (Traditional Chinese)](https://github.com/DRCSolutionService/DRCD)
 - [**CJRC**: Chinese Judiciary Reading Comprehension](http://cail.cipsc.org.cn)
 - [**XNLI**：Natural Langauge Inference](https://github.com/google-research/bert/blob/master/multilingual.md)
+- [**ChnSentiCorp**：Sentiment Analysis](https://github.com/pengming617/bert_classification)
 - [**LCQMC**：Sentence Pair Matching](http://icrc.hitsz.edu.cn/info/1037/1146.htm)
 - [**BQ Corpus**：Sentence Pair Matching](http://icrc.hitsz.edu.cn/Article/show/175.html)
-- [**NER**：Chinese Named Entity Recognition](http://sighan.cs.uchicago.edu/bakeoff2006/)
 - [**THUCNews**：Document-level Text Classification](http://thuctc.thunlp.org)
 
 **Note: To ensure the stability of the results, we run 10 times for each experiment and report maximum and average scores.**
@@ -178,6 +178,19 @@ We use XNLI data for testing NLI task.
 | **RoBERTa-wwm-ext** | 80.0 (79.2) | 78.8 (78.3) |
 | **RoBERTa-wwm-ext-large** | **82.1 (81.3)** | **81.2 (80.6)** |
 
+### ChnSentiCorp
+We use ChnSentiCorp data for testing sentiment analysis.
+
+| Model | Development | Test |
+| :------- | :---------: | :---------: |
+| BERT | 94.7 (94.3) | 95.0 (94.7) |
+| ERNIE | 95.4 (94.8) | 95.4 **(95.3)** |
+| **BERT-wwm** | 95.1 (94.5) | 95.4 (95.0) |
+| **BERT-wwm-ext** | 95.4 （94.6) | 95.3 (94.7) |
+| **RoBERTa-wwm-ext** | 95.0 (94.6) | 95.6 (94.8) |
+| **RoBERTa-wwm-ext-large** | **95.8 (94.9)** | **95.8** (94.9) |
+
+
 ### Sentence Pair Matching：LCQMC, BQ Corpus
 
 #### LCQMC
@@ -203,18 +216,6 @@ We use XNLI data for testing NLI task.
 | **RoBERTa-wwm-ext-large** | 86.3 **(85.7)** | **85.8 (84.9)** |
 
 
-<details>
-<summary><b>Other experiments</b></summary>
-
-### NER
-We use People's Daily and MSRA-NER data for testing Chinese NER.
-
-| Model | People's Daily | MSRA |
-| :------- | :---------: | :---------: |
-| BERT | 95.2 (94.9) | 95.3 (94.9) |  
-| ERNIE | 95.7 (94.5) | 95.4 (95.1) |
-| **BERT-wwm** | 95.3 (95.1) | 95.4 (95.1) |
-
 ### THUCNews
 Released by Tsinghua University, which contains news in 10 categories.
 
@@ -223,6 +224,9 @@ Released by Tsinghua University, which contains news in 10 categories.
 | BERT | 97.7 (97.4) | 97.8 (97.6) |
 | ERNIE | 97.6 (97.3) | 97.5 (97.3) |
 | **BERT-wwm** | 98.0 (97.6) | 97.8 (97.6) |
+| **BERT-wwm-ext** | 97.7 (97.5) | 97.7 (97.5) |
+| **RoBERTa-wwm-ext** | 98.3 (97.9) | 97.7 (97.5) |
+| **RoBERTa-wwm-ext-large** | 98.3 (97.7) | 97.8 (97.6) |
 
 </details>
 
