@@ -125,10 +125,12 @@ We experiment on several Chinese datasets, including sentence-level to document-
 
 **Note: To ensure the stability of the results, we run 10 times for each experiment and report maximum and average scores.**
 
+**Average scores are in brackets, and max performances are the numbers that out of brackets.**
 
 ### [CMRC 2018](https://github.com/ymcui/cmrc2018)
 CMRC 2018 dataset is released by Joint Laboratory of HIT and iFLYTEK Research.
 The model should answer the questions based on the given passage, which is identical to SQuAD.
+Evaluation Metrics: EM / F1
 
 | Model | Development | Test | Challenge |
 | :------- | :---------: | :---------: | :---------: |
@@ -142,6 +144,7 @@ The model should answer the questions based on the given passage, which is ident
 
 ### [DRCD](https://github.com/DRCKnowledgeTeam/DRCD)
 DRCD is also a span-extraction machine reading comprehension dataset, released by Delta Research Center. The text is written in Traditional Chinese.
+Evaluation Metrics: EM / F1
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
@@ -155,6 +158,7 @@ DRCD is also a span-extraction machine reading comprehension dataset, released b
 
 ### CJRC
 [**CJRC**](http://cail.cipsc.org.cn) is a Chinese judiciary reading comprehension dataset, released by Joint Laboratory of HIT and iFLYTEK Research. Note that, the data used in these experiments are NOT identical to the official one.
+Evaluation Metrics: EM / F1
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
@@ -168,6 +172,7 @@ DRCD is also a span-extraction machine reading comprehension dataset, released b
 
 ### XNLI
 We use XNLI data for testing NLI task.
+Evaluation Metrics: Accuracy
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
@@ -180,6 +185,7 @@ We use XNLI data for testing NLI task.
 
 ### ChnSentiCorp
 We use ChnSentiCorp data for testing sentiment analysis.
+Evaluation Metrics: Accuracy
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
@@ -194,6 +200,7 @@ We use ChnSentiCorp data for testing sentiment analysis.
 ### Sentence Pair Matching：LCQMC, BQ Corpus
 
 #### LCQMC
+Evaluation Metrics: Accuracy
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
@@ -205,6 +212,7 @@ We use ChnSentiCorp data for testing sentiment analysis.
 | **RoBERTa-wwm-ext-large** | **90.4 (90.0)** | 87.0 (86.8) |
 
 #### BQ Corpus 
+Evaluation Metrics: Accuracy
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
@@ -218,6 +226,7 @@ We use ChnSentiCorp data for testing sentiment analysis.
 
 ### THUCNews
 Released by Tsinghua University, which contains news in 10 categories.
+Evaluation Metrics: Accuracy
 
 | Model | Development | Test | 
 | :------- | :---------: | :---------: | 

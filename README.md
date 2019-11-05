@@ -141,10 +141,13 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 
 **注意：为了保证结果的可靠性，对于同一模型，我们运行10遍（不同随机种子），汇报模型性能的最大值和平均值（括号内为平均值）。不出意外，你运行的结果应该很大概率落在这个区间内。**
 
+**评测指标中，括号内表示平均值，括号外表示最大值。**
+
 
 ### 简体中文阅读理解：CMRC 2018
 [**CMRC 2018数据集**](https://github.com/ymcui/cmrc2018)是哈工大讯飞联合实验室发布的中文机器阅读理解数据。
 根据给定问题，系统需要从篇章中抽取出片段作为答案，形式与SQuAD相同。
+评测指标为：EM / F1
 
 | 模型 | 开发集 | 测试集 | 挑战集 |
 | :------- | :---------: | :---------: | :---------: |
@@ -159,6 +162,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ### 繁体中文阅读理解：DRCD
 [**DRCD数据集**](https://github.com/DRCKnowledgeTeam/DRCD)由中国台湾台达研究院发布，其形式与SQuAD相同，是基于繁体中文的抽取式阅读理解数据集。
 **由于ERNIE中去除了繁体中文字符，故不建议在繁体中文数据上使用ERNIE（或转换成简体中文后再处理）。**
+评测指标为：EM / F1
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
@@ -173,6 +177,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ### 司法阅读理解：CJRC
 [**CJRC数据集**](http://cail.cipsc.org.cn)是哈工大讯飞联合实验室发布的面向**司法领域**的中文机器阅读理解数据。
 需要注意的是实验中使用的数据并非官方发布的最终数据，结果仅供参考。
+评测指标为：EM / F1
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
@@ -186,6 +191,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 
 ### 自然语言推断：XNLI
 在自然语言推断任务中，我们采用了[**XNLI**数据](https://github.com/google-research/bert/blob/master/multilingual.md)，需要将文本分成三个类别：`entailment`，`neutral`，`contradictory`。
+评测指标为：Accuracy
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
@@ -199,6 +205,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 
 ### 情感分析：ChnSentiCorp
 在情感分析任务中，二分类的情感分类数据集ChnSentiCorp。
+评测指标为：Accuracy
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
@@ -215,6 +222,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 
 #### LCQMC
 [LCQMC](http://icrc.hitsz.edu.cn/info/1037/1146.htm)由哈工大深圳研究生院智能计算研究中心发布。 
+评测指标为：Accuracy
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
@@ -228,6 +236,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 
 #### BQ Corpus 
 [BQ Corpus](http://icrc.hitsz.edu.cn/Article/show/175.html)由哈工大深圳研究生院智能计算研究中心发布，是面向银行领域的数据集。
+评测指标为：Accuracy
 
 | 模型 | 开发集 | 测试集 |
 | :------- | :---------: | :---------: |
@@ -242,6 +251,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ### 篇章级文本分类：THUCNews
 篇章级文本分类任务我们选用了由清华大学自然语言处理实验室发布的新闻数据集**THUCNews**。
 我们采用的是其中一个子集，需要将新闻分成10个类别中的一个。
+评测指标为：Accuracy
 
 | 模型 | 开发集 | 测试集 | 
 | :------- | :---------: | :---------: | 
