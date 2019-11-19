@@ -128,6 +128,21 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 为了对比基线效果，我们在以下几个中文数据集上进行了测试，包括`句子级`和`篇章级`任务。
 对于`BERT-wwm-ext`、`RoBERTa-wwm-ext`、`RoBERTa-wwm-ext-large`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
 
+最佳学习率：  
+| 模型 | BERT | ERNIE | BERT-wwm* |
+| :------- | :---------: | :---------: | :---------: |
+| CMRC 2018 | 3e-5 | 8e-5 | 3e-5 |
+| DRCD | 3e-5 | 8e-5 | 3e-5 |
+| CJRC | 4e-5 | 8e-5 | 4e-5 |
+| XNLI | 3e-5 | 5e-5 | 3e-5 |
+| ChnSentiCorp | 2e-5 | 5e-5 | 2e-5 |
+| LCQMC  | 2e-5 | 3e-5 | 2e-5 |
+| BQ Corpus | 3e-5 | 5e-5 | 3e-5 |
+| THUCNews | 2e-5 | 5e-5 | 2e-5 |
+
+*代表所有wwm系列模型 (BERT-wwm, BERT-wwm-ext, RoBERTa-wwm-ext, RoBERTa-wwm-ext-large)
+
+
 **下面仅列举部分结果，完整结果请查看我们的[技术报告](https://arxiv.org/abs/1906.08101)。**
 
 - [**CMRC 2018**：篇章片段抽取型阅读理解（简体中文）](https://github.com/ymcui/cmrc2018)

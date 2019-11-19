@@ -114,6 +114,20 @@ We experiment on several Chinese datasets, including sentence-level to document-
 
 **We only list partial results here and kindly advise the readers to read our [technical report](https://arxiv.org/abs/1906.08101).**
 
+Best Learning Rate:  
+| Model | BERT | ERNIE | BERT-wwm* |
+| :------- | :---------: | :---------: | :---------: |
+| CMRC 2018 | 3e-5 | 8e-5 | 3e-5 |
+| DRCD | 3e-5 | 8e-5 | 3e-5 |
+| CJRC | 4e-5 | 8e-5 | 4e-5 |
+| XNLI | 3e-5 | 5e-5 | 3e-5 |
+| ChnSentiCorp | 2e-5 | 5e-5 | 2e-5 |
+| LCQMC  | 2e-5 | 3e-5 | 2e-5 |
+| BQ Corpus | 3e-5 | 5e-5 | 3e-5 |
+| THUCNews | 2e-5 | 5e-5 | 2e-5 |
+* represents all related models (BERT-wwm, BERT-wwm-ext, RoBERTa-wwm-ext, RoBERTa-wwm-ext-large)
+
+
 - [**CMRC 2018**：Span-Extraction Machine Reading Comprehension (Simplified Chinese)](https://github.com/ymcui/cmrc2018)
 - [**DRCD**：Span-Extraction Machine Reading Comprehension (Traditional Chinese)](https://github.com/DRCSolutionService/DRCD)
 - [**CJRC**: Chinese Judiciary Reading Comprehension](http://cail.cipsc.org.cn)
