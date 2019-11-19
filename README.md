@@ -129,6 +129,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 对于`BERT-wwm-ext`、`RoBERTa-wwm-ext`、`RoBERTa-wwm-ext-large`，我们**没有进一步调整最佳学习率**，而是直接使用了`BERT-wwm`的最佳学习率。
 
 最佳学习率：  
+
 | 模型 | BERT | ERNIE | BERT-wwm* |
 | :------- | :---------: | :---------: | :---------: |
 | CMRC 2018 | 3e-5 | 8e-5 | 3e-5 |
