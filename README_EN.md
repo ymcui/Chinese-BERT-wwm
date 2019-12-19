@@ -11,7 +11,7 @@ For further accelerating Chinese natural language processing, we provide **Chine
 ## News
 **2019/12/19 The models in this repository now can be easily accessed through [Huggingface-Transformers](https://github.com/huggingface/transformers), check [Quick Load](#Quick-Load)**
 
-**2019/10/14 We release `RoBERTa-wwm-ext-large`, check [Download](#Download)**
+2019/10/14 We release `RoBERTa-wwm-ext-large`, check [Download](#Download)
 
 2019/9/10 We release `RoBERTa-wwm-ext`, check [Download](#Download)
 
