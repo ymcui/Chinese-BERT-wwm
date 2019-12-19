@@ -17,7 +17,9 @@
 
 
 ## 新闻
-**2019/10/14 发布萝卜塔RoBERTa-wwm-ext-large模型，查看[中文模型下载](#中文模型下载)**
+**2019/12/19 本目录发布的模型已接入[Huggingface-Transformers](https://github.com/huggingface/transformers)，查看[快速加载](#快速加载)**
+
+2019/10/14 发布萝卜塔RoBERTa-wwm-ext-large模型，查看[中文模型下载](#中文模型下载)
 
 2019/9/10 发布萝卜塔RoBERTa-wwm-ext模型，查看[中文模型下载](#中文模型下载)
 
@@ -95,6 +97,20 @@ chinese_wwm_L-12_H-768_A-12.zip
 其中`bert_config.json`和`vocab.txt`与谷歌原版`BERT-base, Chinese`完全一致。
 PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件。
 
+### 快速加载
+依托于[Huggingface-Transformers 2.2.2](https://github.com/huggingface/transformers)，可轻松调用以上模型。
+```
+tokenizer = AutoTokenizer.from_pretrained("MODEL_NAME")
+model = AutoModel.from_pretrained("MODEL_NAME")
+```
+其中`MODEL_NAME`对应列表如下：
+
+| 模型名 | MODEL_NAME |
+| - | - |
+| RoBERTa-wwm-ext-large | hfl/chinese-roberta-wwm-ext-large |
+| RoBERTa-wwm-ext | hfl/chinese-roberta-wwm-ext |
+| BERT-wwm-ext | hfl/chinese-bert-wwm-ext |
+| BERT-wwm | hfl/chinese-bert-wwm |
 
 ### 测试任务数据
 我们提供部分任务数据，请查看`data`目录了解。

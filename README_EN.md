@@ -9,6 +9,8 @@ For further accelerating Chinese natural language processing, we provide **Chine
 
 
 ## News
+**2019/12/19 The models in this repository now can be easily accessed through [Huggingface-Transformers](https://github.com/huggingface/transformers), check [Quick Load](#Quick-Load)**
+
 **2019/10/14 We release `RoBERTa-wwm-ext-large`, check [Download](#Download)**
 
 2019/9/10 We release `RoBERTa-wwm-ext`, check [Download](#Download)
@@ -87,7 +89,22 @@ chinese_wwm_L-12_H-768_A-12.zip
 `bert_config.json` and `vocab.txt` are identical to the original **`BERT-base, Chinese`** by Google。
 
 
-#### Task Data
+### Quick Load
+With [Huggingface-Transformers](https://github.com/huggingface/transformers), the models above could be easily accessed and loaded through the following codes.
+```
+tokenizer = AutoTokenizer.from_pretrained("MODEL_NAME")
+model = AutoModel.from_pretrained("MODEL_NAME")
+```
+The actual model and its `MODEL_NAME` are listed below.
+
+| Original Model | MODEL_NAME |
+| - | - |
+| RoBERTa-wwm-ext-large | hfl/chinese-roberta-wwm-ext-large |
+| RoBERTa-wwm-ext | hfl/chinese-roberta-wwm-ext |
+| BERT-wwm-ext | hfl/chinese-bert-wwm-ext |
+| BERT-wwm | hfl/chinese-bert-wwm |
+
+### Task Data
 We only provide the data that is publically available, check `data` directory.
 
 
