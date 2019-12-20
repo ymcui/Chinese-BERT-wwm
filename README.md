@@ -100,9 +100,11 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ### 快速加载
 依托于[Huggingface-Transformers 2.2.2](https://github.com/huggingface/transformers)，可轻松调用以上模型。
 ```
-tokenizer = AutoTokenizer.from_pretrained("MODEL_NAME")
-model = AutoModel.from_pretrained("MODEL_NAME")
+tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
+model = BertModel.from_pretrained("MODEL_NAME")
 ```
+**注意：本目录中的所有模型均使用BertTokenizer以及BertModel加载，请勿使用RobertaTokenizer/RobertaModel！**
+
 其中`MODEL_NAME`对应列表如下：
 
 | 模型名 | MODEL_NAME |

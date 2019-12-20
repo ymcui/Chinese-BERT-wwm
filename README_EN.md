@@ -92,9 +92,11 @@ chinese_wwm_L-12_H-768_A-12.zip
 ### Quick Load
 With [Huggingface-Transformers](https://github.com/huggingface/transformers), the models above could be easily accessed and loaded through the following codes.
 ```
-tokenizer = AutoTokenizer.from_pretrained("MODEL_NAME")
-model = AutoModel.from_pretrained("MODEL_NAME")
+tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
+model = BertModel.from_pretrained("MODEL_NAME")
 ```
+**Notice: Please use BertTokenizer and BertModel for loading these model. DO NOT use RobertaTokenizer/RobertaModel!**
+
 The actual model and its `MODEL_NAME` are listed below.
 
 | Original Model | MODEL_NAME |
