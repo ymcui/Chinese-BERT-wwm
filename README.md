@@ -8,11 +8,6 @@
 
 ![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
 
-**微信公众号文章介绍**
-
-- 哈工大讯飞联合实验室：https://mp.weixin.qq.com/s/EE6dEhvpKxqnVW_bBAKrnA
-- 机器之心：https://mp.weixin.qq.com/s/88OwaHqnrVMQ7vH98INA3w
-
 本项目基于谷歌官方的BERT：https://github.com/google-research/bert
 
 
@@ -330,7 +325,7 @@ model = BertModel.from_pretrained("MODEL_NAME")
 - RBT3：由RoBERTa-wwm-ext 3层进行初始化，继续训练了1M步
 - RBTL3：由RoBERTa-wwm-ext-large 3层进行初始化，继续训练了1M步
 - RBT的名字是RoBERTa三个音节首字母组成，L代表large模型
-- 直接使用RoBERTa-wwm-ext-large前三层进行初始化并进行下游任务的训练将显著降低效果，例如在CMRC 2018上测试集仅能达到42.9/65.3，而RBTL3能达到63.3 / 83.4
+- 直接使用RoBERTa-wwm-ext-large前三层进行初始化并进行下游任务的训练将显著降低效果，例如在CMRC 2018上测试集仅能达到42.9/65.3，而RBTL3能达到63.3/83.4
 
 
 ## 使用建议
