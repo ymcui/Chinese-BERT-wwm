@@ -12,7 +12,9 @@
 
 
 ## 新闻
-**2020/1/20 祝大家鼠年大吉，本次发布了RBT3、RBTL3（3层RoBERTa-wwm-ext-base/large），查看[小参数量模型](#小参数量模型)**
+**2020/2/26 哈工大讯飞联合实验室发布[知识蒸馏工具TextBrewer](https://github.com/airaria/TextBrewer)**
+
+2020/1/20 祝大家鼠年大吉，本次发布了RBT3、RBTL3（3层RoBERTa-wwm-ext-base/large），查看[小参数量模型](#小参数量模型)
 
 2019/12/19 本目录发布的模型已接入[Huggingface-Transformers](https://github.com/huggingface/transformers)，查看[快速加载](#快速加载)
 
@@ -250,7 +252,7 @@ model = BertModel.from_pretrained("MODEL_NAME")
 | BERT | 94.7 (94.3) | 95.0 (94.7) |
 | ERNIE | 95.4 (94.8) | 95.4 **(95.3)** |
 | **BERT-wwm** | 95.1 (94.5) | 95.4 (95.0) |
-| **BERT-wwm-ext** | 95.4 （94.6) | 95.3 (94.7) |
+| **BERT-wwm-ext** | 95.4 (94.6) | 95.3 (94.7) |
 | **RoBERTa-wwm-ext** | 95.0 (94.6) | 95.6 (94.8) |
 | **RoBERTa-wwm-ext-large** | **95.8 (94.9)** | **95.8** (94.9) |
 
