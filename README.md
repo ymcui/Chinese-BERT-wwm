@@ -1,14 +1,18 @@
 [**中文说明**](https://github.com/ymcui/Chinese-BERT-wwm/) | [**English**](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md)
 
-## 中文预训练BERT-wwm（Pre-Trained Chinese BERT with Whole Word Masking）
+<p align="center">
+    <br>
+    <img src="./pics/banner.png" width="500"/>
+    <br>
+</p>
+
 在自然语言处理领域中，预训练模型（Pre-trained Models）已成为非常重要的基础技术。
-为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-ext-large。  
+为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-ext-large, RBT3, RBTL3。  
 
-**更多细节请参考我们的技术报告：https://arxiv.org/abs/1906.08101**
+**[Pre-Training with Whole Word Masking for Chinese BERT](https://arxiv.org/abs/1906.08101)**  
+Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping Hu
 
-![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
-
-本项目基于谷歌官方的BERT：https://github.com/google-research/bert
+本项目基于谷歌官方BERT：https://github.com/google-research/bert
 
 
 ## 新闻
