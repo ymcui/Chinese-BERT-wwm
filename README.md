@@ -21,7 +21,9 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 
 ## 新闻
-**2020/2/26 哈工大讯飞联合实验室发布[知识蒸馏工具TextBrewer](https://github.com/airaria/TextBrewer)**
+**2020/3/11 为了更好地了解需求，邀请您填写[调查问卷](https://wj.qq.com/s2/5637766/6281)，以便为大家提供更好的资源。**
+
+2020/2/26 哈工大讯飞联合实验室发布[知识蒸馏工具TextBrewer](https://github.com/airaria/TextBrewer)
 
 2020/1/20 祝大家鼠年大吉，本次发布了RBT3、RBTL3（3层RoBERTa-wwm-ext-base/large），查看[小参数量模型](#小参数量模型)
 
