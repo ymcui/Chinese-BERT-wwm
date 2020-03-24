@@ -11,7 +11,7 @@ For further accelerating Chinese natural language processing, we provide **Chine
 ## News
 2020/3/23 The models in this repository now can be easily accessed through [PaddleHub](https://github.com/PaddlePaddle/PaddleHub), check [Quick Load](#Quick-Load)
 
-**2020/2/26 We release a knowledge distillation toolkit [TextBrewer](https://github.com/airaria/TextBrewer)**
+2020/2/26 We release a knowledge distillation toolkit [TextBrewer](https://github.com/airaria/TextBrewer)
 
 2020/1/20 Happy Chinese New Year! We've released RBT3 and RBTL3 (3-layer RoBERTa-wwm-ext-base/large), check [Small Models](#Small-Models)
 
@@ -31,6 +31,7 @@ For further accelerating Chinese natural language processing, we provide **Chine
 |-|-|
 | [Introduction](#Introduction) | Introduction to BERT with Whole Word Masking (WWM) |
 | [Download](#Download) | Download links for Chinese BERT-wwm |
+| [Quick Load](#Quick-Load) | Learn how to quickly load our models through [🤗Transformers](https://github.com/huggingface/transformers) or [PaddleHub](https://github.com/PaddlePaddle/PaddleHub) |
 | [Model Comparison](#Model-Comparison) | Compare the models published in this repository |
 | [Baselines](#Baselines) | Baseline results for several Chinese NLP datasets (partial) |
 | [Small Models](#Small-Models) | 3-layer Transformer models |
@@ -98,8 +99,8 @@ chinese_wwm_L-12_H-768_A-12.zip
 `bert_config.json` and `vocab.txt` are identical to the original **`BERT-base, Chinese`** by Google。
 
 
-### Quick Load
-1. Huggingface-Transformers
+## Quick Load
+### Huggingface-Transformers
 
 With [Huggingface-Transformers](https://github.com/huggingface/transformers), the models above could be easily accessed and loaded through the following codes.
 ```
@@ -119,7 +120,7 @@ The actual model and its `MODEL_NAME` are listed below.
 | RBT3 | hfl/rbt3 |
 | RBTL3 | hfl/rbtl3 |
 
-2. PaddleHub
+### PaddleHub
 
 With [PaddleHub](https://github.com/PaddlePaddle/PaddleHub), we can download and install the model with one line of code.
 
@@ -130,7 +131,7 @@ module = hub.Module(name=MODULE_NAME)
 
 The actual model and its `MODULE_NAME` are listed below.
 
-| Original Model| MODULE_NAME |
+| Original Model | MODULE_NAME |
 | - | - |
 | RoBERTa-wwm-ext-large | [chinese-roberta-wwm-ext-large](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-roberta-wwm-ext-large&en_category=SemanticModel) |
 | RoBERTa-wwm-ext       | [chinese-roberta-wwm-ext](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-roberta-wwm-ext&en_category=SemanticModel) |
@@ -138,9 +139,6 @@ The actual model and its `MODULE_NAME` are listed below.
 | BERT-wwm              | [chinese-bert-wwm](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-bert-wwm&en_category=SemanticModel) |
 | RBT3                  | [rbt3](https://www.paddlepaddle.org.cn/hubdetail?name=rbt3&en_category=SemanticModel) |
 | RBTL3                 | [rbtl3](https://www.paddlepaddle.org.cn/hubdetail?name=rbtl3&en_category=SemanticModel) |
-
-### Task Data
-We only provide the data that is publically available, check `data` directory.
 
 
 ## Model Comparison
@@ -361,7 +359,7 @@ A: Use it as if you are using original BERT. Note that, you don't need to do CWS
 A: Unfortunately, I am not be able to release the code at the moment. As implementation is quite easy, I would suggest you to read #10 and #13.
 
 **Q: How can I download XXXXX dataset?**  
-A: Please see `data` directory. For copyright reasons, some of the datasets are not publically available. In that case, please search on GitHub or consult original authors for accessing.
+A: We only provide the data that is publically available, check `data` directory. For copyright reasons, some of the datasets are not publically available. In that case, please search on GitHub or consult original authors for accessing.
 
 **Q: How to use this model?**  
 A: Use it as if you are using original BERT. Note that, you don't need to do CWS for your text, as wwm only change the pre-training input but not the input for down-stream tasks.

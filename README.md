@@ -23,7 +23,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 ## 新闻
 2020/3/23 本目录发布的模型已接入[飞桨PaddleHub](https://github.com/PaddlePaddle/PaddleHub)，查看[快速加载](#快速加载)
 
-**2020/3/11 为了更好地了解需求，邀请您填写[调查问卷](https://wj.qq.com/s2/5637766/6281)，以便为大家提供更好的资源。**
+2020/3/11 为了更好地了解需求，邀请您填写[调查问卷](https://wj.qq.com/s2/5637766/6281)，以便为大家提供更好的资源。
 
 2020/2/26 哈工大讯飞联合实验室发布[知识蒸馏工具TextBrewer](https://github.com/airaria/TextBrewer)
 
@@ -45,9 +45,10 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 |-|-|
 | [简介](#简介) | 介绍BERT-wwm基本原理 |
 | [中文模型下载](#中文模型下载) | 提供了BERT-wwm的下载地址 |
+| [快速加载](#快速加载) | 介绍了如何使用[🤗Transformers](https://github.com/huggingface/transformers)、[PaddleHub](https://github.com/PaddlePaddle/PaddleHub)快速加载模型 |
 | [模型对比](#模型对比) | 提供了本目录中模型的参数对比 |
 | [中文基线系统效果](#中文基线系统效果) | 列举了部分中文基线系统效果 |
-| [new 小参数量模型](#小参数量模型) | 列举了小参数量模型（3层Transformer）的效果 |
+| [小参数量模型](#小参数量模型) | 列举了小参数量模型（3层Transformer）的效果 |
 | [使用建议](#使用建议) | 提供了若干使用中文预训练模型的建议 |
 | [英文模型下载](#英文模型下载) | 谷歌官方的英文BERT-wwm下载地址 |
 | [FAQ](#FAQ) | 常见问题答疑 |
@@ -113,8 +114,8 @@ chinese_wwm_L-12_H-768_A-12.zip
 PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件。
 
 
-### 快速加载
-1. 使用Huggingface-Transformers
+## 快速加载
+### 使用Huggingface-Transformers
 
 依托于[Huggingface-Transformers 2.2.2](https://github.com/huggingface/transformers)，可轻松调用以上模型。
 ```
@@ -134,9 +135,9 @@ model = BertModel.from_pretrained("MODEL_NAME")
 | RBT3 | hfl/rbt3 |
 | RBTL3 | hfl/rbtl3 |
 
-2. 使用PaddleHub
+### 使用PaddleHub
 
-依托[PaddleHub](https://github.com/PaddlePaddle/PaddleHub)，我们只需一行代码即可完成模型下载安装，十余行代码即可完成文本分类、序列标注、阅读理解等任务。
+依托[PaddleHub](https://github.com/PaddlePaddle/PaddleHub)，只需一行代码即可完成模型下载安装，十余行代码即可完成文本分类、序列标注、阅读理解等任务。
 
 ```
 import paddlehub as hub
@@ -153,12 +154,6 @@ module = hub.Module(name=MODULE_NAME)
 | BERT-wwm              | [chinese-bert-wwm](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-bert-wwm&en_category=SemanticModel) |
 | RBT3                  | [rbt3](https://www.paddlepaddle.org.cn/hubdetail?name=rbt3&en_category=SemanticModel) |
 | RBTL3                 | [rbtl3](https://www.paddlepaddle.org.cn/hubdetail?name=rbtl3&en_category=SemanticModel) |
-
-
-### 测试任务数据
-我们提供部分任务数据，请查看`data`目录了解。
-压缩包内包含训练和测试数据，同一目录下的`README.md`标明数据来源。
-由于一部分数据需要原作者授权，故我们无法提供下载链接，敬请谅解。
 
 
 ## 模型对比
@@ -392,7 +387,7 @@ A: 谷歌发布的中文BERT怎么用，这个就怎么用。
 A: 很遗憾，我不能提供相关代码，实现可以参考 [#10](https://github.com/ymcui/Chinese-BERT-wwm/issues/10) 和 [#13](https://github.com/ymcui/Chinese-BERT-wwm/issues/13)。
 
 **Q: 某某数据集在哪里下载？**  
-A: 请查看data目录。对于有版权的内容，请自行搜索或与原作者联系获取数据。
+A: 请查看`data`目录，任务目录下的`README.md`标明了数据来源。对于有版权的内容，请自行搜索或与原作者联系获取数据。
 
 **Q: 会有计划发布更大模型吗？比如BERT-large-wwm版本？**  
 A: 如果我们从实验中得到更好效果，会考虑发布更大的版本。
