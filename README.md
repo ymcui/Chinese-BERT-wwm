@@ -21,6 +21,8 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 
 ## 新闻
+2020/3/23 本目录发布的模型已接入[飞桨PaddleHub](https://github.com/PaddlePaddle/PaddleHub)，查看[快速加载](#快速加载)
+
 **2020/3/11 为了更好地了解需求，邀请您填写[调查问卷](https://wj.qq.com/s2/5637766/6281)，以便为大家提供更好的资源。**
 
 2020/2/26 哈工大讯飞联合实验室发布[知识蒸馏工具TextBrewer](https://github.com/airaria/TextBrewer)
@@ -112,6 +114,8 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 
 
 ### 快速加载
+1. 使用Huggingface-Transformers
+
 依托于[Huggingface-Transformers 2.2.2](https://github.com/huggingface/transformers)，可轻松调用以上模型。
 ```
 tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
@@ -129,6 +133,26 @@ model = BertModel.from_pretrained("MODEL_NAME")
 | BERT-wwm | hfl/chinese-bert-wwm |
 | RBT3 | hfl/rbt3 |
 | RBTL3 | hfl/rbtl3 |
+
+2. 使用PaddleHub
+
+依托[PaddleHub](https://github.com/PaddlePaddle/PaddleHub)，我们只需一行代码即可完成模型下载安装，十余行代码即可完成文本分类、序列标注、阅读理解等任务。
+
+```
+import paddlehub as hub
+module = hub.Module(name=MODULE_NAME)
+```
+
+其中`MODULE_NAME`对应列表如下：
+
+| 模型名 | MODULE_NAME |
+| - | - |
+| RoBERTa-wwm-ext-large | [chinese-roberta-wwm-ext-large](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-roberta-wwm-ext-large&en_category=SemanticModel) |
+| RoBERTa-wwm-ext       | [chinese-roberta-wwm-ext](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-roberta-wwm-ext&en_category=SemanticModel) |
+| BERT-wwm-ext          | [chinese-bert-wwm-ext](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-bert-wwm-ext&en_category=SemanticModel) |
+| BERT-wwm              | [chinese-bert-wwm](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-bert-wwm&en_category=SemanticModel) |
+| RBT3                  | [rbt3](https://www.paddlepaddle.org.cn/hubdetail?name=rbt3&en_category=SemanticModel) |
+| RBTL3                 | [rbtl3](https://www.paddlepaddle.org.cn/hubdetail?name=rbtl3&en_category=SemanticModel) |
 
 
 ### 测试任务数据

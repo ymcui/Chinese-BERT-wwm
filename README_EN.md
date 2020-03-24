@@ -9,6 +9,8 @@ For further accelerating Chinese natural language processing, we provide **Chine
 
 
 ## News
+2020/3/23 The models in this repository now can be easily accessed through [PaddleHub](https://github.com/PaddlePaddle/PaddleHub), check [Quick Load](#Quick-Load)
+
 **2020/2/26 We release a knowledge distillation toolkit [TextBrewer](https://github.com/airaria/TextBrewer)**
 
 2020/1/20 Happy Chinese New Year! We've released RBT3 and RBTL3 (3-layer RoBERTa-wwm-ext-base/large), check [Small Models](#Small-Models)
@@ -97,6 +99,8 @@ chinese_wwm_L-12_H-768_A-12.zip
 
 
 ### Quick Load
+1. Huggingface-Transformers
+
 With [Huggingface-Transformers](https://github.com/huggingface/transformers), the models above could be easily accessed and loaded through the following codes.
 ```
 tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
@@ -115,6 +119,25 @@ The actual model and its `MODEL_NAME` are listed below.
 | RBT3 | hfl/rbt3 |
 | RBTL3 | hfl/rbtl3 |
 
+2. PaddleHub
+
+With [PaddleHub](https://github.com/PaddlePaddle/PaddleHub), we can download and install the model with one line of code.
+
+```
+import paddlehub as hub
+module = hub.Module(name=MODULE_NAME)
+```
+
+The actual model and its `MODULE_NAME` are listed below.
+
+| Original Model| MODULE_NAME |
+| - | - |
+| RoBERTa-wwm-ext-large | [chinese-roberta-wwm-ext-large](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-roberta-wwm-ext-large&en_category=SemanticModel) |
+| RoBERTa-wwm-ext       | [chinese-roberta-wwm-ext](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-roberta-wwm-ext&en_category=SemanticModel) |
+| BERT-wwm-ext          | [chinese-bert-wwm-ext](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-bert-wwm-ext&en_category=SemanticModel) |
+| BERT-wwm              | [chinese-bert-wwm](https://www.paddlepaddle.org.cn/hubdetail?name=chinese-bert-wwm&en_category=SemanticModel) |
+| RBT3                  | [rbt3](https://www.paddlepaddle.org.cn/hubdetail?name=rbt3&en_category=SemanticModel) |
+| RBTL3                 | [rbtl3](https://www.paddlepaddle.org.cn/hubdetail?name=rbtl3&en_category=SemanticModel) |
 
 ### Task Data
 We only provide the data that is publically available, check `data` directory.
