@@ -440,7 +440,7 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 
 
 ## 引用
-如果本目录中的内容对你的研究工作有所帮助，请在文献中引用下述技术报告：
+如果本目录中的内容对你的研究工作有所帮助，欢迎在论文中引用下述技术报告：
 https://arxiv.org/abs/1906.08101
 ```
 @article{chinese-bert-wwm,
@@ -451,6 +451,15 @@ https://arxiv.org/abs/1906.08101
  }
 ```
 
+或 https://arxiv.org/abs/2004.13922
+```
+@article{cui-2020-revisiting,
+  title={Revisiting Pre-Trained Models for Chinese Natural Language Processing},
+  author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Wang, Shijin and Hu, Guoping},
+  journal={arXiv preprint arXiv:2004.13922},
+  year={2020}
+}
+```
 
 ## 致谢
 第一作者部分受到[**谷歌TensorFlow Research Cloud**](https://www.tensorflow.org/tfrc)计划资助。
