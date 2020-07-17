@@ -1,11 +1,20 @@
 [**中文说明**](https://github.com/ymcui/Chinese-BERT-wwm/) | [**English**](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md)
 
 ## Chinese BERT with Whole Word Masking
-For further accelerating Chinese natural language processing, we provide **Chinese pre-trained BERT with Whole Word Masking**. Meanwhile, we also compare the state-of-the-art Chinese pre-trained models in depth, including [BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm)
+For further accelerating Chinese natural language processing, we provide **Chinese pre-trained BERT with Whole Word Masking**. Meanwhile, we also compare the state-of-the-art Chinese pre-trained models in depth, including [BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm).
 
-![./pics/header.png](https://github.com/ymcui/Chinese-BERT-wwm/raw/master/pics/header.png)
+**[Pre-Training with Whole Word Masking for Chinese BERT](https://arxiv.org/abs/1906.08101)**  
+Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping Hu
 
-**Check our technical report on arXiv: https://arxiv.org/abs/1906.08101**
+This repository is developed based on：https://github.com/google-research/bert
+
+You may also interested in,
+
+- Chinese ELECTRA: https://github.com/ymcui/Chinese-ELECTRA
+- Chinese XLNet: https://github.com/ymcui/Chinese-XLNet
+- Knowledge Distillation Toolkit - TextBrewer: https://github.com/airaria/TextBrewer
+
+More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
@@ -146,13 +155,13 @@ We list comparisons on the models that were released in this project.
 `~BERT` means to inherit the attributes from original Google's BERT.
 
 | - | BERT<sup>Google</sup> | BERT-wwm | BERT-wwm-ext | RoBERTa-wwm-ext | RoBERTa-wwm-ext-large |
-| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | 
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: |
 | Masking | WordPiece | WWM<sup>[1]</sup> | WWM | WWM | WWM |
-| Type | BERT-base | BERT-base | BERT-base | BERT-base | **BERT-large** | 
-| Data Source | wiki | wiki | wiki+ext<sup>[2]</sup> | wiki+ext | wiki+ext | 
+| Type | BERT-base | BERT-base | BERT-base | BERT-base | **BERT-large** |
+| Data Source | wiki | wiki | wiki+ext<sup>[2]</sup> | wiki+ext | wiki+ext |
 | Training Tokens # | 0.4B | 0.4B | 5.4B | 5.4B | 5.4B |
-| Device | TPU Pod v2 | TPU v3 | TPU v3 | TPU v3 | **TPU Pod v3-32<sup>[3]</sup>** | 
-| Training Steps | ? | 100K<sup>MAX128</sup> <br/>+100K<sup>MAX512</sup> | 1M<sup>MAX128</sup> <br/>+400K<sup>MAX512</sup> | 1M<sup>MAX512</sup> | 2M<sup>MAX512</sup> | 
+| Device | TPU Pod v2 | TPU v3 | TPU v3 | TPU v3 | **TPU Pod v3-32<sup>[3]</sup>** |
+| Training Steps | ? | 100K<sup>MAX128</sup> <br/>+100K<sup>MAX512</sup> | 1M<sup>MAX128</sup> <br/>+400K<sup>MAX512</sup> | 1M<sup>MAX512</sup> | 2M<sup>MAX512</sup> |
 | Batch Size | ? | 2,560 / 384 | 2,560 / 384 | 384 | 512 |
 | Optimizer | AdamW | LAMB | LAMB | AdamW | AdamW |
 | Vocabulary | 21,128 | ~BERT<sup>[4]</sup> vocab | ~BERT vocab | ~BERT vocab | ~BERT vocab |
@@ -199,9 +208,9 @@ Evaluation Metrics: EM / F1
 
 | Model | Development | Test | Challenge |
 | :------- | :---------: | :---------: | :---------: |
-| BERT | 65.5 (64.4) / 84.5 (84.0) | 70.0 (68.7) / 87.0 (86.3) | 18.6 (17.0) / 43.3 (41.3) | 
-| ERNIE | 65.4 (64.3) / 84.7 (84.2) | 69.4 (68.2) / 86.6 (86.1) | 19.6 (17.0) / 44.3 (42.8) | 
-| **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) | 
+| BERT | 65.5 (64.4) / 84.5 (84.0) | 70.0 (68.7) / 87.0 (86.3) | 18.6 (17.0) / 43.3 (41.3) |
+| ERNIE | 65.4 (64.3) / 84.7 (84.2) | 69.4 (68.2) / 86.6 (86.1) | 19.6 (17.0) / 44.3 (42.8) |
+| **BERT-wwm** | 66.3 (65.0) / 85.6 (84.7) | 70.5 (69.1) / 87.4 (86.7) | 21.0 (19.3) / 47.0 (43.9) |
 | **BERT-wwm-ext** | 67.1 (65.6) / 85.7 (85.0) | 71.4 (70.0) / 87.7 (87.0) | 24.0 (20.0) / 47.3 (44.6) |
 | **RoBERTa-wwm-ext** | 67.4 (66.5) / 87.2 (86.5) | 72.6 (71.4) / 89.4 (88.8) | 26.2 (24.6) / 51.0 (49.1) |
 | **RoBERTa-wwm-ext-large** | **68.5 (67.6) / 88.4 (87.9)** | **74.2 (72.4) / 90.6 (90.0)** | **31.5 (30.1) / 60.1 (57.5)** |
@@ -213,11 +222,11 @@ Evaluation Metrics: EM / F1
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
-| BERT | 83.1 (82.7) / 89.9 (89.6) | 82.2 (81.6) / 89.2 (88.8) | 
-| ERNIE | 73.2 (73.0) / 83.9 (83.8) | 71.9 (71.4) / 82.5 (82.3) | 
-| **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) | 
+| BERT | 83.1 (82.7) / 89.9 (89.6) | 82.2 (81.6) / 89.2 (88.8) |
+| ERNIE | 73.2 (73.0) / 83.9 (83.8) | 71.9 (71.4) / 82.5 (82.3) |
+| **BERT-wwm** | 84.3 (83.4) / 90.5 (90.2) | 82.8 (81.8) / 89.7 (89.0) |
 | **BERT-wwm-ext** | 85.0 (84.5) / 91.2 (90.9) | 83.6 (83.0) / 90.4 (89.9) |
-| **RoBERTa-wwm-ext** | 86.6 (85.9) / 92.5 (92.2) | 85.6 (85.2) / 92.0 (91.7) | 
+| **RoBERTa-wwm-ext** | 86.6 (85.9) / 92.5 (92.2) | 85.6 (85.2) / 92.0 (91.7) |
 | **RoBERTa-wwm-ext-large** | **89.6 (89.1) / 94.8 (94.4)** | **89.6 (88.9) / 94.5 (94.1)** |
 
 
@@ -227,10 +236,10 @@ Evaluation Metrics: EM / F1
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
-| BERT | 54.6 (54.0) / 75.4 (74.5) | 55.1 (54.1) / 75.2 (74.3) | 
-| ERNIE | 54.3 (53.9) / 75.3 (74.6) | 55.0 (53.9) / 75.0 (73.9) | 
-| **BERT-wwm** | 54.7 (54.0) / 75.2 (74.8) | 55.1 (54.1) / 75.4 (74.4) | 
-| **BERT-wwm-ext** | 55.6 (54.8) / 76.0 (75.3) | 55.6 (54.9) / 75.8 (75.0) | 
+| BERT | 54.6 (54.0) / 75.4 (74.5) | 55.1 (54.1) / 75.2 (74.3) |
+| ERNIE | 54.3 (53.9) / 75.3 (74.6) | 55.0 (53.9) / 75.0 (73.9) |
+| **BERT-wwm** | 54.7 (54.0) / 75.2 (74.8) | 55.1 (54.1) / 75.4 (74.4) |
+| **BERT-wwm-ext** | 55.6 (54.8) / 76.0 (75.3) | 55.6 (54.9) / 75.8 (75.0) |
 | **RoBERTa-wwm-ext** | 58.7 (57.6) / 79.1 (78.3) | 59.0 (57.8) / 79.0 (78.0) |
 | **RoBERTa-wwm-ext-large** | **62.1 (61.1) / 82.4 (81.6)** | **62.4 (61.4) / 82.2 (81.0)** |
 
@@ -241,9 +250,9 @@ Evaluation Metrics: Accuracy
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
-| BERT | 77.8 (77.4) | 77.8 (77.5) | 
-| ERNIE | 79.7 (79.4) | 78.6 (78.2) | 
-| **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) | 
+| BERT | 77.8 (77.4) | 77.8 (77.5) |
+| ERNIE | 79.7 (79.4) | 78.6 (78.2) |
+| **BERT-wwm** | 79.0 (78.4) | 78.2 (78.0) |
 | **BERT-wwm-ext** | 79.4 (78.6) | 78.7 (78.3) |
 | **RoBERTa-wwm-ext** | 80.0 (79.2) | 78.8 (78.3) |
 | **RoBERTa-wwm-ext-large** | **82.1 (81.3)** | **81.2 (80.6)** |
@@ -269,7 +278,7 @@ Evaluation Metrics: Accuracy
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
-| BERT | 89.4 (88.4) | 86.9 (86.4) |  
+| BERT | 89.4 (88.4) | 86.9 (86.4) |
 | ERNIE | 89.8 (89.6) | **87.2 (87.0)** |
 | **BERT-wwm** | 89.4 (89.2) | 87.0 (86.8) |
 | **BERT-wwm-ext** | 89.6 (89.2) | 87.1 (86.6) |
@@ -281,7 +290,7 @@ Evaluation Metrics: Accuracy
 
 | Model | Development | Test |
 | :------- | :---------: | :---------: |
-| BERT | 86.0 (85.5) | 84.8 (84.6) | 
+| BERT | 86.0 (85.5) | 84.8 (84.6) |
 | ERNIE | 86.3 (85.5) | 85.0 (84.6) |
 | **BERT-wwm** | 86.1 (85.6) | 85.2 **(84.9)** |
 | **BERT-wwm-ext** | **86.4** (85.5) | 85.3 (84.8) |
@@ -293,8 +302,8 @@ Evaluation Metrics: Accuracy
 Released by Tsinghua University, which contains news in 10 categories.
 Evaluation Metrics: Accuracy
 
-| Model | Development | Test | 
-| :------- | :---------: | :---------: | 
+| Model | Development | Test |
+| :------- | :---------: | :---------: |
 | BERT | 97.7 (97.4) | 97.8 (97.6) |
 | ERNIE | 97.6 (97.3) | 97.5 (97.3) |
 | **BERT-wwm** | 98.0 (97.6) | 97.8 (97.6) |
@@ -305,19 +314,19 @@ Evaluation Metrics: Accuracy
 ### Small Models
 We list RBT3 and RBTL3 results on several NLP tasks. Note that, we only list test set results.
 
-| Model | CMRC 2018 | DRCD | XNLI | CSC | LCQMC | BQ | Average | Params | 
-| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | 
+| Model | CMRC 2018 | DRCD | XNLI | CSC | LCQMC | BQ | Average | Params |
+| :------- | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
 | RoBERTa-wwm-ext-large | 74.2 / 90.6 | 89.6 / 94.5 | 81.2 | 95.8 | 87.0 | 85.8 | 87.335 | 325M |
 | RoBERTa-wwm-ext | 72.6 / 89.4 | 85.6 / 92.0 | 78.8 | 95.6 | 86.4 | 85.0 | 85.675 | 102M |
-| RBTL3 | 63.3 / 83.4 | 77.2 / 85.6 | 74.0 | 94.2 | 85.1 | 83.6 | 80.800 | 61M (59.8%) | 
-| RBT3 | 62.2 / 81.8 | 75.0 / 83.9 | 72.3 | 92.8 | 85.1 | 83.3 | 79.550 | 38M (37.3%) | 
+| RBTL3 | 63.3 / 83.4 | 77.2 / 85.6 | 74.0 | 94.2 | 85.1 | 83.6 | 80.800 | 61M (59.8%) |
+| RBT3 | 62.2 / 81.8 | 75.0 / 83.9 | 72.3 | 92.8 | 85.1 | 83.3 | 79.550 | 38M (37.3%) |
 
 Relative performance:
 
 | Model | CMRC 2018 | DRCD | XNLI | CSC | LCQMC | BQ | Average | AVG-C |
 | :------- | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
 | RoBERTa-wwm-ext-large | 102.2% / 101.3% | 104.7% / 102.7% | 103.0% | 100.2% | 100.7% | 100.9% | 101.9% | 101.2% |
-| RoBERTa-wwm-ext | 100% / 100% | 100% / 100% | 100% | 100% | 100% | 100% | 100% | 100% | 
+| RoBERTa-wwm-ext | 100% / 100% | 100% / 100% | 100% | 100% | 100% | 100% | 100% | 100% |
 | RBTL3 | 87.2% / 93.3% | 90.2% / 93.0% | 93.9% | 98.5% | 98.5% | 98.4% | 94.3% | 97.35% |
 | RBT3 | 85.7% / 91.5% | 87.6% / 91.2% | 91.8% | 97.1% | 98.5% | 98.0% | 92.9% | 96.35% |
 
