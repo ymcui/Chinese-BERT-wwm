@@ -18,6 +18,8 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
+2020/8/27 We are happy to announce that our model is on top of GLUE benchmark, check [leaderboard](https://gluebenchmark.com/leaderboard).
+
 2020/3/23 The models in this repository now can be easily accessed through [PaddleHub](https://github.com/PaddlePaddle/PaddleHub), check [Quick Load](#Quick-Load)
 
 2020/2/26 We release a knowledge distillation toolkit [TextBrewer](https://github.com/airaria/TextBrewer)
