@@ -28,7 +28,9 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 ### 哈工大讯飞联合实验室（HFL）2021提前批校园招聘开始了！欢迎各位[投递简历](https://wj.qq.com/s2/6730642/762d)！
 
 ## 新闻
-**2020/8/27 哈工大讯飞联合实验室在通用自然语言理解评测GLUE中荣登榜首，查看[GLUE榜单](https://gluebenchmark.com/leaderboard)，[新闻](http://dwz.date/ckrD)。**
+**2020/9/15 我们的论文"Revisiting Pre-Trained Models for Chinese Natural Language Processing"被[Findings of EMNLP](https://2020.emnlp.org)录用为长文。**
+
+2020/8/27 哈工大讯飞联合实验室在通用自然语言理解评测GLUE中荣登榜首，查看[GLUE榜单](https://gluebenchmark.com/leaderboard)，[新闻](http://dwz.date/ckrD)。
 
 2020/3/23 本目录发布的模型已接入[飞桨PaddleHub](https://github.com/PaddlePaddle/PaddleHub)，查看[快速加载](#快速加载)
 
@@ -449,8 +451,18 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 
 
 ## 引用
-如果本目录中的内容对你的研究工作有所帮助，欢迎在论文中引用下述技术报告：
-https://arxiv.org/abs/1906.08101
+如果本目录中的内容对你的研究工作有所帮助，欢迎在论文中引用下述技术报告。
+- 首选：https://arxiv.org/abs/2004.13922
+```
+@inproceedings{cui-etal-2020-revisiting,
+    title={Revisiting Pre-Trained Models for Chinese Natural Language Processing},
+    author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Wang, Shijin and Hu, Guoping},
+    booktitle = "Findings of EMNLP",
+    year = "2020",
+    publisher = "Association for Computational Linguistics"
+}
+```
+- 备选：https://arxiv.org/abs/1906.08101
 ```
 @article{chinese-bert-wwm,
   title={Pre-Training with Whole Word Masking for Chinese BERT},
@@ -460,15 +472,6 @@ https://arxiv.org/abs/1906.08101
  }
 ```
 
-或 https://arxiv.org/abs/2004.13922
-```
-@article{cui-2020-revisiting,
-  title={Revisiting Pre-Trained Models for Chinese Natural Language Processing},
-  author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Wang, Shijin and Hu, Guoping},
-  journal={arXiv preprint arXiv:2004.13922},
-  year={2020}
-}
-```
 
 ## 致谢
 第一作者部分受到[**谷歌TensorFlow Research Cloud**](https://www.tensorflow.org/tfrc)计划资助。

@@ -18,6 +18,8 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
+**2020/9/15 Our paper "Revisiting Pre-Trained Models for Chinese Natural Language Processing" is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.**
+
 2020/8/27 We are happy to announce that our model is on top of GLUE benchmark, check [leaderboard](https://gluebenchmark.com/leaderboard).
 
 2020/3/23 The models in this repository now can be easily accessed through [PaddleHub](https://github.com/PaddlePaddle/PaddleHub), check [Quick Load](#Quick-Load)
@@ -414,7 +416,17 @@ A: integrate whole word masking (wwm) into RoBERTa model, specifically:
 
 ## Citation
 If you find the technical report or resource is useful, please cite the following technical report in your paper.
-https://arxiv.org/abs/1906.08101
+- Primary: https://arxiv.org/abs/2004.13922
+```
+@inproceedings{cui-etal-2020-revisiting,
+    title={Revisiting Pre-Trained Models for Chinese Natural Language Processing},
+    author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Wang, Shijin and Hu, Guoping},
+    booktitle = "Findings of EMNLP",
+    year = "2020",
+    publisher = "Association for Computational Linguistics"
+}
+```
+- Secondary: https://arxiv.org/abs/1906.08101  
 ```
 @article{chinese-bert-wwm,
   title={Pre-Training with Whole Word Masking for Chinese BERT},
@@ -422,16 +434,6 @@ https://arxiv.org/abs/1906.08101
   journal={arXiv preprint arXiv:1906.08101},
   year={2019}
  }
-```
-
-or https://arxiv.org/abs/2004.13922
-```
-@article{cui-2020-revisiting,
-  title={Revisiting Pre-Trained Models for Chinese Natural Language Processing},
-  author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Wang, Shijin and Hu, Guoping},
-  journal={arXiv preprint arXiv:2004.13922},
-  year={2020}
-}
 ```
 
 ## Disclaimer
