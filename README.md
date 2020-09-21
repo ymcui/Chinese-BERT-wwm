@@ -28,7 +28,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 ### 哈工大讯飞联合实验室（HFL）2021提前批校园招聘开始了！欢迎各位[投递简历](https://wj.qq.com/s2/6730642/762d)！
 
 ## 新闻
-**2020/9/15 我们的论文"Revisiting Pre-Trained Models for Chinese Natural Language Processing"被[Findings of EMNLP](https://2020.emnlp.org)录用为长文。**
+**2020/9/15 我们的论文["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922)被[Findings of EMNLP](https://2020.emnlp.org)录用为长文。**
 
 2020/8/27 哈工大讯飞联合实验室在通用自然语言理解评测GLUE中荣登榜首，查看[GLUE榜单](https://gluebenchmark.com/leaderboard)，[新闻](http://dwz.date/ckrD)。
 

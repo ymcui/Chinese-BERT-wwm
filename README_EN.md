@@ -18,7 +18,7 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
-**2020/9/15 Our paper "Revisiting Pre-Trained Models for Chinese Natural Language Processing" is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.**
+**2020/9/15 Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.**
 
 2020/8/27 We are happy to announce that our model is on top of GLUE benchmark, check [leaderboard](https://gluebenchmark.com/leaderboard).
 
