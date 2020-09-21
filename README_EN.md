@@ -51,7 +51,7 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 | [Useful Tips](#Useful-Tips) | Provide several useful tips for using Chinese pre-trained models |
 | [English BERT-wwm](#English-BERT-wwm) | Download English BERT-wwm (by Google) |
 | [FAQ](#FAQ) | Frequently Asked Questions |
-| [Reference](#Reference) | Reference |
+| [Citation](#Citation) | Citation |
 
 
 ## Introduction
