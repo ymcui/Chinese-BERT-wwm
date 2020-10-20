@@ -99,7 +99,7 @@ As all models are 'BERT-base' variants, we do not incidate 'base' in the followi
 | `BERT-base, Multilingual Cased`<sup>Google</sup>  | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
 | `BERT-base, Multilingual Uncased`<sup>Google</sup>  | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
 
-#### PyTorch Version
+### PyTorch Version
 
 If you need these models in PyTorch,
 
@@ -109,7 +109,7 @@ If you need these models in PyTorch,
 
 Steps: select one of the model in the page above → click "list all files in model" at the end of the model page → download bin/json files from the pop-up window
 
-#### Note
+### Note
 
 The whole zip package roughly takes ~400M.
 ZIP package includes the following files:

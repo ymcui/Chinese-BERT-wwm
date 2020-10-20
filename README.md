@@ -107,7 +107,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 > [1] 通用数据包括：百科、新闻、问答等数据，总词数达5.4B，处理后的文本大小约10G
 
-#### PyTorch版本
+### PyTorch版本
 
 如需PyTorch版本，
 
@@ -117,7 +117,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 方法：点击任意需要下载的model → 拉到最下方点击"List all files in model" → 在弹出的小框中下载bin和json文件。
 
-#### 使用说明
+### 使用说明
 
 中国大陆境内建议使用讯飞云下载点，境外用户建议使用谷歌下载点，base模型文件大小约**400M**。 
 以TensorFlow版`BERT-wwm, Chinese`为例，下载完毕后对zip文件进行解压得到：
