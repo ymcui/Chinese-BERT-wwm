@@ -89,6 +89,8 @@ As all models are 'BERT-base' variants, we do not incidate 'base' in the followi
 
 | Model | Data | Google Drive | iFLYTEK Cloud |
 | :------- | :--------- | :---------: | :---------: |
+| **`RBT6, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | - | **[TensorFlow（pw:XNMA）](http://pan.iflytek.com:80/link/B935B1F701A8FD352CAA74614126C4A2)** |
+| **`RBT4, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | - | **[TensorFlow（pw:e8dN）](http://pan.iflytek.com:80/link/7B04C5BF09812DB241BBA973D649824C)** |
 | **`RBTL3, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1Jzn1hYwmv0kXkfTeIvNT61Rn1IbRc-o8)**<br/>**[PyTorch](https://drive.google.com/open?id=1qs5OasLXXjOnR2XuGUh12NanUl0pkjEv)** | **[TensorFlow（pw:vySW）](https://pan.iflytek.com:443/link/0DD18FAC080BAF75DBA28FB5C0047760)** |
 | **`RBT3, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1-rvV0nBDvRCASbRz8M9Decc3_8Aw-2yi)**<br/>**[PyTorch](https://drive.google.com/open?id=1_LqmIxm8Nz1Abvlqb8QFZaxYo-TInOed)** | **[TensorFlow（pw:b9nx）](https://pan.iflytek.com:443/link/275E5B46185C982D4AF5AC295E1651B6)** |
 | **`RoBERTa-wwm-ext-large, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（pw:u6gC）](https://pan.iflytek.com:443/link/AC056611607108F33A744A0F56D0F6BE)** |
