@@ -466,11 +466,20 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 - 首选：https://arxiv.org/abs/2004.13922
 ```
 @inproceedings{cui-etal-2020-revisiting,
-    title={Revisiting Pre-Trained Models for Chinese Natural Language Processing},
-    author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Wang, Shijin and Hu, Guoping},
-    booktitle = "Findings of EMNLP",
+    title = "Revisiting Pre-Trained Models for {C}hinese Natural Language Processing",
+    author = "Cui, Yiming  and
+      Che, Wanxiang  and
+      Liu, Ting  and
+      Qin, Bing  and
+      Wang, Shijin  and
+      Hu, Guoping",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: Findings",
+    month = nov,
     year = "2020",
-    publisher = "Association for Computational Linguistics"
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.findings-emnlp.58",
+    pages = "657--668",
 }
 ```
 - 备选：https://arxiv.org/abs/1906.08101
