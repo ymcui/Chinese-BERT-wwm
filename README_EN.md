@@ -19,7 +19,9 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
-**2020/9/15 Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.**
+**2021/1/27 All models support TensorFlow 2 now. Please use transformers library to access them or download from https://huggingface.co/hfl**
+
+2020/9/15 Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.
 
 2020/8/27 We are happy to announce that our model is on top of GLUE benchmark, check [leaderboard](https://gluebenchmark.com/leaderboard).
 
@@ -29,6 +31,8 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 2020/1/20 Happy Chinese New Year! We've released RBT3 and RBTL3 (3-layer RoBERTa-wwm-ext-base/large), check [Small Models](#Small-Models)
 
+<details>
+<summary>Past News</summary>
 2019/12/19 The models in this repository now can be easily accessed through [Huggingface-Transformers](https://github.com/huggingface/transformers), check [Quick Load](#Quick-Load)
 
 2019/10/14 We release `RoBERTa-wwm-ext-large`, check [Download](#Download)
@@ -38,7 +42,7 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 2019/7/30 We release `BERT-wwm-ext`, which was trained on larger data, check [Download](#Download)
 
 2019/6/20 Initial version, pre-trained models could be downloaded through Google Drive, check [Download](#Download)
-
+</details>
 
 ## Guide
 | Section | Description |

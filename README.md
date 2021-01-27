@@ -27,7 +27,9 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 查看更多哈工大讯飞联合实验室（HFL）发布的资源：https://github.com/ymcui/HFL-Anthology
 
 ## 新闻
-**2020/9/15 我们的论文["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922)被[Findings of EMNLP](https://2020.emnlp.org)录用为长文。**
+**2021/1/27 所有模型已支持TensorFlow 2，请通过transformers库进行调用或下载。https://huggingface.co/hfl**
+
+2020/9/15 我们的论文["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922)被[Findings of EMNLP](https://2020.emnlp.org)录用为长文。
 
 2020/8/27 哈工大讯飞联合实验室在通用自然语言理解评测GLUE中荣登榜首，查看[GLUE榜单](https://gluebenchmark.com/leaderboard)，[新闻](http://dwz.date/ckrD)。
 
@@ -39,6 +41,8 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 2020/1/20 祝大家鼠年大吉，本次发布了RBT3、RBTL3（3层RoBERTa-wwm-ext-base/large），查看[小参数量模型](#小参数量模型)
 
+<details>
+<summary>历史新闻</summary>
 2019/12/19 本目录发布的模型已接入[Huggingface-Transformers](https://github.com/huggingface/transformers)，查看[快速加载](#快速加载)
 
 2019/10/14 发布萝卜塔RoBERTa-wwm-ext-large模型，查看[中文模型下载](#中文模型下载)
@@ -48,7 +52,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 2019/7/30 提供了在更大通用语料（5.4B词数）上训练的中文`BERT-wwm-ext`模型，查看[中文模型下载](#中文模型下载)
 
 2019/6/20 初始版本，模型已可通过谷歌下载，国内云盘也已上传完毕，查看[中文模型下载](#中文模型下载)
-
+</details>
 
 ## 内容导引
 | 章节 | 描述 |
