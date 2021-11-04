@@ -8,7 +8,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 This repository is developed based on：https://github.com/google-research/bert
 
-You may also interested in,
+You may also be interested in,
 
 - Chinese MacBERT: https://github.com/ymcui/MacBERT
 - Chinese ELECTRA: https://github.com/ymcui/Chinese-ELECTRA
@@ -435,8 +435,19 @@ A: integrate whole word masking (wwm) into RoBERTa model, specifically:
 4) extended training steps (1M steps)
 
 ## Citation
-If you find the technical report or resource is useful, please cite the following technical report in your paper.
-- Primary: https://arxiv.org/abs/2004.13922
+If you find the technical report or resource is useful, please cite our work in your paper.
+- Primary: https://ieeexplore.ieee.org/document/9599397  
+```
+@journal{cui-etal-2021-pretrain,
+  title={Pre-Training with Whole Word Masking for Chinese BERT},
+  author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Yang, Ziqing},
+  journal={IEEE Transactions on Audio, Speech and Language Processing},
+  year={2021},
+  url={https://ieeexplore.ieee.org/document/9599397},
+  doi={10.1109/TASLP.2021.3124365},
+ }
+```
+- Secondary: https://arxiv.org/abs/2004.13922  
 ```
 @inproceedings{cui-etal-2020-revisiting,
     title = "Revisiting Pre-Trained Models for {C}hinese Natural Language Processing",
@@ -454,15 +465,6 @@ If you find the technical report or resource is useful, please cite the followin
     url = "https://www.aclweb.org/anthology/2020.findings-emnlp.58",
     pages = "657--668",
 }
-```
-- Secondary: https://arxiv.org/abs/1906.08101  
-```
-@article{chinese-bert-wwm,
-  title={Pre-Training with Whole Word Masking for Chinese BERT},
-  author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Yang, Ziqing and Wang, Shijin and Hu, Guoping},
-  journal={arXiv preprint arXiv:1906.08101},
-  year={2019}
- }
 ```
 
 ## Disclaimer

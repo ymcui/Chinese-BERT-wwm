@@ -470,8 +470,20 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 
 
 ## 引用
-如果本目录中的内容对你的研究工作有所帮助，欢迎在论文中引用下述技术报告。
-- 首选：https://arxiv.org/abs/2004.13922
+如果本目录中的内容对你的研究工作有所帮助，欢迎在论文中引用下述论文。
+- 首选：https://ieeexplore.ieee.org/document/9599397
+```
+@journal{cui-etal-2021-pretrain,
+  title={Pre-Training with Whole Word Masking for Chinese BERT},
+  author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Yang, Ziqing},
+  journal={IEEE Transactions on Audio, Speech and Language Processing},
+  year={2021},
+  url={https://ieeexplore.ieee.org/document/9599397},
+  doi={10.1109/TASLP.2021.3124365},
+ }
+```
+
+- 或者：https://arxiv.org/abs/2004.13922
 ```
 @inproceedings{cui-etal-2020-revisiting,
     title = "Revisiting Pre-Trained Models for {C}hinese Natural Language Processing",
@@ -489,15 +501,6 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
     url = "https://www.aclweb.org/anthology/2020.findings-emnlp.58",
     pages = "657--668",
 }
-```
-- 备选：https://arxiv.org/abs/1906.08101
-```
-@article{chinese-bert-wwm,
-  title={Pre-Training with Whole Word Masking for Chinese BERT},
-  author={Cui, Yiming and Che, Wanxiang and Liu, Ting and Qin, Bing and Yang, Ziqing and Wang, Shijin and Hu, Guoping},
-  journal={arXiv preprint arXiv:1906.08101},
-  year={2019}
- }
 ```
 
 
