@@ -14,12 +14,15 @@ You may also be interested in,
 - Chinese ELECTRA: https://github.com/ymcui/Chinese-ELECTRA
 - Chinese XLNet: https://github.com/ymcui/Chinese-XLNet
 - Knowledge Distillation Toolkit - TextBrewer: https://github.com/airaria/TextBrewer
+- Model Pruning Toolkit - TextPruner: https://github.com/airaria/TextPruner
 
 More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 
 ## News
-**2021/1/27 All models support TensorFlow 2 now. Please use transformers library to access them or download from https://huggingface.co/hfl**
+**2021/12/17 We release a model pruning toolkit - TextPruner, check https://github.com/airaria/TextPruner**
+
+2021/1/27 All models support TensorFlow 2 now. Please use transformers library to access them or download from https://huggingface.co/hfl
 
 2020/9/15 Our paper ["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922) is accepted to [Findings of EMNLP](https://2020.emnlp.org) as a long paper.
 
