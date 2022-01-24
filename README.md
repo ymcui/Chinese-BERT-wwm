@@ -19,11 +19,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 其他相关资源：
 
-- 中文MacBERT预训练模型：https://github.com/ymcui/MacBERT
-- 中文ELECTRA预训练模型：https://github.com/ymcui/Chinese-ELECTRA
-- 中文XLNet预训练模型：https://github.com/ymcui/Chinese-XLNet
-- 知识蒸馏工具TextBrewer：https://github.com/airaria/TextBrewer
-- 模型裁剪工具TextPruner：https://github.com/airaria/TextPruner
+[中文MacBERT](https://github.com/ymcui/MacBERT) | [中文ELECTRA](https://github.com/ymcui/Chinese-ELECTRA) | [中文XLNet](https://github.com/ymcui/Chinese-XLNet) | [知识蒸馏工具TextBrewer](https://github.com/airaria/TextBrewer) | [模型裁剪工具TextPruner](https://github.com/airaria/TextPruner)
 
 查看更多哈工大讯飞联合实验室（HFL）发布的资源：https://github.com/ymcui/HFL-Anthology
 
@@ -104,6 +100,8 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 * **`BERT-large模型`**：24-layer, 1024-hidden, 16-heads, 330M parameters  
 * **`BERT-base模型`**：12-layer, 768-hidden, 12-heads, 110M parameters  
 
+**注意：开源版本不包含MLM任务的权重；如需做MLM任务，请进行二次预训练。**
+
 | 模型简称 | 语料 | Google下载 | 百度网盘下载 |
 | :------- | :--------- | :---------: | :---------: |
 | **`RBT6, Chinese`** | **EXT数据<sup>[1]</sup>** | - | **[TensorFlow（密码hniy）](https://pan.baidu.com/s/1_MDAIYIGVgDovWkSs51NDA?pwd=hniy)** |
@@ -128,7 +126,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 2）或者通过huggingface官网直接下载PyTorch版权重：https://huggingface.co/hfl
 
-方法：点击任意需要下载的model → 拉到最下方点击"List all files in model" → 在弹出的小框中下载bin和json文件。
+下载方法：点击任意需要下载的模型 → 选择"Files and versions"选项卡 → 下载对应的模型文件。
 
 ### 使用说明
 
@@ -150,7 +148,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ## 快速加载
 ### 使用Huggingface-Transformers
 
-依托于[Huggingface-Transformers 2.2.2](https://github.com/huggingface/transformers)，可轻松调用以上模型。
+依托于[🤗transformers库](https://github.com/huggingface/transformers)，可轻松调用以上模型。
 ```
 tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
 model = BertModel.from_pretrained("MODEL_NAME")
