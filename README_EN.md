@@ -3,24 +3,22 @@
 ## Chinese BERT with Whole Word Masking
 For further accelerating Chinese natural language processing, we provide **Chinese pre-trained BERT with Whole Word Masking**. Meanwhile, we also compare the state-of-the-art Chinese pre-trained models in depth, including [BERT](https://github.com/google-research/bert)、[ERNIE](https://github.com/PaddlePaddle/LARK/tree/develop/ERNIE)、[BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm).
 
-**[Pre-Training with Whole Word Masking for Chinese BERT](https://arxiv.org/abs/1906.08101)**  
-Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping Hu
+- **[Pre-Training with Whole Word Masking for Chinese BERT](https://ieeexplore.ieee.org/document/9599397)**  
+- Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang
+- Published in *IEEE/ACM Transactions on Audio, Speech, and Language Processing (TASLP)*
 
 This repository is developed based on：https://github.com/google-research/bert
 
-You may also be interested in,
+----
 
-- Chinese MacBERT: https://github.com/ymcui/MacBERT
-- Chinese ELECTRA: https://github.com/ymcui/Chinese-ELECTRA
-- Chinese XLNet: https://github.com/ymcui/Chinese-XLNet
-- Knowledge Distillation Toolkit - TextBrewer: https://github.com/airaria/TextBrewer
-- Model Pruning Toolkit - TextPruner: https://github.com/airaria/TextPruner
+[Chinese MacBERT](https://github.com/ymcui/MacBERT) | [Chinese ELECTRA](https://github.com/ymcui/Chinese-ELECTRA) | [Chinese XLNet](https://github.com /ymcui/Chinese-XLNet) | [Chinese BERT](https://github.com/ymcui/Chinese-BERT-wwm) | [TextBrewer](https://github.com/airaria/TextBrewer) | [TextPruner](https://github.com/airaria/TextPruner)
 
 More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
-
 ## News
-**2021/12/17 We release a model pruning toolkit - TextPruner, check https://github.com/airaria/TextPruner**
+**2022/3/30 We release a new pre-trained model called PERT, check https://github.com/ymcui/PERT **
+
+2021/12/17 We release a model pruning toolkit - TextPruner, check https://github.com/airaria/TextPruner
 
 2021/1/27 All models support TensorFlow 2 now. Please use transformers library to access them or download from https://huggingface.co/hfl
 
@@ -28,14 +26,14 @@ More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 2020/8/27 We are happy to announce that our model is on top of GLUE benchmark, check [leaderboard](https://gluebenchmark.com/leaderboard).
 
+<details>
+<summary>Past News</summary>
 2020/3/23 The models in this repository now can be easily accessed through [PaddleHub](https://github.com/PaddlePaddle/PaddleHub), check [Quick Load](#Quick-Load)
 
 2020/2/26 We release a knowledge distillation toolkit [TextBrewer](https://github.com/airaria/TextBrewer)
 
 2020/1/20 Happy Chinese New Year! We've released RBT3 and RBTL3 (3-layer RoBERTa-wwm-ext-base/large), check [Small Models](#Small-Models)
 
-<details>
-<summary>Past News</summary>
 2019/12/19 The models in this repository now can be easily accessed through [Huggingface-Transformers](https://github.com/huggingface/transformers), check [Quick Load](#Quick-Load)
 
 2019/10/14 We release `RoBERTa-wwm-ext-large`, check [Download](#Download)
@@ -439,7 +437,7 @@ A: integrate whole word masking (wwm) into RoBERTa model, specifically:
 
 ## Citation
 If you find the technical report or resource is useful, please cite our work in your paper.
-- Primary: https://ieeexplore.ieee.org/document/9599397  
+- Primary (Journal extension): https://ieeexplore.ieee.org/document/9599397  
 ```
 @journal{cui-etal-2021-pretrain,
   title={Pre-Training with Whole Word Masking for Chinese BERT},
@@ -450,7 +448,7 @@ If you find the technical report or resource is useful, please cite our work in 
   doi={10.1109/TASLP.2021.3124365},
  }
 ```
-- Secondary: https://arxiv.org/abs/2004.13922  
+- Secondary (conference paper): https://www.aclweb.org/anthology/2020.findings-emnlp.58
 ```
 @inproceedings{cui-etal-2020-revisiting,
     title = "Revisiting Pre-Trained Models for {C}hinese Natural Language Processing",
