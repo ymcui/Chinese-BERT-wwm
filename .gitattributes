@@ -1,1 +1,2 @@
 * linguist-language=python
+*.md linguist-language=Markdown

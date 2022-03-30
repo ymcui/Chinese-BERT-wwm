@@ -10,6 +10,7 @@
         <img alt="GitHub" src="https://img.shields.io/github/license/ymcui/Chinese-BERT-wwm.svg?color=blue&style=flat-square">
     </a>
 </p>
+
 在自然语言处理领域中，预训练语言模型（Pre-trained Language Models）已成为非常重要的基础技术。为了进一步促进中文信息处理的研究发展，我们发布了基于全词掩码（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-ext-large, RBT3, RBTL3等。  
 
 - **[Pre-Training with Whole Word Masking for Chinese BERT](https://ieeexplore.ieee.org/document/9599397)**  
