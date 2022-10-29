@@ -11,12 +11,14 @@ This repository is developed based on：https://github.com/google-research/bert
 
 ----
 
-[Chinese MacBERT](https://github.com/ymcui/MacBERT) | [Chinese ELECTRA](https://github.com/ymcui/Chinese-ELECTRA) | [Chinese XLNet](https://github.com/ymcui/Chinese-XLNet) | [Chinese BERT](https://github.com/ymcui/Chinese-BERT-wwm) | [TextBrewer](https://github.com/airaria/TextBrewer) | [TextPruner](https://github.com/airaria/TextPruner)
+[Chinese LERT](https://github.com/ymcui/LERT) | [Chinese/English PERT](https://github.com/ymcui/PERT) [Chinese MacBERT](https://github.com/ymcui/MacBERT) | [Chinese ELECTRA](https://github.com/ymcui/Chinese-ELECTRA) | [Chinese XLNet](https://github.com/ymcui/Chinese-XLNet) | [Chinese BERT](https://github.com/ymcui/Chinese-BERT-wwm) | [TextBrewer](https://github.com/airaria/TextBrewer) | [TextPruner](https://github.com/airaria/TextPruner)
 
 More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 ## News
-**2022/3/30 We release a new pre-trained model called PERT, check https://github.com/ymcui/PERT **
+<b>2022/10/29 We release a new pre-trained model called LERT, check https://github.com/ymcui/LERT/</b>
+
+2022/3/30 We release a new pre-trained model called PERT, check https://github.com/ymcui/PERT 
 
 2021/12/17 We release a model pruning toolkit - TextPruner, check https://github.com/airaria/TextPruner
 
