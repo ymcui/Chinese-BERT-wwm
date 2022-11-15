@@ -26,6 +26,8 @@
 查看更多哈工大讯飞联合实验室（HFL）发布的资源：https://github.com/ymcui/HFL-Anthology
 
 ## 新闻
+**2022/11/15 我们提出了中文小型预训练模型MiniRBT。查看：https://github.com/iflytek/MiniRBT**
+
 **2022/10/29 我们提出了一种融合语言学信息的预训练模型LERT。查看：https://github.com/ymcui/LERT**
 
 2022/3/30 我们开源了一种新预训练模型PERT。查看：https://github.com/ymcui/PERT
@@ -34,12 +36,12 @@
 
 2021/10/24 哈工大讯飞联合实验室发布面向少数民族语言的预训练模型CINO。查看：https://github.com/ymcui/Chinese-Minority-PLM
 
+<details>
+<summary>历史新闻</summary>
 2021/7/21 由哈工大SCIR多位学者撰写的[《自然语言处理：基于预训练模型的方法》](https://item.jd.com/13344628.html)已出版，欢迎大家选购。
 
 2021/1/27 所有模型已支持TensorFlow 2，请通过transformers库进行调用或下载。https://huggingface.co/hfl
 
-<details>
-<summary>历史新闻</summary>
 2020/9/15 我们的论文["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922)被[Findings of EMNLP](https://2020.emnlp.org)录用为长文。
 
 2020/8/27 哈工大讯飞联合实验室在通用自然语言理解评测GLUE中荣登榜首，查看[GLUE榜单](https://gluebenchmark.com/leaderboard)，[新闻](http://dwz.date/ckrD)。
@@ -396,6 +398,7 @@ module = hub.Module(name=MODULE_NAME)
 - RBT的名字是RoBERTa三个音节首字母组成，L代表large模型
 - 直接使用RoBERTa-wwm-ext-large前三层进行初始化并进行下游任务的训练将显著降低效果，例如在CMRC 2018上测试集仅能达到42.9/65.3，而RBTL3能达到63.3/83.4
 
+欢迎使用效果更优的中文小型预训练模型MiniRBT：https://github.com/iflytek/MiniRBT
 
 ## 使用建议
 * 初始学习率是非常重要的一个参数（不论是`BERT`还是其他模型），需要根据目标任务进行调整。
