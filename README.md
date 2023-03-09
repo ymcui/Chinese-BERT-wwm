@@ -26,18 +26,20 @@
 查看更多哈工大讯飞联合实验室（HFL）发布的资源：https://github.com/ymcui/HFL-Anthology
 
 ## 新闻
-**2022/11/15 我们提出了中文小型预训练模型MiniRBT。查看：https://github.com/iflytek/MiniRBT**
+**2023/3/9 我们提出了一种图文多模态预训练模型VLE，查看：https://github.com/iflytek/VLE **
 
-**2022/10/29 我们提出了一种融合语言学信息的预训练模型LERT。查看：https://github.com/ymcui/LERT**
+2022/11/15 我们提出了中文小型预训练模型MiniRBT。查看：https://github.com/iflytek/MiniRBT
+
+2022/10/29 我们提出了一种融合语言学信息的预训练模型LERT。查看：https://github.com/ymcui/LERT
 
 2022/3/30 我们开源了一种新预训练模型PERT。查看：https://github.com/ymcui/PERT
 
+<details>
+<summary>历史新闻</summary>
 2021/12/17 哈工大讯飞联合实验室推出模型裁剪工具包TextPruner。查看：https://github.com/airaria/TextPruner
 
 2021/10/24 哈工大讯飞联合实验室发布面向少数民族语言的预训练模型CINO。查看：https://github.com/ymcui/Chinese-Minority-PLM
 
-<details>
-<summary>历史新闻</summary>
 2021/7/21 由哈工大SCIR多位学者撰写的[《自然语言处理：基于预训练模型的方法》](https://item.jd.com/13344628.html)已出版，欢迎大家选购。
 
 2021/1/27 所有模型已支持TensorFlow 2，请通过transformers库进行调用或下载。https://huggingface.co/hfl
