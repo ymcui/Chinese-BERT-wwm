@@ -26,7 +26,9 @@
 查看更多哈工大讯飞联合实验室（HFL）发布的资源：https://github.com/ymcui/HFL-Anthology
 
 ## 新闻
-**2023/3/9 我们提出了一种图文多模态预训练模型VLE，查看：https://github.com/iflytek/VLE **
+**2023/3/28 开源了中文LLaMA&Alpaca大模型，可快速在PC上部署体验，查看：https://github.com/ymcui/Chinese-LLaMA-Alpaca**
+
+2023/3/9 我们提出了一种图文多模态预训练模型VLE，查看：https://github.com/iflytek/VLE 
 
 2022/11/15 我们提出了中文小型预训练模型MiniRBT。查看：https://github.com/iflytek/MiniRBT
 

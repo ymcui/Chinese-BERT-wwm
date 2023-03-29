@@ -16,7 +16,9 @@ This repository is developed based on：https://github.com/google-research/bert
 More resources by HFL: https://github.com/ymcui/HFL-Anthology
 
 ## News
-<b>2022/10/29 We release a new pre-trained model called LERT, check https://github.com/ymcui/LERT/</b>
+**Mar 28, 2023 We open-sourced Chinese LLaMA&Alpaca LLMs, which can be quickly deployed on PC. Check: https://github.com/ymcui/Chinese-LLaMA-Alpaca**
+
+2022/10/29 We release a new pre-trained model called LERT, check https://github.com/ymcui/LERT/
 
 2022/3/30 We release a new pre-trained model called PERT, check https://github.com/ymcui/PERT 
 
