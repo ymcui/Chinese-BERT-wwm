@@ -94,21 +94,20 @@ In this repository, we utilize [Language Technology Platform (LTP)](http://ltp.a
 ## Download
 As all models are 'BERT-base' variants, we do not incidate 'base' in the following model names.
 
+* **`BERT-large`**：24-layer, 1024-hidden, 16-heads, 330M parameters  
+
 * **`BERT-base`**：12-layer, 768-hidden, 12-heads, 110M parameters
 
-| Model | Data | Google Drive | iFLYTEK Cloud |
-| :------- | :--------- | :---------: | :---------: |
-| **`RBT6, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | - | **[TensorFlow（pw:hniy）](https://pan.baidu.com/s/1_MDAIYIGVgDovWkSs51NDA?pwd=hniy)** |
-| **`RBT4, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | - | **[TensorFlow（pw:sjpt）](https://pan.baidu.com/s/1MUrmuTULnMn3L1aw_dXxSA?pwd=sjpt)** |
-| **`RBTL3, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1Jzn1hYwmv0kXkfTeIvNT61Rn1IbRc-o8)**<br/>**[PyTorch](https://drive.google.com/open?id=1qs5OasLXXjOnR2XuGUh12NanUl0pkjEv)** | **[TensorFlow（pw:s6cu）](https://pan.baidu.com/s/1vV9ClBMbsSpt8wUpfQz62Q?pwd=s6cu)** |
-| **`RBT3, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1-rvV0nBDvRCASbRz8M9Decc3_8Aw-2yi)**<br/>**[PyTorch](https://drive.google.com/open?id=1_LqmIxm8Nz1Abvlqb8QFZaxYo-TInOed)** | **[TensorFlow（pw:5a57）](https://pan.baidu.com/s/1AnapwWj1YBZ_4E6AAtj2lg?pwd=5a57)** |
-| **`RoBERTa-wwm-ext-large, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（pw:dqqe）](https://pan.baidu.com/s/1F68xzCLWEonTEVP7HQ0Ciw?pwd=dqqe)** |
-| **`RoBERTa-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** <br/>**[PyTorch](https://drive.google.com/open?id=1eHM3l4fMo6DsQYGmey7UZGiTmQquHw25)** | **[TensorFlow（pw:vybq）](https://pan.baidu.com/s/1oR0cgSXE3Nz6dESxr98qVA?pwd=vybq)** |
-| **`BERT-wwm-ext, Chinese`** | **Wikipedia+Extended data<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（pw:wgnt）](https://pan.baidu.com/s/1x-jIw1X2yNYHGak2yiq4RQ?pwd=wgnt)** |
-| **`BERT-wwm, Chinese`** | **Wikipedia** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（pw:qfh8）](https://pan.baidu.com/s/1HDdDXiYxGT5ub5OeO7qdWw?pwd=qfh8)** |
-| `BERT-base, Chinese`<sup>Google</sup> | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
-| `BERT-base, Multilingual Cased`<sup>Google</sup>  | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
-| `BERT-base, Multilingual Uncased`<sup>Google</sup>  | Wikipedia | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
+| Model                                |                Corpus                 |                             🤗HF                              |                          BaiduDisk                           |
+| :----------------------------------- | :-----------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| **`BERT-wwm, Chinese`**              |               Wikipedia               |    [HF Link](https://huggingface.co/hfl/chinese-bert-wwm)    | [TensorFlow（pw:qfh8）](https://pan.baidu.com/s/1HDdDXiYxGT5ub5OeO7qdWw?pwd=qfh8) |
+| **`BERT-wwm-ext, Chinese`**          | Wikipedia+Extended data<sup>[1]</sup> |  [HF Link](https://huggingface.co/hfl/chinese-bert-wwm-ext)  | [TensorFlow（pw:wgnt）](https://pan.baidu.com/s/1x-jIw1X2yNYHGak2yiq4RQ?pwd=wgnt) |
+| **`RoBERTa-wwm-ext, Chinese`**       | Wikipedia+Extended data<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/chinese-roberta-wwm-ext) | [TensorFlow（pw:vybq）](https://pan.baidu.com/s/1oR0cgSXE3Nz6dESxr98qVA?pwd=vybq) |
+| **`RoBERTa-wwm-ext-large, Chinese`** | Wikipedia+Extended data<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/chinese-roberta-wwm-ext-large) | [TensorFlow（pw:dqqe）](https://pan.baidu.com/s/1F68xzCLWEonTEVP7HQ0Ciw?pwd=dqqe) |
+| **`RBT3, Chinese`**                  | Wikipedia+Extended data<sup>[1]</sup> |          [HF Link](https://huggingface.co/hfl/rbt3)          | [TensorFlow（pw:5a57）](https://pan.baidu.com/s/1AnapwWj1YBZ_4E6AAtj2lg?pwd=5a57) |
+| **`RBT4, Chinese`**                  | Wikipedia+Extended data<sup>[1]</sup> |          [HF Link](https://huggingface.co/hfl/rbt4)          | [TensorFlow（pw:sjpt）](https://pan.baidu.com/s/1MUrmuTULnMn3L1aw_dXxSA?pwd=sjpt) |
+| **`RBT6, Chinese`**                  | Wikipedia+Extended data<sup>[1]</sup> |          [HF Link](https://huggingface.co/hfl/rbt6)          | [TensorFlow（pw:hniy）](https://pan.baidu.com/s/1_MDAIYIGVgDovWkSs51NDA?pwd=hniy) |
+| **`RBTL3, Chinese`**                 | Wikipedia+Extended data<sup>[1]</sup> |         [HF Link](https://huggingface.co/hfl/rbtl3)          | [TensorFlow（pw:s6cu）](https://pan.baidu.com/s/1vV9ClBMbsSpt8wUpfQz62Q?pwd=s6cu) |
 
 ### PyTorch Version
 

@@ -114,19 +114,17 @@
 
 **注意：开源版本不包含MLM任务的权重；如需做MLM任务，请使用额外数据进行二次预训练（和其他下游任务一样）。**
 
-| 模型简称 | 语料 | Google下载 | 百度网盘下载 |
-| :------- | :--------- | :---------: | :---------: |
-| **`RBT6, Chinese`** | **EXT数据<sup>[1]</sup>** | - | **[TensorFlow（密码hniy）](https://pan.baidu.com/s/1_MDAIYIGVgDovWkSs51NDA?pwd=hniy)** |
-| **`RBT4, Chinese`** | **EXT数据<sup>[1]</sup>** | - | **[TensorFlow（密码sjpt）](https://pan.baidu.com/s/1MUrmuTULnMn3L1aw_dXxSA?pwd=sjpt)** |
-| **`RBTL3, Chinese`** | **EXT数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1Jzn1hYwmv0kXkfTeIvNT61Rn1IbRc-o8)**<br/>**[PyTorch](https://drive.google.com/open?id=1qs5OasLXXjOnR2XuGUh12NanUl0pkjEv)** | **[TensorFlow（密码s6cu）](https://pan.baidu.com/s/1vV9ClBMbsSpt8wUpfQz62Q?pwd=s6cu)** |
-| **`RBT3, Chinese`** | **EXT数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1-rvV0nBDvRCASbRz8M9Decc3_8Aw-2yi)**<br/>**[PyTorch](https://drive.google.com/open?id=1_LqmIxm8Nz1Abvlqb8QFZaxYo-TInOed)** | **[TensorFlow（密码5a57）](https://pan.baidu.com/s/1AnapwWj1YBZ_4E6AAtj2lg?pwd=5a57)** |
-| **`RoBERTa-wwm-ext-large, Chinese`** | **EXT数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1dtad0FFzG11CBsawu8hvwwzU2R0FDI94)**<br/>**[PyTorch](https://drive.google.com/open?id=1-2vEZfIFCdM1-vJ3GD6DlSyKT4eVXMKq)** | **[TensorFlow（密码dqqe）](https://pan.baidu.com/s/1F68xzCLWEonTEVP7HQ0Ciw?pwd=dqqe)** |
-| **`RoBERTa-wwm-ext, Chinese`** | **EXT数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1jMAKIJmPn7kADgD3yQZhpsqM-IRM1qZt)** <br/>**[PyTorch](https://drive.google.com/open?id=1eHM3l4fMo6DsQYGmey7UZGiTmQquHw25)** | **[TensorFlow（密码vybq）](https://pan.baidu.com/s/1oR0cgSXE3Nz6dESxr98qVA?pwd=vybq)** |
-| **`BERT-wwm-ext, Chinese`** | **EXT数据<sup>[1]</sup>** | **[TensorFlow](https://drive.google.com/open?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi)** <br/>**[PyTorch](https://drive.google.com/open?id=1iNeYFhCBJWeUsIlnW_2K6SMwXkM4gLb_)** | **[TensorFlow（密码wgnt）](https://pan.baidu.com/s/1x-jIw1X2yNYHGak2yiq4RQ?pwd=wgnt)** |
-| **`BERT-wwm, Chinese`** | **中文维基** | **[TensorFlow](https://drive.google.com/open?id=1RoTQsXp2hkQ1gSRVylRIJfQxJUgkfJMW)** <br/>**[PyTorch](https://drive.google.com/open?id=1AQitrjbvCWc51SYiLN-cJq4e0WiNN4KY)** | **[TensorFlow（密码qfh8）](https://pan.baidu.com/s/1HDdDXiYxGT5ub5OeO7qdWw?pwd=qfh8)** |
-| `BERT-base, Chinese`<sup>Google</sup> | 中文维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip) | - |
-| `BERT-base, Multilingual Cased`<sup>Google</sup>  | 多语种维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip) | - |
-| `BERT-base, Multilingual Uncased`<sup>Google</sup>  | 多语种维基 | [Google Cloud](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip) | - |
+| 模型简称 | 语料 | 🤗HF下载 | 百度网盘下载 |
+| :------- | :--------: | :---------: | :---------: |
+| **`BERT-wwm, Chinese`** | 中文维基 | [HF Link](https://huggingface.co/hfl/chinese-bert-wwm) | [TensorFlow（密码qfh8）](https://pan.baidu.com/s/1HDdDXiYxGT5ub5OeO7qdWw?pwd=qfh8) |
+| **`BERT-wwm-ext, Chinese`** | EXT数据<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/chinese-bert-wwm-ext) | [TensorFlow（密码wgnt）](https://pan.baidu.com/s/1x-jIw1X2yNYHGak2yiq4RQ?pwd=wgnt) |
+| **`RoBERTa-wwm-ext, Chinese`** | EXT数据<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/chinese-roberta-wwm-ext) | [TensorFlow（密码vybq）](https://pan.baidu.com/s/1oR0cgSXE3Nz6dESxr98qVA?pwd=vybq) |
+| **`RoBERTa-wwm-ext-large, Chinese`** | EXT数据<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/chinese-roberta-wwm-ext-large) | [TensorFlow（密码dqqe）](https://pan.baidu.com/s/1F68xzCLWEonTEVP7HQ0Ciw?pwd=dqqe) |
+| **`RBT3, Chinese`** | EXT数据<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/rbt3) | [TensorFlow（密码5a57）](https://pan.baidu.com/s/1AnapwWj1YBZ_4E6AAtj2lg?pwd=5a57) |
+| **`RBT4, Chinese`** | EXT数据<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/rbt4) | [TensorFlow（密码sjpt）](https://pan.baidu.com/s/1MUrmuTULnMn3L1aw_dXxSA?pwd=sjpt) |
+| **`RBT6, Chinese`** | EXT数据<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/rbt6) | [TensorFlow（密码hniy）](https://pan.baidu.com/s/1_MDAIYIGVgDovWkSs51NDA?pwd=hniy) |
+| **`RBTL3, Chinese`** | EXT数据<sup>[1]</sup> | [HF Link](https://huggingface.co/hfl/rbtl3) | [TensorFlow（密码s6cu）](https://pan.baidu.com/s/1vV9ClBMbsSpt8wUpfQz62Q?pwd=s6cu) |
+
 
 > [1] EXT数据包括：中文维基百科，其他百科、新闻、问答等数据，总词数达5.4B。
 
