@@ -1,3 +1,5 @@
+# [Chinese-LLaMA-Alpaca-2 v1.0版本](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2)已正式发布！
+
 [**中文说明**](https://github.com/ymcui/Chinese-BERT-wwm/) | [**English**](https://github.com/ymcui/Chinese-BERT-wwm/blob/master/README_EN.md)
 
 <p align="center">
